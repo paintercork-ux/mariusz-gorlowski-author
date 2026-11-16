@@ -8,7 +8,8 @@ Independent website for **mariuszgorlowski.com**. This is a **PRIVATE STAGING RE
 - ✅ Site V3.5 (HTML, CSS, portraits, book and QR FINDER images, publication listings) uploaded and checksum-verified.
 - ✅ Repository remains **private**. GitHub Pages, DNS and public indexing have **not** been enabled.
 - ✅ Contact email address is **not** stored in HTML, CSS or repository settings.
-- ⏳ Formspree form not connected — `REPLACE_WITH_YOUR_FORM_ID` deliberately prevents sending.
+- ✅ Formspree endpoint linked in `index.html` (`https://formspree.io/f/mdegeqwb`), `_gotcha` honeypot enabled. The recipient email remains configured privately in Formspree, not in the repository.
+- ⏳ Formspree spam protection (reCAPTCHA) to be verified in the owner's Formspree Settings; end-to-end test submission and receipt still pending.
 - ⏳ Privacy notice requires final approval and actual mail receipt test.
 - ⏳ Google Search Console, sitemap, canonical URL and HTTPS pending.
 - ⏳ Automatic Facebook / LinkedIn synchronisation is **not yet active**; links in `data/publications.json` are managed manually.
