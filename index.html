@@ -140,18 +140,51 @@
 </main>
 <footer class="footer"><div class="container footer-content"><div><div class="footer-brand">Mariusz Gorlowski</div><p>Ireland-based writer and essayist · Author of The Transition Code book project · Founder of QR FINDER.</p></div><div class="footer-links"><a href="#writing">The Transition Code</a><a href="#essays">Essays</a><a href="#qr-finder">QR FINDER</a><a href="#contact">Contact</a><a href="privacy.html">Privacy</a></div></div><div class="container footer-end"><span>© 2026 Mariusz Gorlowski · All rights reserved.</span><span>Independent author website · Unpublished manuscripts clearly identified</span></div></footer>
 <script>
-  // A deliberate safety stop. No message leaves the website until a real
-  // Formspree form ID is configured privately in this independent project.
+  // Formspree notifications are configured in the owner's private account.
+  // Only the public form ID will be added to the action URL after approval.
   (function () {
     const form = document.getElementById('contact-form');
     if (!form) return;
-    form.addEventListener('submit', function (event) {
+    const notice = document.getElementById('preview-notice');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
       if (form.action.includes('REPLACE_WITH_YOUR_FORM_ID') ||
           location.protocol === 'file:' ||
           ['localhost', '127.0.0.1'].includes(location.hostname)) {
-        event.preventDefault();
-        document.getElementById('preview-notice').textContent =
-          'Contact form is being prepared. Please try again once the site is live.';
+        notice.textContent = 'Contact form is being prepared. Please try again once the site is live.';
+        return;
+      }
+
+      if (!form.reportValidity()) return;
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      notice.textContent = 'Sending your message…';
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          // A custom Thank You URL is not included in Formspree's Free plan.
+          // AJAX allows us to show our own confirmation page after a real success.
+          window.location.assign(new URL('thank-you.html', window.location.href).href);
+          return;
+        }
+        if (response.status === 429) {
+          notice.textContent = 'Too many requests right now. Please try again later.';
+        } else if (response.status === 400 || response.status === 422) {
+          notice.textContent = 'Please check the form details and try again.';
+        } else {
+          notice.textContent = 'Your message could not be sent. Please try again later.';
+        }
+      } catch (_) {
+        notice.textContent = 'The connection failed. Please check your internet connection and try again.';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
       }
     });
   })();
