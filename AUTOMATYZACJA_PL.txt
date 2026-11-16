@@ -1,0 +1,25 @@
+AUTOMATYCZNE LINKI — REALNY ZAKRES V3
+=====================================
+
+Już działa:
+- strona ma dwie niezależne grupy: Eseje i QR FINDER
+- artykuły są generowane z data/publications.json bez ręcznej edycji kodu strony
+- linki do FB i LinkedIn zachowują oryginalne adresy
+- z jednego pliku JSON można wygenerować całą listę i automatycznie posortować ją datą
+
+Jeszcze nie działa:
+- samoistne pobieranie nowych postów z Facebooka/LinkedIn po ich opublikowaniu
+- cykliczna synchronizacja na serwerze
+
+Dlaczego?
+- Facebook oficjalnie udostępnia Graph API dla stron, lecz wymaga tokenu/uprawnień.
+- LinkedIn ma różne zasady dla profili osobistych i stron firmowych; nie wolno obiecywać automatycznego pobierania artykułów z konta osobistego bez sprawdzenia dostępnych uprawnień.
+
+Rekomendowana kolejność:
+1. Zatwierdzenie treści i wyglądu strony.
+2. Zakup domeny i wdrożenie strony na hostingu, ze zgodą autora.
+3. Podłączenie oficjalnych źródeł nowych linków, test bez publikacji automatycznej.
+4. Automatyczne publikowanie wyłącznie zweryfikowanych linków do esejów i QR FINDER, bez kopiowania prywatnej treści czy komentarzy.
+5. W razie braku dostępu LinkedIn: prosty formularz dodania pojedynczego linku do data/publications.json przy publikacji na LinkedIn.
+
+Alternatywa na przyszłość: publikować nowe niezależne eseje jako oryginalne teksty na własnej stronie i udostępniać odnośniki w social media. Może to wzmocnić rozpoznawalność domeny. Fragmenty nieopublikowanych książek nie powinny trafić tam bez świadomej decyzji autora i oceny praw pierwszej publikacji.

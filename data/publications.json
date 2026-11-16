@@ -1,0 +1,43 @@
+[
+  {
+    "id": "2026-11-16-qr-tags",
+    "type": "qr_finder",
+    "date": "2026-11-16",
+    "title": "It All Started with These QR FINDER Tags",
+    "description": "How four metal tag designs grew into a connected system — from free pet profiles and privacy choices to Lost Mode.",
+    "links": [
+      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122104467285546956"},
+      {"label": "LinkedIn", "url": "https://www.linkedin.com/pulse/all-started-qr-finder-tags-mariusz-gorlowski-fgptf/"}
+    ]
+  },
+  {
+    "id": "2026-11-13-voice",
+    "type": "essay",
+    "date": "2026-11-13",
+    "title": "What If Someone Who's Gone Called You?",
+    "description": "A fictional scenario about AI recreations of loved ones, grief and the different ways people may respond to the same technology.",
+    "links": [
+      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122101570203546956"}
+    ]
+  },
+  {
+    "id": "2026-11-10-qr-intro",
+    "type": "qr_finder",
+    "date": "2026-11-10",
+    "title": "Introducing QR FINDER",
+    "description": "The first public introduction to the idea, materials, products and purpose behind QR FINDER.",
+    "links": [
+      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122098581891546956"}
+    ]
+  },
+  {
+    "id": "2026-11-10-say-no",
+    "type": "essay",
+    "date": "2026-11-10",
+    "title": "The Day We Stop Saying No",
+    "description": "A reflection on convenience, delegated decisions and how easily we might stop questioning automated systems.",
+    "links": [
+      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122098148013546956"}
+    ]
+  }
+]
