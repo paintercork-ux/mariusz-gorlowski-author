@@ -1,36 +1,23 @@
-# Mariusz Gorlowski — author website
+# Mariusz Gorlowski — official author website
 
-Independent website for **mariuszgorlowski.com**. This is a **PRIVATE STAGING REPOSITORY**, not a public site yet.
+Website: **https://mariuszgorlowski.com/**
 
-## Current status — 16 November 2026
+The official English-language profile of Mariusz Gorlowski, writer and essayist working on the unpublished **The Transition Code** book project and founder of **QR FINDER**.
 
-- ✅ Domain **mariuszgorlowski.com** registered in the author's own Porkbun account.
-- ✅ Site V3.5 (HTML, CSS, portraits, book and QR FINDER images, publication listings) uploaded and checksum-verified.
-- ✅ Repository remains **private**. GitHub Pages, DNS and public indexing have **not** been enabled.
-- ✅ Contact email address is **not** stored in HTML, CSS or repository settings.
-- ✅ Formspree endpoint linked in `index.html` (`https://formspree.io/f/mdegeqwb`), `_gotcha` honeypot enabled. The recipient email remains configured privately in Formspree, not in the repository.
-- ⏳ Formspree spam protection (reCAPTCHA) to be verified in the owner's Formspree Settings; end-to-end test submission and receipt still pending.
-- ⏳ Privacy notice requires final approval and actual mail receipt test.
-- ✅ `CNAME` file staged for `mariuszgorlowski.com` in the private repository; no GitHub Pages or Porkbun DNS settings changed.
-- ⏳ Verify the domain at GitHub account Settings → Pages using an owner-generated DNS TXT record in Porkbun before setting web A/CNAME records.
-- ⏳ Google Search Console, sitemap, canonical URL and HTTPS pending.
-- ⏳ Automatic Facebook / LinkedIn synchronisation is **not yet active**; links in `data/publications.json` are managed manually.
+## About this repository
 
-## Mandatory launch safeguards
+This is the standalone static website. It includes the public author profile, book-project overview, selected essays and QR FINDER articles, and the contact form. It does **not** contain the QR FINDER product application or its deployment configuration.
 
-1. **Do not publish without the author's explicit approval.**
-2. **Never modify or deploy any QR FINDER repository, Netlify site, settings, or its domain.** This is a separate author website only.
-3. Keep the author-contact email private; enter it only in the Formspree account settings. Do not paste passwords, API tokens or backup codes into files or chat.
-4. Once ready for public deployment, review all repository files for secrets and personal data. GitHub Pages Free requires a public repository.
-5. Do not publish until Formspree, privacy notice, DNS, HTTPS, and end-to-end test messages are approved.
-6. Before Google indexing, replace the temporary robots policy and finish canonical URL/sitemap/schema configuration.
-7. Publication links must reflect actual public articles; do not claim automatic synchronization without implementing and verifying it.
+- Hosting: GitHub Pages (custom domain)
+- Contact form: Formspree (visitor-facing form; recipient email configured privately with the service)
+- Publications: curated links in `data/publications.json`; automatic social-media synchronisation is not yet active
+- Accessibility: responsive design, semantic page sections and labelled form inputs
+- Site source: HTML, CSS, static assets and a publication-list build helper
 
-## Contents
+## Contact and content
 
-- `index.html`, `styles.css`, `assets/` — author site
-- `privacy.html`, `thank-you.html` — privacy and confirmation pages
-- `data/publications.json`, `scripts/build_publications.py` — curated publication list
-- `README_DEPLOY_INDEPENDENT_PL.txt` and `AUTOMATYZACJA_PL.txt` — deployment and publication process notes
+For professional correspondence, use the contact form on the website. Do not submit passwords or sensitive personal information.
 
-Owner: Mariusz Gorlowski. This repo is unrelated to the QR FINDER production application.
+Text, images, book projects and QR FINDER branding are presented for informational use. No reuse licence is granted by this repository.
+
+© 2026 Mariusz Gorlowski. All rights reserved.
