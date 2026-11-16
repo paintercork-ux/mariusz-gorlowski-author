@@ -154,7 +154,7 @@
 
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
-      if (form.action.includes('REPLACE_WITH_YOUR_FORM_ID') ||
+      if (!form.action.startsWith('https://formspree.io/f/mdegeqwb') ||
           location.protocol === 'file:' ||
           ['localhost', '127.0.0.1'].includes(location.hostname)) {
         notice.textContent = 'Contact form is being prepared. Please try again once the site is live.';
