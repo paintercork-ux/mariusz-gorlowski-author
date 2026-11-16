@@ -11,6 +11,8 @@ Independent website for **mariuszgorlowski.com**. This is a **PRIVATE STAGING RE
 - ✅ Formspree endpoint linked in `index.html` (`https://formspree.io/f/mdegeqwb`), `_gotcha` honeypot enabled. The recipient email remains configured privately in Formspree, not in the repository.
 - ⏳ Formspree spam protection (reCAPTCHA) to be verified in the owner's Formspree Settings; end-to-end test submission and receipt still pending.
 - ⏳ Privacy notice requires final approval and actual mail receipt test.
+- ✅ `CNAME` file staged for `mariuszgorlowski.com` in the private repository; no GitHub Pages or Porkbun DNS settings changed.
+- ⏳ Verify the domain at GitHub account Settings → Pages using an owner-generated DNS TXT record in Porkbun before setting web A/CNAME records.
 - ⏳ Google Search Console, sitemap, canonical URL and HTTPS pending.
 - ⏳ Automatic Facebook / LinkedIn synchronisation is **not yet active**; links in `data/publications.json` are managed manually.
 
