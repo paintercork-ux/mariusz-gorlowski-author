@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mariuszgorlowski.com/</loc></url>
+  <url><loc>https://mariuszgorlowski.com/pl/</loc></url>
   <url><loc>https://mariuszgorlowski.com/writing/</loc></url>
+  <url><loc>https://mariuszgorlowski.com/pl/writing/</loc></url>
   <url><loc>https://mariuszgorlowski.com/writing/essays/</loc></url>
+  <url><loc>https://mariuszgorlowski.com/pl/writing/essays/</loc></url>
   <url><loc>https://mariuszgorlowski.com/qr-finder/</loc></url>
+  <url><loc>https://mariuszgorlowski.com/pl/qr-finder/</loc></url>
   <url><loc>https://mariuszgorlowski.com/qr-finder/articles/</loc></url>
+  <url><loc>https://mariuszgorlowski.com/pl/qr-finder/articles/</loc></url>
   <url><loc>https://mariuszgorlowski.com/contact/</loc></url>
+  <url><loc>https://mariuszgorlowski.com/pl/contact/</loc></url>
 </urlset>

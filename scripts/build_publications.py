@@ -1,70 +1,114 @@
-"""Build manually selected publication cards from data/publications.json.
-Selected literary essays MUST have an original full-text file in data/essays.
-The script does NOT fetch Facebook/LinkedIn and does NOT auto-select by date.
+"""Build manually curated article cards in English and Polish.
+
+Source of truth:
+  data/publications.json      — original posts, dates, selection and external URLs
+  data/publications_pl.json   — Polish editorial titles and descriptions
+  data/essays/<id>.txt        — approved English complete essays
+  data/essays/pl/<id>.txt     — Polish review translations
+
+Never fetch automatically from social platforms or publish manuscripts.
 """
 from pathlib import Path
 from html import escape
 from urllib.parse import urlsplit
-import json, re
+import json
+import re
 from datetime import date
 
-ROOT=Path(__file__).resolve().parent.parent
-posts=json.loads((ROOT/'data/publications.json').read_text(encoding="utf-8"))
+ROOT = Path(__file__).resolve().parent.parent
+posts = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
+pl = json.loads((ROOT / "data/publications_pl.json").read_text(encoding="utf-8"))
+months_pl = ("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+             "lipca", "sierpnia", "września", "października", "listopada", "grudnia")
 for p in posts:
-    assert p["type"] in ("essay","qr_finder")
-    assert isinstance(p.get("featured"),bool) and isinstance(p.get("display_order"),int)
-    assert re.fullmatch(r"[a-z0-9-]+",p["id"])
-    assert re.fullmatch(r"\d{4}-\d{2}-\d{2}",p["date"])
-    for l in p["links"]:
-        assert urlsplit(l["url"]).scheme == "https"
-def essay_full_text(p):
-    src=ROOT/"data"/"essays"/(p["id"]+".txt")
+    assert p["type"] in ("essay", "qr_finder")
+    assert isinstance(p.get("featured"), bool) and isinstance(p.get("display_order"), int)
+    assert re.fullmatch(r"[a-z0-9-]+", p["id"])
+    assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", p["date"])
+    assert p["id"] in pl, "Missing Polish publication metadata: " + p["id"]
+    assert all(pl[p["id"]].get(key) for key in ("title", "description"))
+    for link in p["links"]:
+        assert urlsplit(link["url"]).scheme == "https"
+
+def essay_full_text(item, lang):
+    filename = item["id"] + ".txt"
+    src = ROOT / "data" / "essays" / (("pl/" if lang == "pl" else "") + filename)
     if not src.is_file():
-        raise FileNotFoundError(f"Featured essay needs its approved full text: {src}")
-    blocks=re.split(r"\n\s*\n",src.read_text(encoding="utf-8").strip())
-    if blocks and blocks[0].strip().casefold()==p["title"].casefold(): blocks.pop(0)
-    output=[]
-    for b in blocks:
-        b=" ".join(b.split())
-        if not b: continue
-        cls=("v4-essay-signature" if b=="Mariusz Gorlowski" else
-             "v4-research-label" if b=="Research reference:" else "")
-        attr=f' class="{cls}"' if cls else ""
-        if b.startswith("https://doi.org/"):
-            safe=escape(b,quote=True)
-            output.append(f'<p class="v4-source-link"><a href="{safe}" target="_blank" rel="noopener noreferrer">{escape(b)}</a></p>')
+        raise FileNotFoundError("Featured essay needs full text: " + str(src))
+    title = pl[item["id"]]["title"] if lang == "pl" else item["title"]
+    blocks = re.split(r"\n\s*\n", src.read_text(encoding="utf-8").strip())
+    if blocks and blocks[0].strip().casefold() == title.casefold():
+        blocks.pop(0)
+    output = []
+    for block in blocks:
+        block = " ".join(block.split())
+        if not block:
+            continue
+        klass = ("v4-essay-signature" if block == "Mariusz Gorlowski" else
+                 "v4-research-label" if block in ("Research reference:", "Źródło naukowe:") else "")
+        attr = f' class="{klass}"' if klass else ""
+        if block.startswith("https://doi.org/"):
+            safe = escape(block, quote=True)
+            output.append(f'<p class="v4-source-link"><a href="{safe}" target="_blank" rel="noopener noreferrer">{escape(block)}</a></p>')
         else:
-            output.append(f"<p{attr}>{escape(b)}</p>")
+            output.append(f"<p{attr}>{escape(block)}</p>")
     return "\n".join(output)
-def build(kind):
-    chosen=sorted((p for p in posts if p["type"]==kind and p["featured"]),key=lambda p:p["display_order"])
-    if len(chosen)>3:raise ValueError(f"More than three featured items: {kind}")
-    rendered=[]
-    for p in chosen:
-        stamp=date.fromisoformat(p["date"]).strftime("%d %B %Y").lstrip("0")
-        links="".join(f'<a href="{escape(l["url"],quote=True)}" target="_blank" rel="noopener noreferrer">{"Original post" if kind=="essay" else "Read"} on {escape(l["label"])} <span aria-hidden="true">↗</span></a>' for l in p["links"])
-        if kind=="essay":
-            accordion=(f'<details class="v4-full-essay" id="full-{escape(p["id"])}"><summary>'
-                       '<span class="v4-open-label">Read the full essay</span>'
-                       '<span class="v4-close-label">Close the essay</span>'
-                       '<span class="v4-expand-chevron" aria-hidden="true">⌄</span></summary>'
-                       f'<div class="v4-essay-body">{essay_full_text(p)}</div></details>')
-        else: accordion=""
-        rendered.append(f'<article class="v4-article">'
-                        f'<div class="v4-article-meta"><time datetime="{p["date"]}">{stamp}</time> · {"Independent essay" if kind=="essay" else "QR FINDER"}</div>'
-                        f'<h3>{escape(p["title"])}</h3>'
-                        f'<p class="v4-article-lead">{escape(p["description"])}</p>'
-                        f'{accordion}<div class="v4-article-links">{links}</div></article>')
-    return ('\n<hr class="v4-gold-rule v4-essay-divider" aria-hidden="true"/>\n' if kind=="essay" else '\n').join(rendered)
-for marker,kind,relpath in [
-    ("ESSAYS","essay","writing/essays/index.html"),
-    ("QR","qr_finder","qr-finder/articles/index.html")
-]:
-    path=ROOT/relpath
-    html=path.read_text(encoding="utf-8")
-    pattern=f"<!-- AUTO:{marker}:START -->"+r".*?"+f"<!-- AUTO:{marker}:END -->"
-    replacement=f"<!-- AUTO:{marker}:START -->"+build(kind)+f"<!-- AUTO:{marker}:END -->"
-    updated,count=re.subn(pattern,lambda _:replacement,html,flags=re.DOTALL)
-    if count!=1:raise RuntimeError(f"Expected one {marker} block, got {count}")
-    path.write_text(updated,encoding="utf-8")
-print("Updated curated links and the approved complete essays; no platform sync")
+
+def date_label(s, lang):
+    d = date.fromisoformat(s)
+    return f"{d.day} {months_pl[d.month-1]} {d.year}" if lang == "pl" else d.strftime("%d %B %Y").lstrip("0")
+
+def build(kind, lang):
+    chosen = sorted((p for p in posts if p["type"] == kind and p["featured"]), key=lambda p: p["display_order"])
+    if len(chosen) > 3:
+        raise ValueError("More than three featured items: " + kind)
+    rendered = []
+    for item in chosen:
+        title = pl[item["id"]]["title"] if lang == "pl" else item["title"]
+        desc = pl[item["id"]]["description"] if lang == "pl" else item["description"]
+        links = "".join(
+            f'<a href="{escape(link["url"], quote=True)}" target="_blank" rel="noopener noreferrer">'
+            f'{("Oryginalny wpis" if kind == "essay" else "Przeczytaj") if lang == "pl" else ("Original post" if kind == "essay" else "Read")} '
+            f'{"na" if lang == "pl" else "on"} {escape(link["label"])} '
+            '<span aria-hidden="true">↗</span></a>'
+            for link in item["links"]
+        )
+        if kind == "essay":
+            if lang == "pl":
+                open_label, close_label = "Przeczytaj cały esej", "Zwiń esej"
+            else:
+                open_label, close_label = "Read the full essay", "Close the essay"
+            accordion = (
+                f'<details class="v4-full-essay" id="full-{escape(item["id"])}"><summary>'
+                f'<span class="v4-open-label">{open_label}</span>'
+                f'<span class="v4-close-label">{close_label}</span>'
+                '<span class="v4-expand-chevron" aria-hidden="true">⌄</span></summary>'
+                f'<div class="v4-essay-body">{essay_full_text(item, lang)}</div></details>'
+            )
+        else:
+            accordion = ""
+        label = ("Esej autorski" if lang == "pl" else "Independent essay") if kind == "essay" else "QR FINDER"
+        rendered.append(
+            '<article class="v4-article">'
+            f'<div class="v4-article-meta"><time datetime="{item["date"]}">{date_label(item["date"], lang)}</time> · {label}</div>'
+            f'<h3>{escape(title)}</h3>'
+            f'<p class="v4-article-lead">{escape(desc)}</p>'
+            f'{accordion}<div class="v4-article-links">{links}</div></article>'
+        )
+    divider = '\n<hr class="v4-gold-rule v4-essay-divider" aria-hidden="true"/>\n' if kind == "essay" else "\n"
+    return divider.join(rendered)
+
+for lang, root in (("en", ""), ("pl", "pl/")):
+    for marker, kind, relpath in (
+        ("ESSAYS", "essay", "writing/essays/index.html"),
+        ("QR", "qr_finder", "qr-finder/articles/index.html"),
+    ):
+        path = ROOT / root / relpath
+        html = path.read_text(encoding="utf-8")
+        pattern = f"<!-- AUTO:{marker}:START -->" + r".*?" + f"<!-- AUTO:{marker}:END -->"
+        replacement = f"<!-- AUTO:{marker}:START -->" + build(kind, lang) + f"<!-- AUTO:{marker}:END -->"
+        updated, count = re.subn(pattern, lambda _: replacement, html, flags=re.DOTALL)
+        if count != 1:
+            raise RuntimeError(f"Expected one {marker} block in {path}, got {count}")
+        path.write_text(updated, encoding="utf-8")
+print("Updated manually curated EN/PL cards and complete essays. No social-platform sync.")
