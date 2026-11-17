@@ -91,3 +91,5 @@ Mariusz Gorlowski
 Research reference:
 
 Hollanek, T. & Nowaczyk-Basińska, K. (2024). Griefbots, Deadbots, Postmortem Avatars: on Responsible Applications of Generative AI in the Digital Afterlife Industry. Philosophy & Technology, 37, Article 63.
+
+https://doi.org/10.1007/s13347-024-00744-w
