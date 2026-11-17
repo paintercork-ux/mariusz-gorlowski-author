@@ -4,40 +4,63 @@
     "type": "qr_finder",
     "date": "2026-11-16",
     "title": "It All Started with These QR FINDER Tags",
-    "description": "How four metal tag designs grew into a connected system — from free pet profiles and privacy choices to Lost Mode.",
+    "description": "How the first carefully designed metal tags grew into a wider system. Through the example of a free pet profile, I explain the importance of updating information, controlling what is shared and giving finders a simple way to help.",
     "links": [
-      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122104467285546956"},
-      {"label": "LinkedIn", "url": "https://www.linkedin.com/pulse/all-started-qr-finder-tags-mariusz-gorlowski-fgptf/"}
-    ]
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/122101706787546956/posts/122104467285546956"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/pulse/all-started-qr-finder-tags-mariusz-gorlowski-fgptf/"
+      }
+    ],
+    "featured": true,
+    "display_order": 1
   },
   {
     "id": "2026-11-13-voice",
     "type": "essay",
     "date": "2026-11-13",
     "title": "What If Someone Who's Gone Called You?",
-    "description": "A fictional scenario about AI recreations of loved ones, grief and the different ways people may respond to the same technology.",
+    "description": "Imagine a call from someone you loved who is no longer here. You know their voice has been recreated by AI. Would it bring comfort, or make it harder to accept the loss? A fictional family story about grief, attachment and the limits of technology.",
     "links": [
-      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122101570203546956"}
-    ]
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/122101706787546956/posts/122101570203546956"
+      }
+    ],
+    "featured": true,
+    "display_order": 1
   },
   {
     "id": "2026-11-10-qr-intro",
     "type": "qr_finder",
     "date": "2026-11-10",
     "title": "Introducing QR FINDER",
-    "description": "The first public introduction to the idea, materials, products and purpose behind QR FINDER.",
+    "description": "The first public introduction to QR FINDER — the original idea, materials, products and the practical problem the system was created to solve.",
     "links": [
-      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122098581891546956"}
-    ]
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/122101706787546956/posts/122098581891546956"
+      }
+    ],
+    "featured": true,
+    "display_order": 2
   },
   {
     "id": "2026-11-10-say-no",
     "type": "essay",
     "date": "2026-11-10",
     "title": "The Day We Stop Saying No",
-    "description": "A reflection on convenience, delegated decisions and how easily we might stop questioning automated systems.",
+    "description": "Nobody has taken away your freedom to choose. You can still disagree with a system's advice — but you do so less and less often. When does convenience begin to replace our own judgement? An essay about responsibility and the right to say no.",
     "links": [
-      {"label": "Facebook", "url": "https://www.facebook.com/122101706787546956/posts/122098148013546956"}
-    ]
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/122101706787546956/posts/122098148013546956"
+      }
+    ],
+    "featured": true,
+    "display_order": 2
   }
 ]
