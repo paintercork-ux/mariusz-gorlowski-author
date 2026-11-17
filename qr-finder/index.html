@@ -98,4 +98,30 @@
 <a href="../qr-finder/">QR FINDER</a>
 <a href="../contact/">Contact</a><a href="../privacy.html">Privacy</a></div>
 </div><div class="container footer-end"><span>© 2026 Mariusz Gorlowski · All rights reserved.</span>
-<span>Independent author website · Unpublished manuscripts clearly identified</span></div></footer></body></html>
+<span>Independent author website · Unpublished manuscripts clearly identified</span></div></footer>
+<script id="qr-tags-mobile-placement">
+/* On narrow screens, separate the two existing original photos.
+   Desktop keeps the original positions; no image is duplicated. */
+(function () {
+  const intro = document.querySelector('#qr-finder .qr-intro');
+  const tags = document.querySelector('#qr-finder .product-photo');
+  const petExample = document.querySelector('#qr-finder section[aria-labelledby="pet-example"]');
+  if (!intro || !tags || !petExample) return;
+
+  const mobile = window.matchMedia('(max-width: 760px)');
+  function arrangePhotos() {
+    if (mobile.matches) {
+      petExample.after(tags);
+    } else {
+      intro.after(tags);
+    }
+  }
+  arrangePhotos();
+  if (mobile.addEventListener) {
+    mobile.addEventListener('change', arrangePhotos);
+  } else if (mobile.addListener) {
+    mobile.addListener(arrangePhotos);
+  }
+}());
+</script>
+</body></html>
