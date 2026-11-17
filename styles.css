@@ -178,3 +178,24 @@
  .contact-send{width:100%;justify-content:space-between;}
 }
 @media(prefers-reduced-motion:reduce){.contact-send,.contact-card .field input,.contact-card .field textarea,.contact-card .field select{transition:none;}}
+
+
+/* Book-cover proposals: preserve full illustrations without cropping. */
+.book-cover{margin:0;min-width:0;max-width:245px;justify-self:center;align-self:start;}
+.book-cover a{display:block;line-height:0;border-radius:8px;outline-offset:4px;}
+.book-cover img{width:100%;height:auto;display:block;object-fit:contain;border-radius:7px;border:1px solid rgba(130,107,70,.35);box-shadow:0 10px 25px rgba(21,27,32,.13);background:#101416;}
+.book-cover figcaption{font-size:11px;line-height:1.6;color:#747d80;margin-top:11px;}
+.book-feature>.book-cover{width:100%;}
+.continuation{display:grid;grid-template-columns:minmax(150px,.75fr) minmax(0,1.6fr);gap:27px;align-items:center;}
+.continuation .book-cover{width:100%;max-width:220px;}
+.continuation-copy{min-width:0;}
+.continuation-copy h3{margin-top:12px;}
+@media(max-width:760px){
+ .book-feature>.book-cover{max-width:245px;justify-self:center;}
+ .continuation{grid-template-columns:1fr;padding:24px;}
+ .continuation .book-cover{max-width:245px;justify-self:center;}
+}
+@media(max-width:520px){
+ .book-cover figcaption{font-size:10px;}
+ .continuation{padding:21px 18px;gap:20px;}
+}
