@@ -267,13 +267,44 @@
 }
 
 
-/* Bilingual author site: compact language switch in the existing header. */
-.lang-switch{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap;padding:4px 3px;border:1px solid #e0ddd6;border-radius:999px;background:#fff;font-size:11px;font-weight:700;color:#8b8f8e;}
-.lang-switch a{display:inline-block;min-width:23px;padding:4px 5px;border-radius:20px;text-align:center;text-decoration:none;color:#67777b;}
-.lang-switch a[aria-current="page"]{background:var(--navy);color:#e3c796;}
-.lang-switch a:hover:not([aria-current="page"]){color:#845e2a;background:#f6f1e9;}
-.lang-switch a:focus-visible{outline:2px solid #b18c5c;outline-offset:2px;}
-@media(max-width:520px){.topbar-inner{gap:8px}.nav-contact{padding:6px 8px;font-size:0}.nav-contact span{font-size:16px}.lang-switch{gap:4px;font-size:10px}.lang-switch a{min-width:21px;padding:4px}.brand{min-width:0;white-space:nowrap}}
+/* Bilingual switch: strong, accessible navy-and-gold control. */
+.lang-switch{
+  display:inline-flex;align-items:center;gap:0;flex-shrink:0;white-space:nowrap;
+  padding:3px;border:1.5px solid #b48b51;border-radius:999px;
+  background:#172d36;color:#f5f1e8;
+  box-shadow:0 0 0 2px rgba(177,140,92,.09),0 2px 8px rgba(16,29,36,.12);
+}
+.lang-switch > span[aria-hidden="true"]{display:none}
+.lang-switch a{
+  display:inline-flex;justify-content:center;align-items:center;
+  min-width:43px;min-height:38px;padding:0 11px;border-radius:999px;
+  text-align:center;text-decoration:none;font-size:12px;font-weight:800;
+  letter-spacing:.045em;color:#f7f3ec;
+  transition:background-color .16s,color .16s;
+}
+.lang-switch a[aria-current="page"]{
+  background:#e6c484;color:#172d36;box-shadow:0 1px 4px rgba(7,22,29,.18);
+}
+.lang-switch a:hover:not([aria-current="page"]){
+  color:#fff;background:rgba(230,196,132,.23);
+}
+.lang-switch a:focus-visible{outline:3px solid #e6c484;outline-offset:2px}
+@media(max-width:520px){
+  .topbar-inner{gap:8px}
+  .nav-contact{padding:6px 8px;font-size:0}
+  .nav-contact span{font-size:16px}
+  .brand{font-size:11px;letter-spacing:-.035em;gap:6px;min-width:0;white-space:nowrap}
+  .brand-symbol{width:29px;height:29px;font-size:10px;flex-shrink:0}
+  .lang-switch{padding:2px}
+  .lang-switch a{min-width:42px;min-height:40px;padding:0 8px;font-size:11px}
+}
+@media(max-width:360px){
+  .topbar-inner{gap:6px}
+  .brand{font-size:10px}
+  .nav-contact{padding:6px}
+  .lang-switch a{min-width:40px;min-height:38px;padding:0 6px}
+}
+@media(prefers-reduced-motion:reduce){.lang-switch a{transition:none}}
 
 /* Keep the simple privacy and thank-you header switch right-aligned. */
 .topbar-inner > .brand + .lang-switch{margin-left:auto;}
