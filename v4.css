@@ -72,3 +72,24 @@
  .v4-more{width:100%;font-size:12px;}
 }
 @media(prefers-reduced-motion:reduce){.v4-choice,.v4-tabs a{transition:none}.v4-choice:hover{transform:none}}
+
+/* Deliberate, subtle section separators and readable book progress indicators. */
+.v4-gold-rule{display:block;clear:both;width:100%;height:1px;border:0;margin:30px 0 32px;background:linear-gradient(90deg,rgba(177,140,92,.12),rgba(177,140,92,.7) 22%,rgba(177,140,92,.7) 78%,rgba(177,140,92,.12));}
+.v4-book-status{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;line-height:1.5;color:#344348;background:#f7f5ef;border:1px solid #eae5da;border-radius:9px;padding:12px 14px;margin-top:20px;max-width:56ch;}
+.v4-book-status .v4-status-dot{display:block;flex:none;width:11px;height:11px;margin-top:4px;border-radius:50%;border:1px solid rgba(0,0,0,.12);box-shadow:0 0 0 3px rgba(255,255,255,.85);}
+.v4-status-search .v4-status-dot{background:#d78b2b;}
+.v4-status-editing .v4-status-dot{background:#c4514b;}
+.v4-status-published .v4-status-dot{background:#26825a;} /* Future: only after confirmed publisher agreement. */
+.v4-book-status strong{font-weight:800;}
+.v4-qr-topic h3,.v4-qr-card .qr-intro h3,.qr-card .qr-intro h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;color:#1b2b31;font-size:clamp(21px,2.4vw,27px);line-height:1.27;margin:0 0 14px;}
+.v4-qr-topic p{font-size:14px;line-height:1.75;margin:0 0 14px;color:#39494e;}
+.v4-qr-topic p:last-child{margin-bottom:0;}
+.v4-system .qr-card .qr-intro{align-items:start;}
+.v4-system .qr-card .qr-intro>div{min-width:0;}
+.v4-system .qr-card .feature-grid{margin-top:15px;}
+.v4-system .qr-card .qr-bottom{margin-top:31px;}
+@media(max-width:520px){
+ .v4-gold-rule{margin:23px 0 25px;}
+ .v4-book-status{font-size:12px;padding:12px 11px;}
+ .v4-qr-topic h3{font-size:22px;}
+}
