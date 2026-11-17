@@ -265,3 +265,12 @@
     min-width: 0;
   }
 }
+
+
+/* Bilingual author site: compact language switch in the existing header. */
+.lang-switch{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap;padding:4px 3px;border:1px solid #e0ddd6;border-radius:999px;background:#fff;font-size:11px;font-weight:700;color:#8b8f8e;}
+.lang-switch a{display:inline-block;min-width:23px;padding:4px 5px;border-radius:20px;text-align:center;text-decoration:none;color:#67777b;}
+.lang-switch a[aria-current="page"]{background:var(--navy);color:#e3c796;}
+.lang-switch a:hover:not([aria-current="page"]){color:#845e2a;background:#f6f1e9;}
+.lang-switch a:focus-visible{outline:2px solid #b18c5c;outline-offset:2px;}
+@media(max-width:520px){.topbar-inner{gap:8px}.nav-contact{padding:6px 8px;font-size:0}.nav-contact span{font-size:16px}.lang-switch{gap:4px;font-size:10px}.lang-switch a{min-width:21px;padding:4px}.brand{min-width:0;white-space:nowrap}}
