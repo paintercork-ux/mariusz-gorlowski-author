@@ -296,13 +296,13 @@
   .brand{font-size:11px;letter-spacing:-.035em;gap:6px;min-width:0;white-space:nowrap}
   .brand-symbol{width:29px;height:29px;font-size:10px;flex-shrink:0}
   .lang-switch{padding:2px}
-  .lang-switch a{min-width:36px;min-height:36px;padding:0 7px;font-size:11px}
+  .lang-switch a{min-width:42px;min-height:40px;padding:0 8px;font-size:11px}
 }
 @media(max-width:360px){
   .topbar-inner{gap:6px}
   .brand{font-size:10px}
   .nav-contact{padding:6px}
-  .lang-switch a{min-width:33px;min-height:34px;padding:0 6px}
+  .lang-switch a{min-width:40px;min-height:38px;padding:0 6px}
 }
 @media(prefers-reduced-motion:reduce){.lang-switch a{transition:none}}
 
