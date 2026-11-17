@@ -154,3 +154,17 @@
   text-align:center;
   font-size:10px;
 }
+
+
+/* Author photograph from the existing, unaltered assets/book_concept.webp.
+   Natural proportions; do not crop the author, the proposed book cover or the photo. */
+.v4-author-photo{display:block;margin:24px 0 27px;max-width:100%;min-width:0;}
+.v4-author-photo img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;border:1px solid #e5e0d5;border-radius:11px;box-shadow:0 7px 22px rgba(21,35,40,.08);}
+.v4-author-photo figcaption{font-size:11px;line-height:1.55;color:#6b7575;margin:9px 3px 0;}
+.v4-photo-essays{margin-top:25px;}
+.v4-photo-books{max-width:900px;margin:23px auto 28px;}
+@media(max-width:520px){
+ .v4-author-photo{margin:20px 0 23px;}
+ .v4-author-photo img{border-radius:8px;}
+ .v4-author-photo figcaption{font-size:10px;}
+}
