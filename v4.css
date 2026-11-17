@@ -132,3 +132,25 @@
 @media(prefers-reduced-motion:reduce){.v4-full-essay .v4-expand-chevron{transition:none}}
 
 .v4-essay-body .v4-source-link a{overflow-wrap:anywhere;color:#8c653a;text-decoration:underline;text-underline-offset:3px;}
+
+
+/* QR FINDER V4 — show the complete original tag photograph at every viewport.
+   The shared V3 rule capped its height at 370px and cropped desktop displays.
+   Keep this override scoped to QR FINDER; do not change the photo itself. */
+.v4-system .product-photo img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  object-position:center;
+}
+.v4-system .product-photo span{
+  position:static;
+  display:block;
+  width:max-content;
+  max-width:calc(100% - 24px);
+  margin:9px auto 12px;
+  text-align:center;
+  font-size:10px;
+}
