@@ -199,3 +199,69 @@
  .book-cover figcaption{font-size:10px;}
  .continuation{padding:21px 18px;gap:20px;}
 }
+
+/* FIX 2026-11-17: consistent original covers on desktop and mobile, never stretch source images. */
+.book-feature,
+.continuation {
+  min-width: 0;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: start;
+}
+.book-feature > .book-cover,
+.continuation > .book-cover {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+  align-self: start;
+}
+.book-feature > .book-cover > a,
+.continuation > .book-cover > a {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  line-height: 0;
+}
+.book-feature > .book-cover img,
+.continuation > .book-cover img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  object-position: center;
+}
+.book-copy, .continuation-copy { min-width: 0; }
+@media screen and (max-width: 760px) {
+  .book-feature,
+  .continuation {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 22px;
+    align-items: start;
+  }
+  .book-feature > .book-cover,
+  .continuation > .book-cover {
+    width: min(100%, 220px);
+    max-width: 220px;
+    justify-self: center;
+  }
+  .book-feature > .book-cover img,
+  .continuation > .book-cover img {
+    width: 100%;
+    height: auto !important;
+  }
+  .book-feature > .book-copy,
+  .continuation > .continuation-copy {
+    width: 100%;
+    min-width: 0;
+  }
+}
