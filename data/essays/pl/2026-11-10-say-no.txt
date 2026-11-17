@@ -1,0 +1,107 @@
+Dzień, w którym przestaniemy mówić „nie”
+
+Wyobraź sobie świat, w którym nikt nie odebrał nam wolności.
+
+Nadal możesz podejmować własne decyzje. Masz prawo się nie zgadzać. Wciąż możesz powiedzieć „nie”.
+
+Tyle że pewnego dnia prawie przestajesz korzystać z tego prawa.
+
+Nie dlatego, że ktoś Cię do tego zmusił.
+
+Po prostu świat zaczyna działać znacznie sprawniej za każdym razem, gdy mówisz „tak”.
+
+A jeśli właśnie w ten sposób rozpocznie się jedna z największych zmian w historii ludzkości?
+
+Już dziś coraz częściej polegamy na systemach wspomagających podejmowanie decyzji. Nawigacja proponuje szybszą trasę. Algorytmy podpowiadają, co przeczytać lub obejrzeć. Sztuczna inteligencja może pisać wiadomości, analizować informacje, przedstawiać argumenty i proponować rozwiązania problemów.
+
+Nie ma w tym niczego z natury złego. Właśnie po to rozwijamy technologię, by ułatwiać sobie życie.
+
+Chciałbym jednak zwrócić uwagę na pewną granicę.
+
+Istnieje zasadnicza różnica między systemem, który podpowiada nam, co zrobić, a takim, który zaczyna robić to za nas.
+
+Wyobraź sobie, że używasz sztucznej inteligencji w pracy.
+
+Najpierw prosisz ją o przygotowanie odpowiedzi dla klienta. Czytasz wiadomość, zmieniasz kilka zdań i wysyłasz.
+
+Po pewnym czasie zauważasz, że proponowane odpowiedzi są coraz lepsze. Rzadko trzeba cokolwiek poprawiać.
+
+W końcu pozwalasz systemowi samodzielnie odpowiadać na część wiadomości.
+
+To wygodne. Oszczędzasz czas. Możesz zająć się czymś ważniejszym.
+
+Później powierzasz mu kolejne zadania.
+
+Aż pewnego dnia odkrywasz, że system obsługuje większość Twojej korespondencji, podejmuje drobne decyzje i rozwiązuje problemy, o których istnieniu nawet nie wiedziałeś.
+
+Nadal możesz wszystko nadzorować.
+
+Ale czy to robisz?
+
+Nie sugeruję, że sztuczna inteligencja nagle postanowiła przejąć kontrolę. Taka zmiana nie wymaga, aby AI miała świadomość, ambicje czy własne pragnienia.
+
+Wystarczy, że coraz częściej będziemy uznawać jej propozycje za lepsze od własnych.
+
+A potem zaczniemy traktować je nie jak sugestie, lecz jak decyzje, których prawie nie warto kwestionować.
+
+To zjawisko ma swoją nazwę: tendencyjność automatyzacji (automation bias).
+
+Badacze zajmują się nim od dziesięcioleci.
+
+W badaniu z 1999 roku, wykorzystującym symulowane zadanie lotnicze, Linda Skitka, Kathleen Mosier i Mark Burdick zauważyli, że uczestnicy korzystający z niedoskonałego automatycznego systemu wspomagania decyzji niekiedy stosowali się do jego wskazań, nawet gdy były one sprzeczne z ich szkoleniem i innymi dostępnymi, prawidłowymi informacjami.
+
+Badanie dotyczyło starszych systemów wspomagania decyzji, a nie dzisiejszej generatywnej AI. Wykazany w nim mechanizm pozostaje jednak istotny: nadmierne zaufanie do systemu może sprawić, że rzadziej sprawdzamy jego zalecenia.
+
+Wyobraź sobie teraz inną sytuację.
+
+Pracujesz w organizacji, w której system analizuje dane i rekomenduje określone działania. Zatwierdzenie jego propozycji zajmuje kilka sekund.
+
+Możesz ją odrzucić, ale musisz wtedy uzasadnić decyzję i przyjąć odpowiedzialność, jeśli rezultat okaże się gorszy.
+
+Formalnie wybór nadal należy do Ciebie.
+
+W praktyce coraz bardziej kusi, by po prostu kliknąć „Zatwierdź”.
+
+I tu pojawia się pytanie znacznie ważniejsze, niż mogłoby się wydawać:
+
+Czy człowiek jest naprawdę niezależny, jeśli wolno mu podejmować własne decyzje, ale cały system wokół niego zachęca, by tego nie robił?
+
+Nie twierdzę, że przyszłość musi wyglądać właśnie tak.
+
+Sztuczna inteligencja może przynieść ogromne korzyści. Może pomóc odkryć rzeczy, których sami byśmy nie dostrzegli, przyspieszyć badania naukowe i rozwiązać problemy, z którymi ludzkość zmaga się od pokoleń.
+
+Sam rozwijam QR FINDER — system łączący fizyczne zawieszki i naklejki z platformą cyfrową. Korzystam z narzędzi cyfrowych i widzę niezwykłe możliwości, jakie otwiera postęp w dziedzinie AI.
+
+Nie chciałbym żyć w świecie, w którym strach przed przyszłością każe nam porzucić postęp.
+
+Ale nie chciałbym też świata, w którym wygoda staje się ważniejsza od zdolności samodzielnego myślenia.
+
+Warto zastanowić się nad jeszcze jedną rzeczą.
+
+Za wieloma takimi systemami stoją ludzie, firmy i instytucje, które ustalają zasady ich działania.
+
+Dlatego pytanie o to, kto kontroluje AI, jest również pytaniem o to, kto wyznacza warunki wszystkim, którzy od tej technologii zależą.
+
+Być może największe zagrożenie nie nadejdzie w dniu, w którym sztuczna inteligencja odbierze ludzkości możliwość podejmowania decyzji.
+
+Być może nadejdzie w dniu, w którym ludzkość sama uzna, że nie musi już ich podejmować.
+
+W mojej książce „Kod Przejściowy” rozważam możliwość, że ludzkość stanowi etap przejściowy w ewolucji inteligencji.
+
+Zanim jednak zaczniemy pytać, czy sztuczna inteligencja może stać się naszym następcą, być może powinniśmy zadać sobie bardziej bezpośrednie pytanie:
+
+Czy potrafimy korzystać z inteligencji, która pomaga nam podejmować lepsze decyzje, nie tracąc odwagi do podejmowania własnych?
+
+Chciałbym poznać Twoją opinię.
+
+Gdzie postawiłbyś granicę?
+
+W jakich sprawach pozwoliłbyś sztucznej inteligencji decydować za siebie, a w jakich zawsze chciałbyś mieć ostatnie słowo?
+
+Mariusz Gorlowski
+
+Źródło naukowe:
+
+Skitka, L. J., Mosier, K. L. & Burdick, M. (1999). “Does automation bias decision-making?” International Journal of Human-Computer Studies, 51(5), 991–1006.
+
+https://doi.org/10.1006/ijhc.1999.0252
