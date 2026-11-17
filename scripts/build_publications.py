@@ -68,7 +68,7 @@ def build(kind, lang):
         desc = pl[item["id"]]["description"] if lang == "pl" else item["description"]
         links = "".join(
             f'<a href="{escape(link["url"], quote=True)}" target="_blank" rel="noopener noreferrer">'
-            f'{"Oryginalny wpis" if kind == "essay" else "Przeczytaj" if lang == "pl" else "Original post" if kind == "essay" else "Read"} '
+            f'{("Oryginalny wpis" if kind == "essay" else "Przeczytaj") if lang == "pl" else ("Original post" if kind == "essay" else "Read")} '
             f'{"na" if lang == "pl" else "on"} {escape(link["label"])} '
             '<span aria-hidden="true">↗</span></a>'
             for link in item["links"]
