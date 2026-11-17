@@ -30,14 +30,18 @@ def essay_full_text(p):
         cls=("v4-essay-signature" if b=="Mariusz Gorlowski" else
              "v4-research-label" if b=="Research reference:" else "")
         attr=f' class="{cls}"' if cls else ""
-        output.append(f"<p{attr}>{escape(b)}</p>")
+        if b.startswith("https://doi.org/"):
+            safe=escape(b,quote=True)
+            output.append(f'<p class="v4-source-link"><a href="{safe}" target="_blank" rel="noopener noreferrer">{escape(b)}</a></p>')
+        else:
+            output.append(f"<p{attr}>{escape(b)}</p>")
     return "\n".join(output)
 def build(kind):
     chosen=sorted((p for p in posts if p["type"]==kind and p["featured"]),key=lambda p:p["display_order"])
     if len(chosen)>3:raise ValueError(f"More than three featured items: {kind}")
     rendered=[]
     for p in chosen:
-        stamp=date.fromisoformat(p["date"]).strftime("%-d %B %Y")
+        stamp=date.fromisoformat(p["date"]).strftime("%d %B %Y").lstrip("0")
         links="".join(f'<a href="{escape(l["url"],quote=True)}" target="_blank" rel="noopener noreferrer">{"Original post" if kind=="essay" else "Read"} on {escape(l["label"])} <span aria-hidden="true">↗</span></a>' for l in p["links"])
         if kind=="essay":
             accordion=(f'<details class="v4-full-essay" id="full-{escape(p["id"])}"><summary>'

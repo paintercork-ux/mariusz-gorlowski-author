@@ -130,3 +130,5 @@
  .v4-project-status{font-size:12px;}
 }
 @media(prefers-reduced-motion:reduce){.v4-full-essay .v4-expand-chevron{transition:none}}
+
+.v4-essay-body .v4-source-link a{overflow-wrap:anywhere;color:#8c653a;text-decoration:underline;text-underline-offset:3px;}
