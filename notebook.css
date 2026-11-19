@@ -8,8 +8,8 @@
 .notebook-hotspot:focus-visible .notebook-hotspot-label{outline:2px solid #e8c987;outline-offset:4px;}
 .notebook-hotspot:hover .notebook-hotspot-label{color:#fff1ce;border-color:#d8bc83;}
 .cover-content{pointer-events:none;}
-@media(max-width:760px){.notebook-hotspot-point{left:80%;top:25%;width:14px;height:6px;}.notebook-hotspot-label{left:80%;bottom:calc(75% + 10px);padding:4px 8px;font-size:11px;}.notebook-hotspot-label::after{width:8px;height:8px;transform:translate(-50%,-4px) rotate(45deg);}}
-@media(max-width:380px){.notebook-hotspot-label{left:auto;right:0;top:calc(25% + 12px);bottom:auto;transform:none;}.notebook-hotspot-label::after{left:calc(100% - 35px);top:0;transform:translate(-50%,-4px) rotate(225deg);}}
+@media(max-width:760px){.notebook-hotspot-point{left:80%;top:25%;width:14px;height:6px;}.notebook-hotspot-label{left:80%;bottom:calc(75% + 40px);padding:4px 8px;font-size:11px;}.notebook-hotspot-label::after{width:16px;height:36px;transform:translate(-50%,-1px);border:0;background:center/100% 100% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 36'%3E%3Cpath d='M1 .5H15L8 35Z' fill='%23151811' stroke='%23bb9759' stroke-opacity='.7'/%3E%3C/svg%3E");}}
+@media(max-width:380px){.notebook-hotspot-label{left:auto;right:0;top:calc(25% + 12px);bottom:auto;transform:none;}.notebook-hotspot-label::after{left:calc(100% - 35px);top:0;width:8px;height:8px;transform:translate(-50%,-4px) rotate(225deg);border-right:1px solid #bb9759b3;border-bottom:1px solid #bb9759b3;background:#151811;}}
 .notebook-dialog,.notebook-image-dialog,.notebook-source-dialog{--nb-gold:#bb985b;--nb-paper:#f8f0dd;--nb-ink:#302719;--nb-muted:#796749;box-sizing:border-box;border:0;padding:0;background:transparent;color:var(--nb-ink);max-width:none;max-height:none;font:1rem/1.5 var(--sans,system-ui,sans-serif);}
 .notebook-dialog{width:min(1040px,calc(100% - 48px));height:min(780px,calc(var(--notebook-viewport-height,100dvh) - 28px));margin:auto;overflow:visible;}
 .notebook-dialog::backdrop,.notebook-image-dialog::backdrop,.notebook-source-dialog::backdrop{background:#080e11df;backdrop-filter:blur(7px);}
