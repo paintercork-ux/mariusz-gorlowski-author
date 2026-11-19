@@ -14,7 +14,28 @@ def reader_path(item, lang, translations):
     return ("/pl" if lang == "pl" else "") + "/writing/essays/" + slug + "/"
 
 
-def reader_html(item, lang, translations, render_body, date_label, next_item):
+def quote_markup(item, lang, metadata, quotes):
+    paragraphs = quotes.get(item["id"], {}).get(lang)
+    if not paragraphs:
+        return ""
+    polish = lang == "pl"
+    caption = "Zabierz jedną myśl" if polish else "Take a thought with you"
+    save = "Zapisz myśl" if polish else "Save a thought"
+    close = "Zamknij" if polish else "Close"
+    download = "Pobierz grafikę" if polish else "Download image"
+    error = "Nie udało się przygotować grafiki. Spróbuj ponownie." if polish else "The image could not be prepared. Please try again."
+    payload = escape(json.dumps({"title": metadata["title"], "language": lang, "paragraphs": paragraphs, "filename": "mariusz-gorlowski-" + metadata.get("slug", item["id"]) + "-" + lang + ".png"}, ensure_ascii=False), quote=True)
+    return f'''<section class="reader-quote-save" aria-label="{save}"><p>{caption}</p>
+<button class="reader-quote-button" type="button" data-save-quote data-quote="{payload}" disabled>{save}</button>
+<p class="quote-error" data-quote-error role="status" hidden>{error}</p></section>
+<dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
+<div class="quote-dialog-head"><h2 id="quote-dialog-title">{save}</h2><form method="dialog"><button class="quote-close" type="submit">{close}</button></form></div>
+<img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
+<a class="quote-download" data-quote-download download>{download}</a>
+</div></dialog>'''
+
+
+def reader_html(item, lang, translations, render_body, date_label, next_item, quotes):
     polish = lang == "pl"
     meta = translations[item["id"]] if polish else item
     title, description = escape(meta["title"]), escape(meta["description"], quote=True)
@@ -59,8 +80,9 @@ def reader_html(item, lang, translations, render_body, date_label, next_item):
 <meta property="og:image" content="{ORIGIN}/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261119-reading-1">
+<link rel="stylesheet" href="/reader.css?v=20261119-quotes-1">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
+<script src="/reader-quotes.js?v=20261119-quotes-1" defer></script>
 <script type="application/ld+json">{structured}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">{skip}</a>
@@ -77,6 +99,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item):
 <div class="essay-reader-body" data-reader-body>
 {render_body(item, lang)}
 </div></article>
+{quote_markup(item, lang, meta, quotes)}
 <aside class="reader-next"><p>{next_label}</p><a href="{next_path}">{escape(next_meta['title'])}</a></aside>
 <footer class="reader-footer"><a href="{listing}">{back}</a><br><a href="{home}">mariuszgorlowski.com</a></footer>
 </main></body></html>
@@ -102,6 +125,7 @@ def write_reading_pages(root, posts, translations, render_body, date_label):
     essays = sorted((item for item in posts if item["type"] == "essay" and item.get("status") == "published"), key=lambda item: item["date"], reverse=True)
     if not essays:
         return
+    quotes = json.loads((root / "data/essay_quotes.json").read_text(encoding="utf-8"))
     sitemap_entries = []
     for lang, homepage in (("en", "index.html"), ("pl", "pl/index.html")):
         for index, item in enumerate(essays):
@@ -109,7 +133,7 @@ def write_reading_pages(root, posts, translations, render_body, date_label):
             url_path = reader_path(item, lang, translations)
             destination = root / url_path.lstrip("/") / "index.html"
             destination.parent.mkdir(parents=True, exist_ok=True)
-            destination.write_text(reader_html(item, lang, translations, render_body, date_label, next_item), encoding="utf-8")
+            destination.write_text(reader_html(item, lang, translations, render_body, date_label, next_item, quotes), encoding="utf-8")
             sitemap_entries.append(ORIGIN + url_path)
         page = root / homepage
         html = page.read_text(encoding="utf-8")

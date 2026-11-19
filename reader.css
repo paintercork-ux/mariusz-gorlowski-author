@@ -51,6 +51,22 @@ button, .reader-topbar, .reader-tools, .reader-meta, .reader-next, .reader-foote
 .reader-next a { display: inline-block; min-height: 44px; font: 25px/1.35 Georgia, serif; color: #25363b; text-underline-offset: 6px; }
 .reader-footer { margin-top: 36px; font-size: 14px; line-height: 1.7; color: #746c5f; }
 a:focus-visible, button:focus-visible { outline: 3px solid #b48e50; outline-offset: 4px; }
+.reader-quote-save { margin-top: 40px; padding-top: 25px; border-top: 1px solid #e2d8c6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.reader-quote-save p { margin: 0; font-size: 16px; color: #74634a; }
+.reader-quote-button { min-height: 48px; padding: 11px 22px; border: 1px solid #b59663; border-radius: 8px; color: #28383d; background: #fff; font-size: 16px; cursor: pointer; }
+.reader-quote-button:hover { background: #f7f1e5; }
+.reader-quote-button:disabled { opacity: .5; cursor: default; }
+.reader-quote-save .quote-error { width: 100%; font-size: 14px; color: #923a32; }
+.quote-dialog { width: min(520px, calc(100% - 24px)); max-width: none; max-height: calc(100dvh - 24px); padding: 0; border: 1px solid #b3945f; border-radius: 12px; color: #26363b; background: #fcfbf7; }
+.quote-dialog::backdrop { background: rgb(5 12 16 / 74%); }
+.quote-dialog-shell { display: flex; flex-direction: column; gap: 13px; padding: 14px; }
+.quote-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-dialog-head h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.quote-dialog-head form { margin: 0; }
+.quote-close { min-height: 44px; padding: 8px 11px; border: 1px solid #d7cbb7; border-radius: 7px; background: #fff; color: #4a514c; font-size: 14px; cursor: pointer; }
+.quote-preview-image { display: block; width: 100%; height: auto; max-height: calc(100dvh - 190px); object-fit: contain; background: #050505; }
+.quote-download { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 18px; border: 1px solid #b59a6c; border-radius: 8px; color: #fff; background: #182f37; text-decoration: none; font: 600 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-download:hover { background: #29444e; }
 @media (max-width: 370px) {
   .reader-topbar-inner { padding-right: 14px; padding-left: 14px; gap: 8px; }
   .reader-brand { font-size: 12px; gap: 7px; }
@@ -58,7 +74,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #b48e50; outline-offs
   .reader-main { width: calc(100% - 36px); }
 }
 @media print {
-  .reader-topbar, .reader-tools, .reader-next, .reader-footer { display: none; }
+  .reader-topbar, .reader-tools, .reader-next, .reader-footer, .reader-quote-save, .quote-dialog { display: none; }
   .reader-main { width: 100%; padding: 0; }
   .essay-reader-body { font-size: 12pt; }
 }
