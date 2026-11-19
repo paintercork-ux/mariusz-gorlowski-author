@@ -54,8 +54,8 @@ for lang in ('en', 'pl'):
 <link rel="alternate" hreflang="pl" href="https://mariuszgorlowski.com/pl/notebook/">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/styles.css?v=20261117-lang-gold-1">
-<link rel="stylesheet" href="/notebook.css?v=20261119-book-4">
-<script type="module" src="/notebook.js?v=20261119-book-4"></script>
+<link rel="stylesheet" href="/notebook.css?v=20261119-book-5">
+<script type="module" src="/notebook.js?v=20261119-book-5"></script>
 </head><body data-notebook-auto-open><main class="notebook-fallback">{body}</main></body></html>
 '''
     (path / 'index.html').write_text(document)
