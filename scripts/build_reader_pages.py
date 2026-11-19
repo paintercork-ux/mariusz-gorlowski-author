@@ -23,6 +23,13 @@ def quote_markup(item, lang, metadata, quotes):
     save = "Zapisz myśl" if polish else "Save a thought"
     close = "Zamknij" if polish else "Close"
     download = "Pobierz grafikę" if polish else "Download image"
+    choose = "Wybierz inny fragment" if polish else "Choose another passage"
+    instructions = "Wybierz akapit z eseju. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu." if polish else "Choose a paragraph from the essay. You can shorten it to a sentence or paste another passage from this essay."
+    passages = "Fragmenty eseju" if polish else "Essay passages"
+    excerpt = "Fragment do zapisania" if polish else "Passage to save"
+    limit = "Do 500 znaków, aby karta pozostała czytelna." if polish else "Up to 500 characters to keep the card readable."
+    generate = "Podgląd karty" if polish else "Preview card"
+    cancel = "Anuluj" if polish else "Cancel"
     error = "Nie udało się przygotować grafiki. Spróbuj ponownie." if polish else "The image could not be prepared. Please try again."
     payload = escape(json.dumps({"title": metadata["title"], "language": lang, "paragraphs": paragraphs, "filename": "mariusz-gorlowski-" + metadata.get("slug", item["id"]) + "-" + lang + ".png"}, ensure_ascii=False), quote=True)
     return f'''<section class="reader-quote-save" aria-label="{save}"><p>{caption}</p>
@@ -30,8 +37,20 @@ def quote_markup(item, lang, metadata, quotes):
 <p class="quote-error" data-quote-error role="status" hidden>{error}</p></section>
 <dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
 <div class="quote-dialog-head"><h2 id="quote-dialog-title">{save}</h2><form method="dialog"><button class="quote-close" type="submit">{close}</button></form></div>
+<div class="quote-card-panel" data-quote-card>
+<button class="quote-choose" type="button" data-quote-choose>{choose}</button>
 <img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
 <a class="quote-download" data-quote-download download>{download}</a>
+</div>
+<form class="quote-editor" data-quote-editor hidden>
+<p class="quote-picker-help">{instructions}</p>
+<div class="quote-passages" data-quote-passages role="group" aria-label="{passages}"></div>
+<label for="quote-excerpt">{excerpt}</label>
+<textarea id="quote-excerpt" data-quote-excerpt rows="4" maxlength="500" aria-describedby="quote-limit quote-count quote-edit-error"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit">{limit}</p><output id="quote-count" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>{cancel}</button><button class="quote-apply" type="submit" data-quote-apply>{generate}</button></div>
+</form>
 </div></dialog>'''
 
 
@@ -80,9 +99,9 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 <meta property="og:image" content="{ORIGIN}/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261119-quotes-1">
+<link rel="stylesheet" href="/reader.css?v=20261119-quotes-2">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v=20261119-quotes-1" defer></script>
+<script src="/reader-quotes.js?v=20261119-quotes-2" defer></script>
 <script type="application/ld+json">{structured}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">{skip}</a>

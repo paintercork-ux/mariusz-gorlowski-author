@@ -4,7 +4,27 @@
   const preview = document.querySelector('[data-quote-preview]');
   const download = document.querySelector('[data-quote-download]');
   const error = document.querySelector('[data-quote-error]');
+  const cardPanel = document.querySelector('[data-quote-card]');
+  const choose = document.querySelector('[data-quote-choose]');
+  const editor = document.querySelector('[data-quote-editor]');
+  const passages = document.querySelector('[data-quote-passages]');
+  const excerpt = document.querySelector('[data-quote-excerpt]');
+  const count = document.querySelector('[data-quote-count]');
+  const editError = document.querySelector('[data-quote-edit-error]');
+  const cancel = document.querySelector('[data-quote-cancel]');
+  const apply = document.querySelector('[data-quote-apply]');
   if (!trigger || !dialog || !preview || !download) return;
+  const suggested = JSON.parse(trigger.dataset.quote);
+  const polish = suggested.language === 'pl';
+  const normalize = text => text.replace(/\s+/gu, ' ').trim();
+  const essayPassages = [];
+  for (const paragraph of document.querySelectorAll('[data-reader-body] > p')) {
+    if (paragraph.matches('.v4-essay-signature, .v4-research-label')) break;
+    const text = normalize(paragraph.textContent);
+    if (text) essayPassages.push(text);
+  }
+  const essayText = essayPassages.join(' ');
+  let current = suggested;
   let objectURL;
 
   function wrapText(context, text, width) {
@@ -68,9 +88,9 @@
       blocks = data.paragraphs.map(text => wrapText(context, text, 900));
       height = blocks.reduce((total, lines) => total + lines.length * size * 1.2, 0)
         + (blocks.length - 1) * 46;
-      if (height <= 660 || size <= 54) break;
+      if (height <= 660 || size <= 36) break;
       size -= 2;
-    } while (size >= 54);
+    } while (size >= 36);
 
     let y = 272 + (660 - height) / 2;
     context.textAlign = 'center';
@@ -88,22 +108,91 @@
     return canvas;
   }
 
+  async function prepareCard(data) {
+    await document.fonts.ready;
+    const canvas = drawCard(data);
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    if (!blob) throw new Error('Image unavailable');
+    if (objectURL) URL.revokeObjectURL(objectURL);
+    objectURL = URL.createObjectURL(blob);
+    preview.src = objectURL;
+    preview.alt = `${data.paragraphs.join(' ')} — Mariusz Gorlowski`;
+    download.href = objectURL;
+    download.download = data.filename;
+    current = data;
+  }
+
+  function showCard() {
+    if (editor) editor.hidden = true;
+    if (cardPanel) cardPanel.hidden = false;
+    choose?.focus({ preventScroll: true });
+  }
+
+  function updateCount() {
+    count.textContent = `${normalize(excerpt.value).length} / 500`;
+    editError.hidden = true;
+    excerpt.removeAttribute('aria-invalid');
+  }
+
+  if (choose && editor && cardPanel && passages && excerpt && count && editError && cancel && apply) {
+    for (const text of essayPassages) {
+      const option = document.createElement('button');
+      option.type = 'button';
+      option.className = 'quote-passage';
+      option.textContent = text;
+      option.setAttribute('aria-pressed', 'false');
+      option.addEventListener('click', () => {
+        excerpt.value = text;
+        for (const sibling of passages.children) sibling.setAttribute('aria-pressed', 'false');
+        option.setAttribute('aria-pressed', 'true');
+        updateCount();
+      });
+      passages.append(option);
+    }
+    choose.addEventListener('click', () => {
+      excerpt.value = current.paragraphs.join(' ');
+      for (const option of passages.children) option.setAttribute('aria-pressed', String(option.textContent === normalize(excerpt.value)));
+      updateCount();
+      cardPanel.hidden = true;
+      editor.hidden = false;
+      passages.querySelector('button')?.focus({ preventScroll: true });
+    });
+    excerpt.addEventListener('input', updateCount);
+    cancel.addEventListener('click', showCard);
+    editor.addEventListener('submit', async event => {
+      event.preventDefault();
+      const text = normalize(excerpt.value);
+      let message;
+      if (!text) message = polish ? 'Wybierz fragment eseju.' : 'Choose a passage from the essay.';
+      else if (text.length > 500) message = polish ? 'Skróć fragment do 500 znaków.' : 'Shorten the passage to 500 characters.';
+      else if (!essayText.includes(text)) message = polish ? 'Wybierz fragment z eseju, zachowując jego oryginalne brzmienie.' : 'Choose a passage from the essay, keeping its original wording.';
+      if (message) {
+        editError.textContent = message;
+        editError.hidden = false;
+        excerpt.setAttribute('aria-invalid', 'true');
+        excerpt.focus();
+        return;
+      }
+      apply.disabled = true;
+      try {
+        await prepareCard({ ...suggested, paragraphs: [text] });
+        showCard();
+      } catch {
+        editError.textContent = polish ? 'Nie udało się przygotować grafiki. Spróbuj ponownie.' : 'The image could not be prepared. Please try again.';
+        editError.hidden = false;
+      } finally {
+        apply.disabled = false;
+      }
+    });
+  }
+
   trigger.disabled = false;
   trigger.addEventListener('click', async () => {
     trigger.disabled = true;
     if (error) error.hidden = true;
     try {
-      const data = JSON.parse(trigger.dataset.quote);
-      await document.fonts.ready;
-      const canvas = drawCard(data);
-      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-      if (!blob) throw new Error('Image unavailable');
-      if (objectURL) URL.revokeObjectURL(objectURL);
-      objectURL = URL.createObjectURL(blob);
-      preview.src = objectURL;
-      preview.alt = `${data.paragraphs.join(' ')} — Mariusz Gorlowski`;
-      download.href = objectURL;
-      download.download = data.filename;
+      await prepareCard(current);
+      showCard();
       if (!dialog.open) dialog.showModal();
     } catch {
       if (error) error.hidden = false;
@@ -111,7 +200,7 @@
       trigger.disabled = false;
     }
   });
-  window.addEventListener('pagehide', () => {
-    if (objectURL) URL.revokeObjectURL(objectURL);
+  window.addEventListener('pagehide', event => {
+    if (objectURL && !event.persisted) URL.revokeObjectURL(objectURL);
   });
 })();

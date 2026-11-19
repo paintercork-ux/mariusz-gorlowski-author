@@ -16,9 +16,9 @@
 <meta property="og:image" content="https://mariuszgorlowski.com/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261119-quotes-1">
+<link rel="stylesheet" href="/reader.css?v=20261119-quotes-2">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v=20261119-quotes-1" defer></script>
+<script src="/reader-quotes.js?v=20261119-quotes-2" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Am I Still Me?", "description": "It took one innocent question to spoil a family dinner.", "inLanguage": "en", "datePublished": "2026-11-19", "mainEntityOfPage": "https://mariuszgorlowski.com/writing/essays/am-i-still-me/", "author": {"@type": "Person", "name": "Mariusz Gorlowski", "url": "https://mariuszgorlowski.com/"}}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">Skip to the essay</a>
@@ -80,8 +80,20 @@
 <p class="quote-error" data-quote-error role="status" hidden>The image could not be prepared. Please try again.</p></section>
 <dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
 <div class="quote-dialog-head"><h2 id="quote-dialog-title">Save a thought</h2><form method="dialog"><button class="quote-close" type="submit">Close</button></form></div>
+<div class="quote-card-panel" data-quote-card>
+<button class="quote-choose" type="button" data-quote-choose>Choose another passage</button>
 <img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
 <a class="quote-download" data-quote-download download>Download image</a>
+</div>
+<form class="quote-editor" data-quote-editor hidden>
+<p class="quote-picker-help">Choose a paragraph from the essay. You can shorten it to a sentence or paste another passage from this essay.</p>
+<div class="quote-passages" data-quote-passages role="group" aria-label="Essay passages"></div>
+<label for="quote-excerpt">Passage to save</label>
+<textarea id="quote-excerpt" data-quote-excerpt rows="4" maxlength="500" aria-describedby="quote-limit quote-count quote-edit-error"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit">Up to 500 characters to keep the card readable.</p><output id="quote-count" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>Cancel</button><button class="quote-apply" type="submit" data-quote-apply>Preview card</button></div>
+</form>
 </div></dialog>
 <aside class="reader-next"><p>Read next</p><a href="/writing/essays/what-if-someone-whos-gone-called-you/">What If Someone Who&#x27;s Gone Called You?</a></aside>
 <footer class="reader-footer"><a href="/writing/essays/">All essays</a><br><a href="/">mariuszgorlowski.com</a></footer>
