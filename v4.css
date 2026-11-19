@@ -171,3 +171,24 @@
  .v4-author-photo img{border-radius:8px;}
  .v4-author-photo figcaption{font-size:10px;}
 }
+
+/* Jonathan Eyers: original editorial-report quotations, signature only. */
+.v4-books .tlc-review{margin:23px 0 25px;padding:20px 23px 18px;border:0;border-left:2px solid #b69760;background:#faf7ef;border-radius:0 7px 7px 0;min-width:0;}
+.v4-books .tlc-review blockquote{margin:0;padding:0;border:0;}
+.v4-books .paper-card .tlc-review p{margin:0;max-width:none;font-family:var(--serif);font-size:1.0625rem;font-style:italic;font-weight:400;line-height:1.75;color:#344248;overflow-wrap:break-word;}
+.v4-books .tlc-review figcaption{margin:13px 0 0;font-family:var(--sans);font-size:.875rem;font-style:normal;font-weight:600;line-height:1.5;letter-spacing:.01em;color:#80602e;}
+.v4-books .tlc-review-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:25px 0 0;}
+.v4-books .tlc-review-pair .tlc-review{margin:0;}
+.v4-books .tlc-review--closing{margin:27px auto 0;padding:28px 26px 16px;border-left:0;border-top:1px solid #d9c8a8;border-radius:0;background:none;text-align:center;}
+.v4-books .paper-card .tlc-review--closing p{max-width:47ch;margin:0 auto;font-size:clamp(1.25rem,2vw,1.5625rem);line-height:1.6;color:#4e422e;}
+@media(max-width:760px){
+ .v4-books .tlc-review-pair{grid-template-columns:1fr;gap:15px;}
+ .v4-books .tlc-review{padding:18px 19px 17px;}
+ .v4-books .tlc-review--closing{padding:24px 9px 11px;}
+}
+@media(max-width:420px){
+ .v4-books .tlc-review{padding:17px 16px 16px;}
+ .v4-books .paper-card .tlc-review p{font-size:1rem;line-height:1.75;}
+ .v4-books .paper-card .tlc-review--closing p{font-size:1.25rem;line-height:1.6;}
+ .v4-books .tlc-review--closing{padding:23px 5px 9px;}
+}
