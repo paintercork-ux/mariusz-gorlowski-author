@@ -1,7 +1,7 @@
 /* The QR occupies the open space beside the existing portrait. */
 .profile-card .curiosity-qr {
   position: absolute;
-  top: 14px;
+  top: 24px;
   right: 34px;
   width: 112px;
   height: 112px;
@@ -30,7 +30,7 @@
 }
 @media (max-width: 760px) {
   .profile-card .curiosity-qr {
-    top: 10px;
+    top: 26px;
     right: 23px;
     width: 92px;
     height: 92px;
