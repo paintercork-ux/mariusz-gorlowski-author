@@ -53,12 +53,20 @@ body {
 }
 .curiosity-count {
   max-width: 42ch;
-  margin: 0 auto 42px;
+  margin: 0 auto 28px;
   color: var(--muted-gold);
   font-size: 16px;
   line-height: 1.7;
   font-weight: 400;
   text-wrap: balance;
+}
+.curiosity-count::after {
+  content: "";
+  display: block;
+  width: 112px;
+  height: 1px;
+  margin: 24px auto 0;
+  background: linear-gradient(90deg, transparent, rgb(190 151 88 / 65%) 22%, rgb(190 151 88 / 65%) 78%, transparent);
 }
 .curiosity-count strong { color: #f2d69d; font-weight: 600; }
 .curiosity-message { width: 100%; max-width: 650px; }
@@ -107,7 +115,7 @@ a:focus-visible { outline: 2px solid #e8c98f; outline-offset: 5px; }
 @media (max-width: 420px) {
   body { padding: 15px; }
   .curiosity-card { min-height: calc(100svh - 30px); padding: 90px 24px 28px; border-radius: 22px; }
-  .curiosity-count { font-size: 15px; margin-bottom: 35px; }
+  .curiosity-count { font-size: 15px; margin-bottom: 26px; }
   .curiosity-intro { font-size: 17px; margin-bottom: 22px; }
   .curiosity-quote { font-size: 30px; }
   .curiosity-signature { font-size: 22px; }
