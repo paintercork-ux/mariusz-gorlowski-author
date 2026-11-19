@@ -14,6 +14,7 @@ from urllib.parse import urlsplit
 import json
 import re
 from datetime import date
+from build_reader_pages import reader_path, write_reading_pages
 
 ROOT = Path(__file__).resolve().parent.parent
 posts = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
@@ -87,19 +88,13 @@ def build(kind, lang):
             for link in item["links"]
         )
         if kind == "essay":
-            if lang == "pl":
-                open_label, close_label = "Przeczytaj cały esej", "Zwiń esej"
-            else:
-                open_label, close_label = "Read the full essay", "Close the essay"
-            accordion = (
-                f'<details class="v4-full-essay" id="full-{escape(item["id"])}"><summary>'
-                f'<span class="v4-open-label">{open_label}</span>'
-                f'<span class="v4-close-label">{close_label}</span>'
-                '<span class="v4-expand-chevron" aria-hidden="true">⌄</span></summary>'
-                f'<div class="v4-essay-body">{essay_full_text(item, lang)}</div></details>'
+            read_label = "Przeczytaj cały esej" if lang == "pl" else "Read the full essay"
+            reading_link = (
+                f'<a class="v4-read-essay" id="full-{escape(item["id"])}" '
+                f'href="{reader_path(item, lang, pl)}">{read_label}</a>'
             )
         else:
-            accordion = ""
+            reading_link = ""
         label = ("Esej autorski" if lang == "pl" else "Independent essay") if kind == "essay" else "QR FINDER"
         meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time> · {label}'
         if kind == "essay" and item.get("status") == "published":
@@ -117,7 +112,7 @@ def build(kind, lang):
             f'<div class="{meta_class}">{meta}</div>'
             f'<h3>{escape(title)}</h3>'
             f'<p class="v4-article-lead">{escape(desc)}</p>'
-            f'{accordion}{links_html}</article>'
+            f'{reading_link}{links_html}</article>'
         )
     divider = '\n<hr class="v4-gold-rule v4-essay-divider" aria-hidden="true"/>\n' if kind == "essay" else "\n"
     return divider.join(rendered)
@@ -135,4 +130,5 @@ for lang, root in (("en", ""), ("pl", "pl/")):
         if count != 1:
             raise RuntimeError(f"Expected one {marker} block in {path}, got {count}")
         path.write_text(updated, encoding="utf-8")
-print("Updated manually curated EN/PL cards and complete essays. No social-platform sync.")
+write_reading_pages(ROOT, posts, pl, essay_full_text, date_label)
+print("Updated EN/PL publication cards, individual reading pages and latest home essays.")

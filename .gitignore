@@ -1,3 +1,5 @@
 dist/
 .devdata/
 .openai/
+__pycache__/
+*.pyc
