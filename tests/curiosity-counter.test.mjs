@@ -15,7 +15,7 @@ function request(id, origin = 'https://mariuszgorlowski.com') {
   });
 }
 
-test('shared count starts at 1000 and preserves retry numbers across reopening storage', async () => {
+test('shared count starts at 1000 and returning sessions see the current total without increasing it', async () => {
   const directory = mkdtempSync(join(tmpdir(), 'author-curiosity-'));
   const filename = join(directory, 'counter.sqlite');
   let storage = previewStorage(filename);
@@ -32,12 +32,16 @@ test('shared count starts at 1000 and preserves retry numbers across reopening s
     return (await result.json()).number;
   }));
   assert.deepEqual(results.sort((a, b) => a - b), Array.from({ length: 20 }, (_, i) => 1002 + i));
+  for (let i = 0; i < 10; i += 1) {
+    assert.equal((await (await worker.fetch(request(firstId), env)).json()).number, 1021);
+  }
   storage.database.close();
 
   storage = previewStorage(filename);
   counter = new CuriosityCounter({ storage });
-  assert.equal((await (await worker.fetch(request(firstId), env)).json()).number, 1001);
+  assert.equal((await (await worker.fetch(request(firstId), env)).json()).number, 1021);
   assert.equal((await (await worker.fetch(request(randomUUID()), env)).json()).number, 1022);
+  assert.equal((await (await worker.fetch(request(firstId), env)).json()).number, 1022);
   storage.database.close();
   rmSync(directory, { recursive: true });
 });

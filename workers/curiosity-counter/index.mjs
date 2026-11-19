@@ -80,7 +80,7 @@ export class CuriosityCounter {
     if (!VISIT_ID.test(body?.visitId ?? '')) return new Response('{}', { status: 400 });
     const number = this.storage.transactionSync(() => {
       const existing = this.sql.exec('SELECT number FROM visits WHERE visit_id = ?', body.visitId).toArray()[0];
-      if (existing) return existing.number;
+      if (existing) return this.sql.exec('SELECT value FROM counter WHERE id = 1').toArray()[0].value;
       const next = this.sql.exec('UPDATE counter SET value = value + 1 WHERE id = 1 RETURNING value').toArray()[0].value;
       this.sql.exec('INSERT INTO visits (visit_id, number) VALUES (?, ?)', body.visitId, next);
       return next;
