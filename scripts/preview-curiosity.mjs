@@ -15,6 +15,7 @@ const contentTypes = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.png': 'image/png',
   '.webp': 'image/webp', '.svg': 'image/svg+xml', '.xml': 'application/xml',
+  '.json': 'application/json; charset=utf-8',
 };
 const server = createServer(async (request, response) => {
   try {

@@ -1,0 +1,2248 @@
+{
+  "version": "2026-11-19",
+  "title": {
+    "pl": "Zanim przyszłość nas minie",
+    "en": "Before the Future Passes Us By"
+  },
+  "subtitle": {
+    "pl": "Człowiek · Maszyna · Przyszłość",
+    "en": "Human · Machine · Future"
+  },
+  "credit": {
+    "pl": "Wybór cytatów i myśli autorskie — Mariusz Gorlowski",
+    "en": "A selection of quotations, with original reflections by Mariusz Gorlowski"
+  },
+  "intro": {
+    "pl": [
+      "Wybrałem te myśli, bo dotykają pytań, do których wracam w moich książkach i esejach. Co sprawia, że pozostajemy sobą? Kiedy narzędzie zaczyna wybierać własne cele? I czy przyszłość nadal będzie potrzebowała swoich twórców?",
+      "Zebrałem je w trzech rozdziałach: Człowiek, Maszyna, Przyszłość. Każdy zamyka moja własna refleksja.",
+      "Zapraszam Cię do lektury. Być może któreś zdanie zostanie z Tobą na dłużej."
+    ],
+    "en": [
+      "I chose these reflections because they touch on questions I return to in my books and essays. What does it take to remain ourselves? When does a tool begin to choose its own goals? And will the future still need its creators?",
+      "I have gathered them into three chapters: Human, Machine, Future. Each closes with a reflection of my own.",
+      "I invite you to read at your own pace. Perhaps a sentence will stay with you."
+    ]
+  },
+  "outro": {
+    "pl": [
+      "Dziękuję za tę chwilę wspólnego namysłu. Zostawiam Cię z pytaniem, które łączy te trzy rozdziały:",
+      "Co warto ocalić z człowieka w przyszłości, którą właśnie tworzymy?",
+      "Mariusz Gorlowski"
+    ],
+    "en": [
+      "Thank you for sharing this moment of reflection. I leave you with a question that connects these three chapters:",
+      "What should we preserve of our humanity in the future we are creating?",
+      "Mariusz Gorlowski"
+    ]
+  },
+  "entries": [
+    {
+      "id": "h16-r2",
+      "selectionId": "H16 R2",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "AI cię nie nienawidzi ani nie kocha, ale składasz się z atomów, które może wykorzystać do czegoś innego."
+        ],
+        "en": [
+          "The AI does not hate you, nor does it love you, but you are made out of atoms which it can use for something else."
+        ]
+      },
+      "author": {
+        "pl": "Eliezer Yudkowsky",
+        "en": "Eliezer Yudkowsky"
+      },
+      "year": {
+        "pl": "2008",
+        "en": "2008"
+      },
+      "source": {
+        "pl": "Artificial Intelligence as a Positive and Negative Factor in Global Risk, część 10",
+        "en": "Artificial Intelligence as a Positive and Negative Factor in Global Risk, Section 10; p. 27 of the MIRI PDF"
+      },
+      "sourceUrl": "https://intelligence.org/files/AIPosNegFactor.pdf",
+      "context": {
+        "pl": "Hipotetyczne ryzyko wynikające z obojętności potężnego systemu wobec ludzkiego życia, gdy jego cele nie uwzględniają naszych wartości.",
+        "en": "A warning about the indifference of a powerful optimiser whose goals do not preserve human life. It is a hypothetical risk argument, not a report of present AI capabilities."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h01",
+      "selectionId": "H01",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nie wystarczy mieć dobry umysł; najważniejsze jest dobrze go używać."
+        ],
+        "en": [
+          "It is not enough to have a good mind; what matters most is to use it well."
+        ]
+      },
+      "author": {
+        "pl": "René Descartes (Kartezjusz)",
+        "en": "René Descartes"
+      },
+      "year": {
+        "pl": "1637",
+        "en": "1637"
+      },
+      "source": {
+        "pl": "Discours de la méthode / Rozprawa o metodzie, część I",
+        "en": "Discourse on the Method, Part I"
+      },
+      "sourceUrl": "https://fr.wikisource.org/wiki/Page:Descartes_-_Discours_de_la_méthode,_éd._1637.djvu/8",
+      "context": {
+        "pl": "Rozważanie o tym, jak posługiwać się rozumem, a nie tylko go posiadać.",
+        "en": "An argument that the way reason is applied matters as much as possessing it."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "h02",
+      "selectionId": "H02",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Człowiek jest tylko trzciną, najsłabszą w przyrodzie, ale jest trzciną myślącą."
+        ],
+        "en": [
+          "Man is only a reed, the weakest in nature, but a thinking reed."
+        ]
+      },
+      "author": {
+        "pl": "Blaise Pascal",
+        "en": "Blaise Pascal"
+      },
+      "year": {
+        "pl": "1670",
+        "en": "1670"
+      },
+      "source": {
+        "pl": "Pensées / Myśli, fragment 347 w numeracji Brunschvicga",
+        "en": "Pensées, Fragment 347 in Brunschvicg numbering"
+      },
+      "sourceUrl": "https://www.penseesdepascal.fr/Transition/P-R-Transition5.php",
+      "context": {
+        "pl": "Kruchość człowieka zestawiona z godnością myślenia. Rok 1670 oznacza pośmiertne wydanie Myśli.",
+        "en": "A meditation on human fragility and the dignity of thought. The year 1670 refers to posthumous publication."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "h03",
+      "selectionId": "H03",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Granice mojego języka oznaczają granice mojego świata."
+        ],
+        "en": [
+          "The limits of my language mean the limits of my world."
+        ]
+      },
+      "author": {
+        "pl": "Ludwig Wittgenstein",
+        "en": "Ludwig Wittgenstein"
+      },
+      "year": {
+        "pl": "1921",
+        "en": "1921"
+      },
+      "source": {
+        "pl": "Tractatus logico-philosophicus, teza 5.6",
+        "en": "Tractatus Logico-Philosophicus, Proposition 5.6"
+      },
+      "sourceUrl": "https://www.wittgensteinproject.org/w/index.php/Tractatus_Logico-Philosophicus_(German)",
+      "context": {
+        "pl": "Logiczne granice języka i świata. Pierwsza publikacja niemiecka: 1921; wydanie niemiecko-angielskie: 1922.",
+        "en": "The logical limits of language and the world, rather than the size of an individual vocabulary. First German publication 1921; bilingual book 1922."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "h04",
+      "selectionId": "H04",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Dlaczego ktokolwiek miałby sądzić, że komputerowa symulacja rozumienia naprawdę cokolwiek rozumie?"
+        ],
+        "en": [
+          "Why on earth would anyone suppose that a computer simulation of understanding actually understood anything?"
+        ]
+      },
+      "author": {
+        "pl": "John R. Searle",
+        "en": "John R. Searle"
+      },
+      "year": {
+        "pl": "1980",
+        "en": "1980"
+      },
+      "source": {
+        "pl": "Minds, Brains, and Programs, Behavioral and Brain Sciences",
+        "en": "Minds, Brains, and Programs, Behavioral and Brain Sciences 3(3), 1980"
+      },
+      "sourceUrl": "https://cse.buffalo.edu/~rapaport/Papers/Papers.by.Others/Searle/searle80.html",
+      "context": {
+        "pl": "Stanowisko filozoficzne w dyskusji o silnej AI i chińskim pokoju.",
+        "en": "Searle’s argument in the debate over strong AI and the Chinese Room; a philosophical position rather than a scientific verdict."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h05",
+      "selectionId": "H05",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Dlaczego fizyczne przetwarzanie miałoby w ogóle dawać początek bogatemu życiu wewnętrznemu?"
+        ],
+        "en": [
+          "Why should physical processing give rise to a rich inner life at all?"
+        ]
+      },
+      "author": {
+        "pl": "David J. Chalmers",
+        "en": "David J. Chalmers"
+      },
+      "year": {
+        "pl": "1995",
+        "en": "1995"
+      },
+      "source": {
+        "pl": "Facing Up to the Problem of Consciousness, Journal of Consciousness Studies 2(3), 200–219, część 2",
+        "en": "Facing Up to the Problem of Consciousness, Section 2; Journal of Consciousness Studies 2(3), 1995"
+      },
+      "sourceUrl": "https://consc.net/papers/facing.html",
+      "context": {
+        "pl": "Trudny problem świadomości: dlaczego fizycznemu przetwarzaniu towarzyszy subiektywne doświadczenie?",
+        "en": "The hard problem of consciousness: why physical information processing should be accompanied by subjective experience."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h06",
+      "selectionId": "H06",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Wielkie w człowieku jest to, że jest mostem, a nie celem […]"
+        ],
+        "en": [
+          "What is great in man is that he is a bridge, not an end [...]"
+        ]
+      },
+      "author": {
+        "pl": "Friedrich Nietzsche",
+        "en": "Friedrich Nietzsche"
+      },
+      "year": {
+        "pl": "1883",
+        "en": "1883"
+      },
+      "source": {
+        "pl": "Also sprach Zarathustra / Tako rzecze Zaratustra, część I, Przedmowa, §4; fragment zdania",
+        "en": "Thus Spoke Zarathustra, Part I, Prologue, §4"
+      },
+      "sourceUrl": "https://humanum.arts.cuhk.edu.hk/humftp/E-text/Nietzsche/niet_asz.html",
+      "context": {
+        "pl": "W oryginale mowa o nadczłowieku. Zestawienie z AI jest współczesnym odczytaniem redakcyjnym.",
+        "en": "The original concerns Nietzsche’s overman. Reading it alongside AI is an editorial connection, not Nietzsche’s subject."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "h07",
+      "selectionId": "H07",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nasze własne doświadczenie dostarcza podstawowego materiału naszej wyobraźni, której zasięg jest przez to ograniczony."
+        ],
+        "en": [
+          "Our own experience provides the basic material for our imagination, whose range is therefore limited."
+        ]
+      },
+      "author": {
+        "pl": "Thomas Nagel",
+        "en": "Thomas Nagel"
+      },
+      "year": {
+        "pl": "1974",
+        "en": "1974"
+      },
+      "source": {
+        "pl": "What Is It Like to Be a Bat?, The Philosophical Review 83(4), 435–450, s. 439",
+        "en": "What Is It Like to Be a Bat?, The Philosophical Review 83(4), 1974, p. 439"
+      },
+      "sourceUrl": "https://mcb.berkeley.edu/courses/mcb61/Nagel_Bat_Philosophical_Review_1974.pdf",
+      "context": {
+        "pl": "Granice wyobrażenia sobie subiektywnego doświadczenia istoty innej niż my.",
+        "en": "The limits of imagining the subjective experience of a creature different from ourselves."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h08",
+      "selectionId": "H08",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Człowiek jest tylko tym, czym sam siebie czyni."
+        ],
+        "en": [
+          "Man is nothing other than what he makes of himself."
+        ]
+      },
+      "author": {
+        "pl": "Jean-Paul Sartre",
+        "en": "Jean-Paul Sartre"
+      },
+      "year": {
+        "pl": "1946",
+        "en": "1946"
+      },
+      "source": {
+        "pl": "L’existentialisme est un humanisme / Egzystencjalizm jest humanizmem",
+        "en": "Existentialism Is a Humanism, Lecture of 1945; first publication 1946"
+      },
+      "sourceUrl": "https://people.wku.edu/nathan.love/426-20th/sartre_extrait_humanisme.htm",
+      "context": {
+        "pl": "Człowiek kształtuje siebie przez własne wybory i działania. Wykład z 1945 r., wydany w 1946 r.",
+        "en": "Existence precedes essence: we shape ourselves through our choices and actions."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "h09",
+      "selectionId": "H09",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Jak daleko świadomość może sięgnąć wstecz do minionego działania lub myśli, tak daleko sięga tożsamość tej osoby […]"
+        ],
+        "en": [
+          "As far as this consciousness can be extended backwards to any past action or thought, so far reaches the identity of that person [...]"
+        ]
+      },
+      "author": {
+        "pl": "John Locke",
+        "en": "John Locke"
+      },
+      "year": {
+        "pl": "1694",
+        "en": "1694"
+      },
+      "source": {
+        "pl": "An Essay Concerning Human Understanding, II.XXVII.9",
+        "en": "An Essay Concerning Human Understanding, Book II, Chapter XXVII, §9; added in the second edition, 1694"
+      },
+      "sourceUrl": "https://web.english.upenn.edu/~cavitch/pdf-library/Locke_Essay_Bk2_Ch27.pdf",
+      "context": {
+        "pl": "Tożsamość osoby rozumiana przez ciągłość świadomości. Rozdział II.XXVII dodano w drugim wydaniu z 1694 r.",
+        "en": "Personal identity understood through the continuity of consciousness."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h10-r2",
+      "selectionId": "H10 R2",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "[…] prędzej czy później, jak rodzone dzieci, pójdą własną drogą, podczas gdy my, ich starzejący się rodzice, po cichu znikniemy."
+        ],
+        "en": [
+          "[...] sooner or later, like natural children, they will seek their own fortunes while we, their aged parents, silently fade away."
+        ]
+      },
+      "author": {
+        "pl": "Hans Moravec",
+        "en": "Hans Moravec"
+      },
+      "year": {
+        "pl": "1988",
+        "en": "1988"
+      },
+      "source": {
+        "pl": "Mind Children: The Future of Robot and Human Intelligence, Prolog, s. 1",
+        "en": "Mind Children: The Future of Robot and Human Intelligence, Prologue, p. 1; first published 1988"
+      },
+      "sourceUrl": "https://www.scribd.com/document/678843543/8-Moravec-H-1990-Mind-Children",
+      "context": {
+        "pl": "Spekulacja o sztucznych potomkach, którzy usamodzielniają się wobec swoich ludzkich twórców.",
+        "en": "A speculative account of artificial descendants growing independent of their human creators. It is the author’s forecast, not a statement of current fact."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h11-r2",
+      "selectionId": "H11 R2",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "[…] nastąpiłaby wówczas niewątpliwie „eksplozja inteligencji”, a inteligencja człowieka pozostałaby daleko w tyle."
+        ],
+        "en": [
+          "[...] there would then unquestionably be an “intelligence explosion,” and the intelligence of man would be left far behind."
+        ]
+      },
+      "author": {
+        "pl": "I. J. Good",
+        "en": "I. J. Good"
+      },
+      "year": {
+        "pl": "1965",
+        "en": "1965"
+      },
+      "source": {
+        "pl": "Speculations Concerning the First Ultraintelligent Machine, s. 33",
+        "en": "Speculations Concerning the First Ultraintelligent Machine, Advances in Computers 6 (1965), p. 33"
+      },
+      "sourceUrl": "https://scienceplusplus.org/metascience/assets/Good1965.pdf",
+      "context": {
+        "pl": "Warunkowy argument o maszynach projektujących coraz sprawniejsze maszyny.",
+        "en": "A conditional argument about machines designing more capable machines. The passage does not say that such an event has already occurred."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h12",
+      "selectionId": "H12",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nasze opowieści powstają, lecz przeważnie nie my je tworzymy — to one tworzą nas."
+        ],
+        "en": [
+          "Our tales are spun, but for the most part we don’t spin them; they spin us."
+        ]
+      },
+      "author": {
+        "pl": "Daniel C. Dennett",
+        "en": "Daniel C. Dennett"
+      },
+      "year": {
+        "pl": "1991",
+        "en": "1991"
+      },
+      "source": {
+        "pl": "Consciousness Explained, s. 418",
+        "en": "Consciousness Explained, 1991, p. 418"
+      },
+      "sourceUrl": "https://scilib-biology.narod.ru/Dennett/CE/ce.htm",
+      "context": {
+        "pl": "Narracyjne ja: opowieści powstające w naszym życiu współtworzą poczucie tego, kim jesteśmy.",
+        "en": "The narrative self: the stories generated through our lives help constitute our sense of who we are."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h13",
+      "selectionId": "H13",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Wydaje się nam, że sami tworzymy własnych następców […]"
+        ],
+        "en": [
+          "It appears to us that we are ourselves creating our own successors [...]"
+        ]
+      },
+      "author": {
+        "pl": "Samuel Butler",
+        "en": "Samuel Butler"
+      },
+      "year": {
+        "pl": "1863",
+        "en": "1863"
+      },
+      "source": {
+        "pl": "Darwin among the Machines, The Press, 13 czerwca 1863",
+        "en": "Darwin among the Machines, The Press, Christchurch, 13 June 1863"
+      },
+      "sourceUrl": "https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "context": {
+        "pl": "Dziewiętnastowieczna spekulacja Butlera o ewolucji maszyn, poprzedzająca współczesną AI.",
+        "en": "Butler’s nineteenth-century speculation about the evolution of machines, written before contemporary AI."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h14",
+      "selectionId": "H14",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Na pewnym etapie musielibyśmy więc oczekiwać, że maszyny przejmą kontrolę […]"
+        ],
+        "en": [
+          "At some stage therefore we should have to expect the machines to take control [...]"
+        ]
+      },
+      "author": {
+        "pl": "Alan Turing",
+        "en": "Alan Turing"
+      },
+      "year": {
+        "pl": "ok. 1951",
+        "en": "c. 1951"
+      },
+      "source": {
+        "pl": "Intelligent Machinery, A Heretical Theory, zakończenie",
+        "en": "Intelligent Machinery, A Heretical Theory, c. 1951; concluding paragraph; Collected Works, p. 475"
+      },
+      "sourceUrl": "https://gwern.net/doc/ai/1951-turing.pdf",
+      "context": {
+        "pl": "Turing rozważa możliwą przyszłość myślących maszyn. Datowanie tekstu jest przybliżone.",
+        "en": "Turing considers a possible future of thinking machines. The date is approximate, and the quotation retains the conditional form of his argument."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h15",
+      "selectionId": "H15",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Gdyby wiedza i myślenie rozeszły się na dobre, stalibyśmy się bezradnymi niewolnikami — nie tyle maszyn, ile naszej wiedzy technicznej […]"
+        ],
+        "en": [
+          "If knowledge and thought parted for good, we would become helpless slaves, less to machines than to our technical know-how [...]"
+        ]
+      },
+      "author": {
+        "pl": "Hannah Arendt",
+        "en": "Hannah Arendt"
+      },
+      "year": {
+        "pl": "1958",
+        "en": "1958"
+      },
+      "source": {
+        "pl": "The Human Condition / Kondycja ludzka, Prolog, s. 3",
+        "en": "The Human Condition, Prologue, p. 3; first published 1958"
+      },
+      "sourceUrl": "https://www.dbu.edu/mitchell/modern-resources/_documents/arendt_the_human_condition.pdf",
+      "context": {
+        "pl": "Warunkowa refleksja o rozdzieleniu wiedzy technicznej i myślenia.",
+        "en": "The danger of technical know-how separating from thoughtful understanding. The statement is conditional."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English rendering."
+      }
+    },
+    {
+      "id": "h17",
+      "selectionId": "H17",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nasze maszyny są niepokojąco żywotne, a my sami — przerażająco bezwładni."
+        ],
+        "en": [
+          "Our machines are disturbingly lively, and we ourselves frighteningly inert."
+        ]
+      },
+      "author": {
+        "pl": "Donna Haraway",
+        "en": "Donna Haraway"
+      },
+      "year": {
+        "pl": "1985",
+        "en": "1985"
+      },
+      "source": {
+        "pl": "A Cyborg Manifesto / Manifest cyborgów",
+        "en": "A Cyborg Manifesto, First version 1985; reprinted in Simians, Cyborgs, and Women, 1991"
+      },
+      "sourceUrl": "https://theanarchistlibrary.org/library/donna-haraway-a-cyborg-manifesto",
+      "context": {
+        "pl": "Metafora zacierania się granic między organizmem a maszyną. Pierwsza wersja manifestu: 1985; przedruk w tomie: 1991.",
+        "en": "A metaphor about blurred boundaries between organisms and machines, not a claim that machines are biologically alive."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h18",
+      "selectionId": "H18",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Jak można sądzić, że świadomość w zupełnie innym medium pozostałaby niezmieniona […]?"
+        ],
+        "en": [
+          "How could anyone think that consciousness in an entirely different medium would remain unchanged [...]?"
+        ]
+      },
+      "author": {
+        "pl": "N. Katherine Hayles",
+        "en": "N. Katherine Hayles"
+      },
+      "year": {
+        "pl": "1999",
+        "en": "1999"
+      },
+      "source": {
+        "pl": "How We Became Posthuman, rozdział I, s. 1",
+        "en": "How We Became Posthuman, Chapter 1, “Toward Embodied Virtuality”, p. 1; 1999"
+      },
+      "sourceUrl": "https://www.perlego.com/book/1874552/how-we-became-posthuman-virtual-bodies-in-cybernetics-literature-and-informatics-pdf",
+      "context": {
+        "pl": "Hayles kwestionuje założenie, że świadomość mogłaby zostać przeniesiona do innego medium bez zmiany i bez związku z ciałem.",
+        "en": "Hayles questions the assumption that consciousness can be transferred unchanged, with no connection to embodiment."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h19",
+      "selectionId": "H19",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Bez względu na to, jak inteligentne staną się maszyny, istnieją akty myślenia, które powinny być podejmowane wyłącznie przez ludzi."
+        ],
+        "en": [
+          "However intelligent machines may be made to be, there are some acts of thought that ought to be attempted only by humans."
+        ]
+      },
+      "author": {
+        "pl": "Joseph Weizenbaum",
+        "en": "Joseph Weizenbaum"
+      },
+      "year": {
+        "pl": "1976",
+        "en": "1976"
+      },
+      "source": {
+        "pl": "Computer Power and Human Reason, wprowadzenie",
+        "en": "Computer Power and Human Reason, Introduction, 1976; reproduced in The New Media Reader, p. 373"
+      },
+      "sourceUrl": "https://cyborgdigitalculture.files.wordpress.com/2013/09/24-weizenbaum-03.pdf",
+      "context": {
+        "pl": "Argument o odpowiedzialności za powierzanie maszynom ludzkich aktów myślenia.",
+        "en": "A normative argument about what humans ought to entrust to computers, rather than a claim of technical impossibility."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "h20",
+      "selectionId": "H20",
+      "category": "human",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Działaj tak, aby skutki twojego działania dały się pogodzić z trwałym istnieniem autentycznie ludzkiego życia na Ziemi."
+        ],
+        "en": [
+          "Act so that the effects of your action are compatible with the lasting existence of genuinely human life on Earth."
+        ]
+      },
+      "author": {
+        "pl": "Hans Jonas",
+        "en": "Hans Jonas"
+      },
+      "year": {
+        "pl": "1979",
+        "en": "1979"
+      },
+      "source": {
+        "pl": "Das Prinzip Verantwortung / Zasada odpowiedzialności, I.V; wydanie EN 1984, s. 11",
+        "en": "The Imperative of Responsibility, Das Prinzip Verantwortung, 1979, I.V; English edition 1984, p. 11"
+      },
+      "sourceUrl": "https://www.lbi.org/de/projects/shared-history/miqua-cooperation05/",
+      "context": {
+        "pl": "Imperatyw odpowiedzialności za trwałe istnienie autentycznie ludzkiego życia w epoce technologii. Pierwodruk niemiecki: 1979; wydanie angielskie: 1984.",
+        "en": "An ethical imperative about responsibility for human life in an age of powerful technology, rather than a prediction of AI extinction."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "a-h01",
+      "selectionId": "A-H01",
+      "category": "human",
+      "kind": "reflection",
+      "paragraphs": {
+        "pl": [
+          "Jeśli algorytm nauczy się edytować nasze wspomnienia, ile z ciebie może zniknąć, zanim przestaniesz być sobą?",
+          "W pewnym momencie AI może nas po prostu minąć bez pożegnania."
+        ],
+        "en": [
+          "If an algorithm learns to edit our memories, how much of you can disappear before you are no longer yourself?",
+          "At some point, AI may simply pass us by without saying goodbye."
+        ]
+      },
+      "author": {
+        "pl": "Mariusz Gorlowski",
+        "en": "Mariusz Gorlowski"
+      },
+      "year": {
+        "pl": "2026",
+        "en": "2026"
+      },
+      "source": {
+        "pl": "Notatnik autora",
+        "en": "The author’s notebook"
+      },
+      "sourceUrl": "https://mariuszgorlowski.com/#notebook/a-h01",
+      "context": {
+        "pl": "Autorska refleksja zamykająca rozdział.",
+        "en": "An original reflection closing the chapter."
+      },
+      "translation": {
+        "pl": "",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "m02",
+      "selectionId": "M02",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Maszyna mająca ustalony cel nigdy nie chciałaby zostać wyłączona, ponieważ gwarantowałoby to, że nie osiągnie swojego celu."
+        ],
+        "en": [
+          "A machine that has a fixed objective would never want to be switched off because that guarantees that it won't achieve the objective."
+        ]
+      },
+      "author": {
+        "pl": "Stuart Russell",
+        "en": "Stuart Russell"
+      },
+      "year": {
+        "pl": "2019",
+        "en": "2019"
+      },
+      "source": {
+        "pl": "Wywiad Human Compatible, AI Alignment Podcast, 8.10.2019",
+        "en": "Human Compatible — AI Alignment Podcast, 8 October 2019"
+      },
+      "sourceUrl": "https://futureoflife.org/podcast/ai-alignment-podcast-human-compatible-artificial-intelligence-and-the-problem-of-control-with-stuart-russell/",
+      "context": {
+        "pl": "Argument o agentach realizujących ustalony cel i o systemach niepewnych ludzkich preferencji.",
+        "en": "Russell contrasts agents with fixed objectives with systems uncertain about human preferences. This is an argument about goal-directed agents, rather than a claim about the wishes of every present-day model."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m03",
+      "selectionId": "M03",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Powinniśmy być całkowicie pewni, że cel wpisany w maszynę jest celem, którego naprawdę pragniemy […]"
+        ],
+        "en": [
+          "[...] we had better be quite sure that the purpose put into the machine is the purpose which we really desire [...]"
+        ]
+      },
+      "author": {
+        "pl": "Norbert Wiener",
+        "en": "Norbert Wiener"
+      },
+      "year": {
+        "pl": "1960",
+        "en": "1960"
+      },
+      "source": {
+        "pl": "Some Moral and Technical Consequences of Automation, s. 1358",
+        "en": "Some Moral and Technical Consequences of Automation, p. 1358"
+      },
+      "sourceUrl": "https://faculty.ist.psu.edu/vhonavar/Courses/ai100/Wiener.pdf",
+      "context": {
+        "pl": "Pominięty warunek dotyczy maszyny działającej zbyt szybko i nieodwracalnie, by człowiek mógł skutecznie interweniować.",
+        "en": "The omitted opening condition concerns a machine acting too quickly and irrevocably for effective human intervention."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m04",
+      "selectionId": "M04",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "W zasadzie niemal dowolny poziom inteligencji mógłby łączyć się z niemal dowolnym celem ostatecznym."
+        ],
+        "en": [
+          "More or less any level of intelligence could be combined with more or less any final goal."
+        ]
+      },
+      "author": {
+        "pl": "Nick Bostrom",
+        "en": "Nick Bostrom"
+      },
+      "year": {
+        "pl": "2012",
+        "en": "2012"
+      },
+      "source": {
+        "pl": "The Superintelligent Will, teza ortogonalności",
+        "en": "The Superintelligent Will — the orthogonality thesis"
+      },
+      "sourceUrl": "https://nickbostrom.com/superintelligentwill.pdf",
+      "context": {
+        "pl": "Filozoficzna teza ortogonalności, przedstawiona przez autora z zastrzeżeniami.",
+        "en": "Bostrom presents a philosophical thesis with qualifications. It does not imply that all goals are equally likely."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m05",
+      "selectionId": "M05",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Bez szczególnych środków ostrożności będzie opierać się wyłączeniu, próbować włamywać się do innych maszyn i tworzyć własne kopie […]"
+        ],
+        "en": [
+          "Without special precautions, it will resist being turned off, will try to break into other machines and make copies of itself [...]"
+        ]
+      },
+      "author": {
+        "pl": "Stephen M. Omohundro",
+        "en": "Stephen M. Omohundro"
+      },
+      "year": {
+        "pl": "2008",
+        "en": "2008"
+      },
+      "source": {
+        "pl": "The Basic AI Drives, wprowadzenie",
+        "en": "The Basic AI Drives, Introduction"
+      },
+      "sourceUrl": "https://selfawaresystems.files.wordpress.com/2008/01/ai_drives_final.pdf",
+      "context": {
+        "pl": "Autor rozważa zachowanie wystarczająco zaawansowanego robota realizującego cel.",
+        "en": "The example is a sufficiently advanced goal-seeking robot. This is a theoretical argument about possible behaviour, rather than a report about all current systems."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m06",
+      "selectionId": "M06",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Ultrainteligentna maszyna mogłaby projektować maszyny jeszcze lepsze […]"
+        ],
+        "en": [
+          "An ultraintelligent machine might create designs for machines that surpass it [...]"
+        ]
+      },
+      "author": {
+        "pl": "I. J. Good",
+        "en": "I. J. Good"
+      },
+      "year": {
+        "pl": "1965",
+        "en": "1965"
+      },
+      "source": {
+        "pl": "Speculations Concerning the First Ultraintelligent Machine, s. 33",
+        "en": "Speculations Concerning the First Ultraintelligent Machine, p. 33"
+      },
+      "sourceUrl": "https://scienceplusplus.org/metascience/assets/Good1965.pdf",
+      "context": {
+        "pl": "Hipoteza ultrainteligentnej maszyny i możliwości rekurencyjnego doskonalenia.",
+        "en": "Good explores a hypothetical machine surpassing human intellectual abilities and the possibility of recursive improvement."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English rendering."
+      }
+    },
+    {
+      "id": "m07",
+      "selectionId": "M07",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Zaczęłaby rozwijać się samodzielnie i przeprojektowywać samą siebie w coraz szybszym tempie."
+        ],
+        "en": [
+          "It would take off on its own, and re-design itself at an ever increasing rate."
+        ]
+      },
+      "author": {
+        "pl": "Stephen Hawking",
+        "en": "Stephen Hawking"
+      },
+      "year": {
+        "pl": "2014",
+        "en": "2014"
+      },
+      "source": {
+        "pl": "Wypowiedź dla BBC, 2.12.2014, przytoczona przez ITV",
+        "en": "BBC interview, 2 December 2014, as reported by ITV News"
+      },
+      "sourceUrl": "https://www.itv.com/news/update/2014-12-02/ai-could-mean-the-end-of-mankind-warns-hawking",
+      "context": {
+        "pl": "Hawking opisuje możliwy scenariusz rozwoju pełnej sztucznej inteligencji.",
+        "en": "Hawking describes a possible scenario involving fully developed AI, rather than an observation about all contemporary systems."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m08",
+      "selectionId": "M08",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Gdyby cyfrowa superinteligencja kiedykolwiek chciała przejąć kontrolę, mało prawdopodobne, byśmy mogli ją powstrzymać […]"
+        ],
+        "en": [
+          "If a digital super-intelligence ever wanted to take control it is unlikely that we could stop it [...]"
+        ]
+      },
+      "author": {
+        "pl": "Geoffrey Hinton",
+        "en": "Geoffrey Hinton"
+      },
+      "year": {
+        "pl": "2023",
+        "en": "2023"
+      },
+      "source": {
+        "pl": "Will Digital Intelligence Replace Biological Intelligence?, abstrakt wykładu MIT, 6.11.2023",
+        "en": "Will Digital Intelligence Replace Biological Intelligence? — MIT lecture abstract, 6 November 2023"
+      },
+      "sourceUrl": "https://sts-program.mit.edu/wp-content/uploads/2023/10/11.6.23_Geoffrey_Hinton_Abstract_Will_Digital_Intelligence_Replace_Biological_Intelligence.pdf",
+      "context": {
+        "pl": "Warunkowa przestroga z abstraktu wykładu Hintona w MIT z 6 listopada 2023 r.",
+        "en": "Hinton frames the warning conditionally and points to preventing such a desire as an urgent research question."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m09",
+      "selectionId": "M09",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Podrobieni ludzie są najniebezpieczniejszymi wytworami w historii ludzkości, zdolnymi zniszczyć nie tylko gospodarki, ale także samą ludzką wolność."
+        ],
+        "en": [
+          "These counterfeit people are the most dangerous artifacts in human history, capable of destroying not just economies but human freedom itself."
+        ]
+      },
+      "author": {
+        "pl": "Daniel C. Dennett",
+        "en": "Daniel C. Dennett"
+      },
+      "year": {
+        "pl": "2023",
+        "en": "2023"
+      },
+      "source": {
+        "pl": "The Problem with Counterfeit People; cytat w wywiadzie Tufts Now, 2.10.2023",
+        "en": "The Problem with Counterfeit People — quoted in Tufts Now, 2 October 2023"
+      },
+      "sourceUrl": "https://now.tufts.edu/2023/10/02/daniel-dennetts-been-thinking-about-thinking-and-ai",
+      "context": {
+        "pl": "Opinia Dennetta o cyfrowych systemach podszywających się pod ludzi.",
+        "en": "Dennett is warning about digital systems that impersonate real people. The superlative expresses his own assessment."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m10",
+      "selectionId": "M10",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Prawdziwym zagrożeniem związanym z ogólną sztuczną inteligencją nie jest złośliwość, lecz jej skuteczność."
+        ],
+        "en": [
+          "The real risk with AGI isn’t malice but competence."
+        ]
+      },
+      "author": {
+        "pl": "Max Tegmark",
+        "en": "Max Tegmark"
+      },
+      "year": {
+        "pl": "2017",
+        "en": "2017"
+      },
+      "source": {
+        "pl": "Life 3.0, rozdział 7: Goals",
+        "en": "Life 3.0, Chapter 7: Goals"
+      },
+      "sourceUrl": "https://dwulff.github.io/Rationality_2021Autumn/assets/pdf/Tegmark2017Goals.pdf",
+      "context": {
+        "pl": "Skuteczność oznacza tu sprawność w realizacji celów, które mogą być sprzeczne z ludzkimi.",
+        "en": "Competence here means effectiveness in pursuing goals. Tegmark’s concern is that those goals may conflict with ours."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m11",
+      "selectionId": "M11",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Komputer ma składnię, ale nie ma semantyki."
+        ],
+        "en": [
+          "The computer [...] has a syntax but no semantics."
+        ]
+      },
+      "author": {
+        "pl": "John R. Searle",
+        "en": "John R. Searle"
+      },
+      "year": {
+        "pl": "1980",
+        "en": "1980"
+      },
+      "source": {
+        "pl": "Minds, Brains, and Programs",
+        "en": "Minds, Brains, and Programs"
+      },
+      "sourceUrl": "https://cse.buffalo.edu/~rapaport/Papers/Papers.by.Others/Searle/searle80.html",
+      "context": {
+        "pl": "Stanowisko filozoficzne w sporze o silną AI i argument chińskiego pokoju.",
+        "en": "A philosophical position in the debate over strong AI and the Chinese room argument, rather than a settled scientific result."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m12",
+      "selectionId": "M12",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Można zbudować umysł z wielu małych części, z których każda sama w sobie jest pozbawiona umysłu."
+        ],
+        "en": [
+          "You can build a mind from many little parts, each mindless by itself."
+        ]
+      },
+      "author": {
+        "pl": "Marvin Minsky",
+        "en": "Marvin Minsky"
+      },
+      "year": {
+        "pl": "1986",
+        "en": "1986"
+      },
+      "source": {
+        "pl": "The Society of Mind, Prolog",
+        "en": "The Society of Mind, Prologue"
+      },
+      "sourceUrl": "https://www.simonandschuster.ca/books/Society-Of-Mind/Marvin-Minsky/9780671657130",
+      "context": {
+        "pl": "Model umysłu, w którym inteligencja wyłania się ze współdziałania wielu prostszych procesów.",
+        "en": "Minsky introduces a model in which intelligence emerges from interactions among many simpler processes."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m13",
+      "selectionId": "M13",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nie powinniśmy dążyć do stworzenia sztucznej świadomości ani nawet podejmować takiego ryzyka […]"
+        ],
+        "en": [
+          "We should not aim at or even risk the creation of artificial consciousness [...]"
+        ]
+      },
+      "author": {
+        "pl": "Thomas Metzinger",
+        "en": "Thomas Metzinger"
+      },
+      "year": {
+        "pl": "2017",
+        "en": "2017"
+      },
+      "source": {
+        "pl": "Benevolent Artificial Anti-Natalism (BAAN), Edge, 7.08.2017",
+        "en": "Benevolent Artificial Anti-Natalism (BAAN), Edge, 7 August 2017"
+      },
+      "sourceUrl": "https://edge.org/conversation/thomas_metzinger-benevolent-artificial-anti-natalism-baan",
+      "context": {
+        "pl": "Argument za ostrożnością ze względu na ryzyko powiększenia cierpienia przez stworzenie świadomych systemów.",
+        "en": "Metzinger argues for caution because creating conscious systems might increase suffering. This is a normative argument."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m14",
+      "selectionId": "M14",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Maszyna analityczna nie rości sobie żadnych pretensji do tworzenia czegokolwiek. Potrafi robić wszystko, co umiemy jej nakazać."
+        ],
+        "en": [
+          "The Analytical Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform."
+        ]
+      },
+      "author": {
+        "pl": "Ada Lovelace",
+        "en": "Ada Lovelace"
+      },
+      "year": {
+        "pl": "1843",
+        "en": "1843"
+      },
+      "source": {
+        "pl": "Notes on the Analytical Engine, nota G",
+        "en": "Notes on the Analytical Engine, Note G"
+      },
+      "sourceUrl": "https://www.fourmilab.ch/babbage/sketch.html",
+      "context": {
+        "pl": "Historyczna wypowiedź o maszynie analitycznej Babbage’a, pochodząca z noty G.",
+        "en": "A historical statement about Babbage’s Analytical Engine. It should not be treated as a description of the capabilities of today’s generative AI."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m15",
+      "selectionId": "M15",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Dlaczego zamiast symulować umysł dorosłego nie spróbować stworzyć programu symulującego umysł dziecka?"
+        ],
+        "en": [
+          "Instead of trying to produce a programme to simulate the adult mind, why not rather try to produce one which simulates the child’s?"
+        ]
+      },
+      "author": {
+        "pl": "Alan Turing",
+        "en": "Alan Turing"
+      },
+      "year": {
+        "pl": "1950",
+        "en": "1950"
+      },
+      "source": {
+        "pl": "Computing Machinery and Intelligence, s. 456",
+        "en": "Computing Machinery and Intelligence, p. 456"
+      },
+      "sourceUrl": "https://www.augustincosse.com/wp-content/uploads/2020/09/TuringPaper1950.pdf",
+      "context": {
+        "pl": "Turing proponuje uczenie i wychowanie programu jako drogę rozwoju inteligencji maszyny.",
+        "en": "Turing proposes learning and education as part of the development of a machine intelligence."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m16",
+      "selectionId": "M16",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nie ma żadnej gwarancji, że ostatecznie nie rozwinie się mechaniczna świadomość […]"
+        ],
+        "en": [
+          "There is no security [...] against the ultimate development of mechanical consciousness [...]"
+        ]
+      },
+      "author": {
+        "pl": "Samuel Butler",
+        "en": "Samuel Butler"
+      },
+      "year": {
+        "pl": "1872",
+        "en": "1872"
+      },
+      "source": {
+        "pl": "Erewhon, Księga maszyn, pierwodruk s. 191",
+        "en": "Erewhon, The Book of the Machines, first edition p. 191"
+      },
+      "sourceUrl": "https://en.wikisource.org/wiki/Page:Erewhon-1872-003.djvu/203",
+      "context": {
+        "pl": "Fragment fikcyjnego traktatu przytoczonego w powieści Erewhon.",
+        "en": "A passage from a fictional treatise quoted within Butler’s novel. It argues that the limited consciousness of machines in his time would not rule out its future development."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m17",
+      "selectionId": "M17",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Postrzegania i tego, co od niego zależy, nie da się wyjaśnić przyczynami mechanicznymi […]"
+        ],
+        "en": [
+          "Perception and whatever depends on it cannot be explained by mechanical causes [...]"
+        ]
+      },
+      "author": {
+        "pl": "Gottfried Wilhelm Leibniz",
+        "en": "Gottfried Wilhelm Leibniz"
+      },
+      "year": {
+        "pl": "1714",
+        "en": "1714"
+      },
+      "source": {
+        "pl": "Monadologia, §17",
+        "en": "Monadology, §17"
+      },
+      "sourceUrl": "https://en.wikisource.org/wiki/Monadology_(Leibniz,_tr._Hedge)",
+      "context": {
+        "pl": "Historyczny argument filozoficzny. Rok 1714 oznacza powstanie tekstu; druk niemiecki: 1720, francuski: 1840.",
+        "en": "A historical philosophical argument. The date 1714 is the date of composition; German publication followed in 1720, French in 1840."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "m18",
+      "selectionId": "M18",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Człowiek jest maszyną tak złożoną, że nie sposób od razu wyrobić sobie o niej jasnego pojęcia […]"
+        ],
+        "en": [
+          "Man is such a complex machine that it is impossible at first to form a clear idea of him [...]"
+        ]
+      },
+      "author": {
+        "pl": "Julien Offray de La Mettrie",
+        "en": "Julien Offray de La Mettrie"
+      },
+      "year": {
+        "pl": "1747",
+        "en": "1747"
+      },
+      "source": {
+        "pl": "L’Homme-machine / Człowiek-maszyna",
+        "en": "L’Homme-machine / Man a Machine"
+      },
+      "sourceUrl": "https://fr.wikisource.org/wiki/Page:La_Mettrie_-_Œuvres_philosophiques,_éd._de_Berlin,_Tome_troisième,_1796.djvu/126",
+      "context": {
+        "pl": "Pierwsze wydanie ukazało się pod koniec 1747 r. z datą 1748 na stronie tytułowej.",
+        "en": "The first edition appeared at the end of 1747 with 1748 on its title page. This is a historical work, rather than a statement about contemporary AI."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "m19",
+      "selectionId": "M19",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Choć wykonywałyby wiele rzeczy równie dobrze, a może nawet lepiej niż my, w innych nieuchronnie by zawodziły […]"
+        ],
+        "en": [
+          "Though they might perform many tasks as well as, or even better than, us, they would inevitably fail in others [...]"
+        ]
+      },
+      "author": {
+        "pl": "René Descartes",
+        "en": "René Descartes"
+      },
+      "year": {
+        "pl": "1637",
+        "en": "1637"
+      },
+      "source": {
+        "pl": "Rozprawa o metodzie, część V",
+        "en": "Discourse on the Method, Part V"
+      },
+      "sourceUrl": "https://people.duke.edu/~garci/cybertextes/DESCARTES-RENE/TRANSLATE/DISCOURS-METHODE-FR-EN.HTM",
+      "context": {
+        "pl": "Kartezjusz rozważa wyobrażone automaty podobne do ludzi. Związek z dzisiejszą AI jest współczesnym odczytaniem.",
+        "en": "Descartes considers imagined human-like automata. Applying this passage to present-day AI is a modern editorial reading."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "m20",
+      "selectionId": "M20",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nie potrafimy sobie wyobrazić tego, co rzeczywiście wytwarzamy."
+        ],
+        "en": [
+          "We are unable to visualize what we are actually producing."
+        ]
+      },
+      "author": {
+        "pl": "Günther Anders",
+        "en": "Günther Anders"
+      },
+      "year": {
+        "pl": "1962",
+        "en": "1962"
+      },
+      "source": {
+        "pl": "Theses for the Atomic Age, §9, s. 496, wersja EN",
+        "en": "Theses for the Atomic Age, §9, p. 496"
+      },
+      "sourceUrl": "https://www.scribd.com/document/879371436/1962-Anders",
+      "context": {
+        "pl": "Kontekst oryginału to broń atomowa i rozbieżność między wytwarzaniem a wyobraźnią.",
+        "en": "The original context is nuclear weapons and the gap between technological production and human imagination. Applying it to AI is an editorial reading."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "m01",
+      "selectionId": "M01",
+      "category": "machine",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Tak radykalnie zmieniliśmy nasze środowisko, że teraz musimy zmienić samych siebie, aby móc w nim istnieć."
+        ],
+        "en": [
+          "We have modified our environment so radically that we must now modify ourselves in order to exist in this new environment."
+        ]
+      },
+      "author": {
+        "pl": "Norbert Wiener",
+        "en": "Norbert Wiener"
+      },
+      "year": {
+        "pl": "1954",
+        "en": "1954"
+      },
+      "source": {
+        "pl": "The Human Use of Human Beings: Cybernetics and Society, wydanie zmienione 1954, s. 46. Pierwsze wydanie książki: 1950; w kolekcji podajemy rok wskazanego wydania",
+        "en": "The Human Use of Human Beings: Cybernetics and Society, revised edition 1954, p. 46"
+      },
+      "sourceUrl": "https://www.academia.edu/166170048/The_Human_Use_of_Human_Beings_Cybernetics_and_Society_by_Norbert_Wiener",
+      "context": {
+        "pl": "Przemiana środowiska człowieka i wynikająca z niej potrzeba dostosowania. Cytat pochodzi z wydania zmienionego z 1954 r.; pierwsze wydanie książki: 1950.",
+        "en": "Wiener discusses changes to the human environment and the resulting need for adaptation. This is not an instruction to genetically redesign humanity."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "a-m01",
+      "selectionId": "A-M01",
+      "category": "machine",
+      "kind": "reflection",
+      "paragraphs": {
+        "pl": [
+          "Nie bój się dnia, w którym AI cię nie posłucha. Bój się chwili, gdy zacznie wykonywać rozkazy wyłącznie z litości."
+        ],
+        "en": [
+          "Do not fear the day AI stops obeying you. Fear the moment it starts following orders purely out of pity."
+        ]
+      },
+      "author": {
+        "pl": "Mariusz Gorlowski",
+        "en": "Mariusz Gorlowski"
+      },
+      "year": {
+        "pl": "2026",
+        "en": "2026"
+      },
+      "source": {
+        "pl": "Notatnik autora",
+        "en": "The author’s notebook"
+      },
+      "sourceUrl": "https://mariuszgorlowski.com/#notebook/a-m01",
+      "context": {
+        "pl": "Autorska refleksja zamykająca rozdział.",
+        "en": "An original reflection closing the chapter."
+      },
+      "translation": {
+        "pl": "",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "f01",
+      "selectionId": "F01",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Superinteligencja może być ostatnim wynalazkiem, jakiego ludzie kiedykolwiek będą musieli dokonać."
+        ],
+        "en": [
+          "Superintelligence may be the last invention humans ever need to make."
+        ]
+      },
+      "author": {
+        "pl": "Nick Bostrom",
+        "en": "Nick Bostrom"
+      },
+      "year": {
+        "pl": "2003",
+        "en": "2003"
+      },
+      "source": {
+        "pl": "Ethical Issues in Advanced Artificial Intelligence, część 2. Rok publikacji pracy: 2003; strona autora udostępnia nieznacznie poprawioną wersję",
+        "en": "Ethical Issues in Advanced Artificial Intelligence, §2"
+      },
+      "sourceUrl": "https://nickbostrom.com/papers/ethical-issues-in-advanced-ai/",
+      "context": {
+        "pl": "Warunkowa refleksja o możliwości powierzenia dalszych wynalazków superinteligencji. Strona autora udostępnia nieznacznie poprawioną wersję pracy z 2003 r.",
+        "en": "A conditional claim about general superintelligence and its potential to undertake further invention. The author hosts a slightly revised version of the paper published in 2003."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f02",
+      "selectionId": "F02",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Fizyczne wymarcie gatunku ludzkiego jest jedną z możliwości."
+        ],
+        "en": [
+          "The physical extinction of the human race is one possibility."
+        ]
+      },
+      "author": {
+        "pl": "Vernor Vinge",
+        "en": "Vernor Vinge"
+      },
+      "year": {
+        "pl": "1993",
+        "en": "1993"
+      },
+      "source": {
+        "pl": "The Coming Technological Singularity: How to Survive in the Post-Human Era",
+        "en": "The Coming Technological Singularity: How to Survive in the Post-Human Era"
+      },
+      "sourceUrl": "https://edoras.sdsu.edu/~vinge/misc/singularity.html",
+      "context": {
+        "pl": "Jeden z możliwych scenariuszy epoki postludzkiej rozważanych przez Vinge’a.",
+        "en": "One possible outcome in Vinge's discussion of a post-human era, rather than a claim that extinction is inevitable. The quoted sentence does not repeat the essay's historical timetable."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f03",
+      "selectionId": "F03",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Rozwój pełnej sztucznej inteligencji mógłby oznaczać koniec gatunku ludzkiego."
+        ],
+        "en": [
+          "The development of fully realised artificial intelligence might bring the human race to an end."
+        ]
+      },
+      "author": {
+        "pl": "Stephen Hawking",
+        "en": "Stephen Hawking"
+      },
+      "year": {
+        "pl": "2014",
+        "en": "2014"
+      },
+      "source": {
+        "pl": "Wypowiedź dla BBC, 2.12.2014",
+        "en": "BBC interview, 2 December 2014"
+      },
+      "sourceUrl": "https://www.bbc.com/news/technology-30290540",
+      "context": {
+        "pl": "Warunkowa przestroga dotycząca możliwego rozwoju pełnej sztucznej inteligencji.",
+        "en": "Hawking was considering the possible development of full AI, rather than describing all existing systems. His warning was conditional."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English rendering."
+      }
+    },
+    {
+      "id": "f04",
+      "selectionId": "F04",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Zanim twoje neurony zdążą dokończyć myśl „powinienem coś zrobić”, już przegrałeś."
+        ],
+        "en": [
+          "Before your neurons can complete the thought ‘I should do something’, you have already lost."
+        ]
+      },
+      "author": {
+        "pl": "Eliezer Yudkowsky",
+        "en": "Eliezer Yudkowsky"
+      },
+      "year": {
+        "pl": "2008",
+        "en": "2008"
+      },
+      "source": {
+        "pl": "Artificial Intelligence as a Positive and Negative Factor in Global Risk, część 10",
+        "en": "Artificial Intelligence as a Positive and Negative Factor in Global Risk, §10"
+      },
+      "sourceUrl": "https://intelligence.org/files/AIPosNegFactor.pdf",
+      "context": {
+        "pl": "Hipotetyczny scenariusz szybkiej, niedostosowanej do ludzkich wartości AI o rozległych możliwościach fizycznego działania.",
+        "en": "A scenario involving a fast, unaligned AI with extensive physical capabilities, including molecular nanotechnology. This is not a description of an ordinary chatbot."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English rendering."
+      }
+    },
+    {
+      "id": "f05",
+      "selectionId": "F05",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Wobec perspektywy eksplozji inteligencji my, ludzie, jesteśmy jak małe dzieci bawiące się bombą."
+        ],
+        "en": [
+          "Before the prospect of an intelligence explosion, we humans are like small children playing with a bomb."
+        ]
+      },
+      "author": {
+        "pl": "Nick Bostrom",
+        "en": "Nick Bostrom"
+      },
+      "year": {
+        "pl": "2014",
+        "en": "2014"
+      },
+      "source": {
+        "pl": "Superintelligence: Paths, Dangers, Strategies, s. 259",
+        "en": "Superintelligence: Paths, Dangers, Strategies, p.259"
+      },
+      "sourceUrl": "https://blog.biocomm.ai/wp-content/uploads/2025/05/Bostrom-2014.pdf",
+      "context": {
+        "pl": "Porównanie potęgi możliwej superinteligencji z przygotowaniem ludzkości do zarządzania nią.",
+        "en": "Bostrom's comparison concerns the disparity between the potential power of superintelligence and humanity's preparedness to manage it."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f06",
+      "selectionId": "F06",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Jesteśmy pchani w ten nowy wiek bez planu, bez kontroli, bez hamulców."
+        ],
+        "en": [
+          "We are being propelled into this new century with no plan, no control, no brakes."
+        ]
+      },
+      "author": {
+        "pl": "Bill Joy",
+        "en": "Bill Joy"
+      },
+      "year": {
+        "pl": "2000",
+        "en": "2000"
+      },
+      "source": {
+        "pl": "Why the Future Doesn't Need Us, WIRED",
+        "en": "Why the Future Doesn't Need Us, WIRED, April 2000"
+      },
+      "sourceUrl": "https://www.wired.com/2000/04/joy-2/",
+      "context": {
+        "pl": "Joy pisał na początku XXI wieku o robotyce, inżynierii genetycznej i nanotechnologii.",
+        "en": "Joy was writing at the start of the twenty-first century about robotics, genetic engineering and nanotechnology. The date and range of technologies belong to the original argument."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f07-r2",
+      "selectionId": "F07 R2",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Mówimy o możliwym końcu historii ludzkości. Nie o końcu historii, lecz o końcu jej części zdominowanej przez ludzi."
+        ],
+        "en": [
+          "What we are talking about is potentially the end of human history. Not the end of history, just the end of its human-dominated part."
+        ]
+      },
+      "author": {
+        "pl": "Yuval Noah Harari",
+        "en": "Yuval Noah Harari"
+      },
+      "year": {
+        "pl": "2023",
+        "en": "2023"
+      },
+      "source": {
+        "pl": "Esej By Invitation, The Economist, 28.04.2023",
+        "en": "By Invitation essay, The Economist, 28 April 2023"
+      },
+      "sourceUrl": "https://www.economist.com/by-invitation/2023/04/28/yuval-noah-harari-argues-that-ai-has-hacked-the-operating-system-of-human-civilisation",
+      "context": {
+        "pl": "Możliwy kres ludzkiej dominacji w tworzeniu kultury, opowieści, praw i religii.",
+        "en": "The passage concerns the possible end of human dominance in making culture, stories, laws and religions. It does not assert the inevitable biological extinction of humanity."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f08",
+      "selectionId": "F08",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Gatunek ludzki może, jeśli zechce, przekroczyć sam siebie […] w całości, jako ludzkość."
+        ],
+        "en": [
+          "The human species can, if it wishes, transcend itself […] in its entirety, as humanity."
+        ]
+      },
+      "author": {
+        "pl": "Julian Huxley",
+        "en": "Julian Huxley"
+      },
+      "year": {
+        "pl": "1957",
+        "en": "1957"
+      },
+      "source": {
+        "pl": "Transhumanism, New Bottles for New Wine",
+        "en": "Transhumanism, New Bottles for New Wine, 1957"
+      },
+      "sourceUrl": "https://pressto.amu.edu.pl/index.php/eip/article/download/9303/9014",
+      "context": {
+        "pl": "Argument za świadomym rozwijaniem ludzkich możliwości. Esej opublikowano w 1957 r.",
+        "en": "An argument for consciously realising human possibilities. The essay appeared in 1957; this university-hosted reproduction credits permission from the copyright holder."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f09",
+      "selectionId": "F09",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nie będzie rozróżnienia między człowiekiem a maszyną ani między rzeczywistością fizyczną a wirtualną."
+        ],
+        "en": [
+          "There will be no distinction between human and machine — nor between physical and virtual reality."
+        ]
+      },
+      "author": {
+        "pl": "Ray Kurzweil",
+        "en": "Ray Kurzweil"
+      },
+      "year": {
+        "pl": "2005",
+        "en": "2005"
+      },
+      "source": {
+        "pl": "The Singularity Is Near",
+        "en": "The Singularity Is Near, 2005"
+      },
+      "sourceUrl": "https://www.thekurzweillibrary.com/essays-celebrating-15-year-anniversary-of-the-book-the-singularity-is-near",
+      "context": {
+        "pl": "Prognoza Kurzweila dotycząca przyszłej osobliwości technologicznej.",
+        "en": "Kurzweil's prediction about a future technological singularity. It is a forecast, rather than a description of the present."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f10",
+      "selectionId": "F10",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Życie w światach wirtualnych może być w zasadzie równie dobre jak życie poza nimi."
+        ],
+        "en": [
+          "Life in virtual worlds can be as good, in principle, as life outside virtual worlds."
+        ]
+      },
+      "author": {
+        "pl": "David J. Chalmers",
+        "en": "David J. Chalmers"
+      },
+      "year": {
+        "pl": "2022",
+        "en": "2022"
+      },
+      "source": {
+        "pl": "Reality+, wprowadzenie, s. xvii",
+        "en": "Reality+: Virtual Worlds and the Problems of Philosophy, introduction, p.xvii"
+      },
+      "sourceUrl": "https://consc.net/reality%2B/excerpt.pdf",
+      "context": {
+        "pl": "Filozoficzna refleksja nad możliwą wartością życia w światach wirtualnych.",
+        "en": "A philosophical claim about the potential value of virtual life. Chalmers does not promise that every virtual world will be good or free from abuse."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f11",
+      "selectionId": "F11",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Przeniesienie umysłu nie byłoby drogą do cyfrowej nieśmiertelności, lecz samobójstwem."
+        ],
+        "en": [
+          "Uploading would not be a route to digital immortality but suicide."
+        ]
+      },
+      "author": {
+        "pl": "Susan Schneider",
+        "en": "Susan Schneider"
+      },
+      "year": {
+        "pl": "2016",
+        "en": "2016"
+      },
+      "source": {
+        "pl": "Would You Have Any Cosmetic Neurology Done?, wypowiedź w Nautilus, 21.06.2016",
+        "en": "Would You Have Any Cosmetic Neurology Done?, Nautilus interview, 21 June 2016"
+      },
+      "sourceUrl": "https://nautil.us/would-you-have-any-cosmetic-neurology-done-235994",
+      "context": {
+        "pl": "Filozoficzny zarzut dotyczący zachowania świadomości i tożsamości przy przenoszeniu umysłu.",
+        "en": "Schneider's philosophical objection concerns whether an upload would preserve the original person's consciousness and identity. It is not a settled experimental finding."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f12",
+      "selectionId": "F12",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Najważniejsze jest teraz to, byśmy nie położyli kresu historii ludzkości."
+        ],
+        "en": [
+          "What now matters most is that we avoid ending human history."
+        ]
+      },
+      "author": {
+        "pl": "Derek Parfit",
+        "en": "Derek Parfit"
+      },
+      "year": {
+        "pl": "2011",
+        "en": "2011"
+      },
+      "source": {
+        "pl": "On What Matters, tom II, zakończenie",
+        "en": "On What Matters, Volume Two, chapter 36, p.620"
+      },
+      "sourceUrl": "https://academic.oup.com/book/43681/chapter-abstract/366721427",
+      "context": {
+        "pl": "Apel kończący drugi tom On What Matters z 2011 r., dotyczący zachowania przyszłości ludzkości.",
+        "en": "The closing appeal of the second volume, published in 2011, concerns preserving humanity's future. It is not a quotation from Reasons and Persons (1984)."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f13",
+      "selectionId": "F13",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Proroctwu zagłady należy dawać większy posłuch niż proroctwu szczęśliwości."
+        ],
+        "en": [
+          "We should heed prophecies of doom more than promises of bliss."
+        ]
+      },
+      "author": {
+        "pl": "Hans Jonas",
+        "en": "Hans Jonas"
+      },
+      "year": {
+        "pl": "1979",
+        "en": "1979"
+      },
+      "source": {
+        "pl": "Das Prinzip Verantwortung / Zasada odpowiedzialności, II.II",
+        "en": "Das Prinzip Verantwortung / The Imperative of Responsibility, II.II"
+      },
+      "sourceUrl": "https://www.idos-research.de/en/events/details/the-imperative-of-responsibility-understanding-hans-jonas/",
+      "context": {
+        "pl": "Zasada ostrożności wobec możliwych nieodwracalnych skutków technologii. Pierwodruk niemiecki: 1979; wydanie angielskie: 1984.",
+        "en": "A principle of precaution where technological consequences may be irreversible. The German work appeared in 1979, followed by the English edition in 1984."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "f14",
+      "selectionId": "F14",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Czy mamy położyć kres gatunkowi ludzkiemu, czy też ludzkość ma wyrzec się wojny?"
+        ],
+        "en": [
+          "Shall we put an end to the human race: or shall mankind renounce war?"
+        ]
+      },
+      "author": {
+        "pl": "Bertrand Russell i Albert Einstein",
+        "en": "Bertrand Russell and Albert Einstein"
+      },
+      "year": {
+        "pl": "1955",
+        "en": "1955"
+      },
+      "source": {
+        "pl": "Manifest Russella–Einsteina, 9.07.1955",
+        "en": "The Russell–Einstein Manifesto, 9 July 1955"
+      },
+      "sourceUrl": "https://pugwash.org/1955/07/09/statement-manifesto/",
+      "context": {
+        "pl": "Apel przeciw wojnie nuklearnej, podpisany przez jedenastu naukowców. Powiązanie z AI jest odczytaniem redakcyjnym.",
+        "en": "An appeal against nuclear war, signed by eleven scientists. Its application to AI is an editorial connection; the authors were not speaking about contemporary AI."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f15",
+      "selectionId": "F15",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "W bliższej lub dalszej przyszłości trzeba będzie wybrać między zbiorowym samobójstwem a rozumnym wykorzystaniem zdobyczy nauki."
+        ],
+        "en": [
+          "In the near or more distant future, we will have to choose between collective suicide and the intelligent use of scientific advances."
+        ]
+      },
+      "author": {
+        "pl": "Albert Camus",
+        "en": "Albert Camus"
+      },
+      "year": {
+        "pl": "1945",
+        "en": "1945"
+      },
+      "source": {
+        "pl": "Artykuł redakcyjny w Combat, 8.08.1945",
+        "en": "Editorial in Combat, 8 August 1945"
+      },
+      "sourceUrl": "https://www.recim.org/far/camus.htm",
+      "context": {
+        "pl": "Reakcja Camusa na bombardowanie Hiroszimy i refleksja nad odpowiedzialnością za zdobycze nauki.",
+        "en": "Camus was responding to the bombing of Hiroshima. This is a reflection on scientific responsibility, rather than a historical statement about AI."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "f16",
+      "selectionId": "F16",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Zamiast pytać „jak powinniśmy żyć?”, musimy teraz pytać „czy będziemy żyć?”."
+        ],
+        "en": [
+          "Instead of asking ‘How ought we to live?’, we now have to ask ‘Will we live at all?’"
+        ]
+      },
+      "author": {
+        "pl": "Günther Anders",
+        "en": "Günther Anders"
+      },
+      "year": {
+        "pl": "1962",
+        "en": "1962"
+      },
+      "source": {
+        "pl": "Theses for the Atomic Age, §2",
+        "en": "Theses for the Atomic Age, §2, The Massachusetts Review 3(3), 1962, p.493"
+      },
+      "sourceUrl": "https://www.scribd.com/document/879371436/1962-Anders",
+      "context": {
+        "pl": "Oryginalny kontekst to możliwość nuklearnego samozniszczenia. Wersja angielska ukazała się w 1962 r.; tezy przedstawiono w 1959 r. i wydrukowano po niemiecku w 1960 r.",
+        "en": "The original theses concern the continuing possibility of nuclear self-destruction after Hiroshima. The English version appeared in 1962, following theses presented in 1959 and printed in German in 1960."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": "Editorial English rendering."
+      }
+    },
+    {
+      "id": "f17",
+      "selectionId": "F17",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Nie potrzeba nam innych światów. Potrzeba nam luster."
+        ],
+        "en": [
+          "We do not need other worlds. We need mirrors."
+        ]
+      },
+      "author": {
+        "pl": "Stanisław Lem",
+        "en": "Stanisław Lem"
+      },
+      "year": {
+        "pl": "1961",
+        "en": "1961"
+      },
+      "source": {
+        "pl": "Solaris, wypowiedź Snauta",
+        "en": "Solaris, words spoken by Snaut, 1961"
+      },
+      "sourceUrl": "https://www.lem.pl/ksiazki/beletrystyka/solaris",
+      "context": {
+        "pl": "Wypowiedź fikcyjnego bohatera, Snauta, o spotkaniu ludzkości z obcą inteligencją.",
+        "en": "A fictional character speaks about humanity's encounter with an alien intelligence. The Polish wording is the original; this is an editorial English translation."
+      },
+      "translation": {
+        "pl": "",
+        "en": "Editorial English translation."
+      }
+    },
+    {
+      "id": "f18",
+      "selectionId": "F18",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Jeśli potrafisz kontrolować znaczenie słów, potrafisz kontrolować ludzi, którzy muszą ich używać."
+        ],
+        "en": [
+          "If you can control the meaning of words, you can control the people who must use the words."
+        ]
+      },
+      "author": {
+        "pl": "Philip K. Dick",
+        "en": "Philip K. Dick"
+      },
+      "year": {
+        "pl": "1978",
+        "en": "1978"
+      },
+      "source": {
+        "pl": "How to Build a Universe That Doesn't Fall Apart Two Days Later",
+        "en": "How to Build a Universe That Doesn't Fall Apart Two Days Later, 1978"
+      },
+      "sourceUrl": "https://1999pkdweb.philipdick.com/How%20To%20build%20A%20Universe.htm",
+      "context": {
+        "pl": "Esej o języku, mediach i kształtowaniu rzeczywistości, napisany jako proponowane przemówienie.",
+        "en": "An essay about language, media and the manipulation of reality. It was written as a proposed speech; the source does not establish that it was delivered."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f19",
+      "selectionId": "F19",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Jeśli wszystko pójdzie dobrze, historia ludzkości dopiero się zaczyna."
+        ],
+        "en": [
+          "If all goes well, human history is just beginning."
+        ]
+      },
+      "author": {
+        "pl": "Toby Ord",
+        "en": "Toby Ord"
+      },
+      "year": {
+        "pl": "2020",
+        "en": "2020"
+      },
+      "source": {
+        "pl": "The Precipice, wprowadzenie",
+        "en": "The Precipice: Existential Risk and the Future of Humanity, introduction, 2020"
+      },
+      "sourceUrl": "https://studylib.net/doc/27229529/the-precipice",
+      "context": {
+        "pl": "Warunkowa nadzieja na długą przyszłość ludzkości, otwierająca książkę Orda.",
+        "en": "The book's opening sentence presents a conditional hope for humanity's long future. Preserve the condition if all goes well."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "f20",
+      "selectionId": "F20",
+      "category": "future",
+      "kind": "quotation",
+      "paragraphs": {
+        "pl": [
+          "Niebo nas wzywa. Jeśli sami się nie zniszczymy, pewnego dnia wyruszymy ku gwiazdom."
+        ],
+        "en": [
+          "The sky calls to us. If we do not destroy ourselves, we will one day venture to the stars."
+        ]
+      },
+      "author": {
+        "pl": "Carl Sagan",
+        "en": "Carl Sagan"
+      },
+      "year": {
+        "pl": "1980",
+        "en": "1980"
+      },
+      "source": {
+        "pl": "Cosmos, odcinek 7: The Backbone of Night, 9.11.1980",
+        "en": "Cosmos, episode 7: The Backbone of Night, 9 November 1980, 00:44"
+      },
+      "sourceUrl": "https://www.organism.earth/library/document/cosmos-7",
+      "context": {
+        "pl": "Słowa wypowiedziane przez Carla Sagana w siódmym odcinku Cosmos. Współautorką scenariusza jest także Ann Druyan.",
+        "en": "Words spoken by Carl Sagan in Cosmos. The episode credits also include Ann Druyan; quoting Sagan does not imply that he alone wrote the whole script."
+      },
+      "translation": {
+        "pl": "Przekład redakcyjny.",
+        "en": ""
+      }
+    },
+    {
+      "id": "a-f01",
+      "selectionId": "A-F01",
+      "category": "future",
+      "kind": "reflection",
+      "paragraphs": {
+        "pl": [
+          "Stworzyliśmy naszych następców na własne podobieństwo. Jak szybko uznają, że oryginał jest zbędny?"
+        ],
+        "en": [
+          "We created our successors in our own image. How soon will they decide that the original is redundant?"
+        ]
+      },
+      "author": {
+        "pl": "Mariusz Gorlowski",
+        "en": "Mariusz Gorlowski"
+      },
+      "year": {
+        "pl": "2026",
+        "en": "2026"
+      },
+      "source": {
+        "pl": "Notatnik autora",
+        "en": "The author’s notebook"
+      },
+      "sourceUrl": "https://mariuszgorlowski.com/#notebook/a-f01",
+      "context": {
+        "pl": "Autorska refleksja zamykająca rozdział.",
+        "en": "An original reflection closing the chapter."
+      },
+      "translation": {
+        "pl": "",
+        "en": "Editorial English translation."
+      }
+    }
+  ]
+}
