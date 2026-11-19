@@ -36,6 +36,9 @@
 .v4-article-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:23px;}
 .v4-article{min-width:0;background:#fff;border:1px solid #e9e4da;border-radius:13px;padding:24px 24px 22px;display:flex;flex-direction:column;}
 .v4-article-meta{color:#876c4f;font-size:11px;font-weight:700;letter-spacing:.04em;margin-bottom:11px;}
+.v4-essay-meta{display:flex;align-items:center;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;}
+.v4-essay-status{display:inline-flex;align-items:center;gap:7px;color:#266c4e;font-size:14px;font-weight:700;letter-spacing:0;line-height:1.5;}
+.v4-essay-status .v4-status-dot{display:block;flex:none;width:9px;height:9px;border-radius:50%;background:#26825a;}
 .v4-article h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2.2vw,25px);line-height:1.25;margin:0 0 12px;}
 .v4-article p{color:#5e6a6d;font-size:14px;line-height:1.64;margin:0 0 22px;}
 .v4-article-links{margin-top:auto;display:flex;gap:14px;flex-wrap:wrap;}
