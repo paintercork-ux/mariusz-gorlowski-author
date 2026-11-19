@@ -8,7 +8,8 @@
     "links": [],
     "status": "published",
     "featured": true,
-    "display_order": 1
+    "display_order": 1,
+    "slug": "am-i-still-me"
   },
   {
     "id": "2026-11-16-qr-tags",
@@ -43,7 +44,8 @@
     ],
     "featured": true,
     "display_order": 2,
-    "status": "published"
+    "status": "published",
+    "slug": "what-if-someone-whos-gone-called-you"
   },
   {
     "id": "2026-11-10-qr-intro",
@@ -74,6 +76,7 @@
     ],
     "featured": true,
     "display_order": 3,
-    "status": "published"
+    "status": "published",
+    "slug": "the-day-we-stop-saying-no"
   }
 ]

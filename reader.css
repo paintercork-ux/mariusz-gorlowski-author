@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light;
+  --reader-ink: #253337;
+  --reader-gold: #9b7844;
+  --reader-paper: #fff;
+  --reader-font-size: 1.25rem;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--reader-ink);
+  background: var(--reader-paper);
+}
+* { box-sizing: border-box; }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button, .reader-topbar, .reader-tools, .reader-meta, .reader-next, .reader-footer {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.reader-skip { position: fixed; left: 16px; top: -100px; z-index: 20; padding: 12px 18px; background: #14262c; color: #fff; }
+.reader-skip:focus { top: 10px; }
+.reader-topbar { position: sticky; top: 0; z-index: 10; background: rgb(255 255 255 / 97%); border-bottom: 1px solid #e9e5dc; }
+.reader-topbar-inner { max-width: 1140px; margin: auto; min-height: 68px; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.reader-brand { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 650; text-decoration: none; white-space: nowrap; }
+.reader-monogram { width: 34px; height: 34px; border-radius: 50%; background: #13262d; color: #dfc38e; display: grid; place-items: center; font: 15px Georgia, serif; }
+.reader-languages { display: flex; gap: 3px; border: 1px solid #c2a16b; padding: 3px; border-radius: 30px; background: #162c34; }
+.reader-languages a { min-width: 40px; min-height: 36px; display: grid; place-items: center; border-radius: 23px; color: #fff; font-size: 14px; text-decoration: none; }
+.reader-languages a[aria-current="page"] { background: #dfc38e; color: #192b32; font-weight: 700; }
+.reader-progress { position: absolute; left: 0; bottom: -1px; width: 100%; height: 2px; overflow: hidden; }
+.reader-progress span { display: block; width: 100%; height: 100%; background: #b48e50; transform: scaleX(0); transform-origin: left; }
+.reader-main { width: min(100% - 44px, 700px); margin: auto; padding: 25px 0 70px; }
+.reader-tools { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 35px; }
+.reader-back { min-height: 44px; display: inline-flex; align-items: center; color: #6d624e; font-size: 14px; text-underline-offset: 4px; }
+.reader-size { display: flex; align-items: center; gap: 7px; }
+.reader-size button { width: 44px; height: 44px; border: 1px solid #d8d0c2; border-radius: 8px; background: #fff; color: #26383c; font-size: 18px; cursor: pointer; }
+.reader-size button:hover:not(:disabled) { background: #f6f2e9; border-color: #b48e50; }
+.reader-size button:disabled { color: #aaa49a; cursor: default; }
+.reader-meta { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 18px; font-size: 14px; line-height: 1.5; color: #78694f; }
+.reader-published { display: inline-flex; align-items: center; gap: 7px; color: #266c4e; font-weight: 600; }
+.reader-published::before { content: ""; width: 8px; height: 8px; flex: none; border-radius: 50%; background: #26825a; }
+.reader-title { margin: 0; color: #1c2b30; font-size: clamp(2.15rem, 5.8vw, 3.5rem); line-height: 1.15; font-weight: 400; letter-spacing: -.035em; text-wrap: balance; }
+.reader-byline { margin: 18px 0 33px; color: #7b6544; font-size: 18px; font-style: italic; }
+.reader-rule { height: 1px; border: 0; background: linear-gradient(90deg, #c4a470, #e7decd); margin: 0 0 35px; }
+.essay-reader-body { font-size: var(--reader-font-size); line-height: 1.78; overflow-wrap: break-word; }
+.essay-reader-body p { margin: 0 0 1.1em; }
+.essay-reader-body strong { font-weight: 700; }
+.essay-reader-body .v4-essay-signature { margin-top: 2em; font-style: italic; font-weight: 600; }
+.essay-reader-body .v4-research-label { font: 700 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin-top: 2.5rem; }
+.essay-reader-body .v4-source-link { font-size: 1rem; overflow-wrap: anywhere; }
+.essay-reader-body .v4-source-link a { color: #785c33; text-underline-offset: 4px; }
+.essay-reader-body .v4-gold-rule { height: 1px; border: 0; margin: 35px 0; background: #dfd3bf; }
+.reader-next { border-top: 1px solid #e2d8c6; margin-top: 48px; padding-top: 26px; }
+.reader-next p { margin: 0 0 9px; color: #826942; font-size: 14px; }
+.reader-next a { display: inline-block; min-height: 44px; font: 25px/1.35 Georgia, serif; color: #25363b; text-underline-offset: 6px; }
+.reader-footer { margin-top: 36px; font-size: 14px; line-height: 1.7; color: #746c5f; }
+a:focus-visible, button:focus-visible { outline: 3px solid #b48e50; outline-offset: 4px; }
+@media (max-width: 370px) {
+  .reader-topbar-inner { padding-right: 14px; padding-left: 14px; gap: 8px; }
+  .reader-brand { font-size: 12px; gap: 7px; }
+  .reader-languages a { min-width: 35px; }
+  .reader-main { width: calc(100% - 36px); }
+}
+@media print {
+  .reader-topbar, .reader-tools, .reader-next, .reader-footer { display: none; }
+  .reader-main { width: 100%; padding: 0; }
+  .essay-reader-body { font-size: 12pt; }
+}

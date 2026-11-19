@@ -1,0 +1,20 @@
+.home-latest { padding-top: 22px; }
+.home-latest-card { border: 1px solid #d9c5a4; border-radius: 14px; background: #fff; padding: clamp(23px, 4vw, 36px); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; box-shadow: 0 5px 20px rgb(21 32 38 / 3%); }
+.home-latest-eyebrow { margin: 0 0 12px; font-size: 12px; letter-spacing: .15em; font-weight: 750; color: #987344; }
+.home-latest-card h2 { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 37px); line-height: 1.2; letter-spacing: -.025em; font-weight: 400; color: #213036; margin: 0 0 12px; }
+.home-latest-card p.home-latest-intro { color: #536267; font-size: 16px; line-height: 1.75; margin: 0; }
+.home-latest-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 17px; }
+.home-latest-meta { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px 17px; font-size: 14px; color: #786b58; }
+.home-latest-status { display: inline-flex; align-items: center; gap: 7px; color: #266c4e; font-weight: 650; }
+.home-latest-status::before { content: ""; width: 8px; height: 8px; background: #26825a; border-radius: 50%; }
+.home-latest-card .btn { min-height: 48px; font-size: 15px; }
+.v4-read-essay { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; max-width: 100%; padding: 12px 21px; border: 1px solid #b99a68; border-radius: 9px; background: #1a2b31; color: #fff; font-size: 15px; font-weight: 700; line-height: 1.5; text-align: center; text-decoration: none; scroll-margin-top: 90px; }
+.v4-read-essay:hover { background: #2c4149; }
+.v4-read-essay:focus-visible { outline: 3px solid #b48e50; outline-offset: 4px; }
+.v4-essays .v4-article .v4-article-lead { font-size: 1rem; }
+@media (max-width: 680px) {
+  .home-latest-card { grid-template-columns: minmax(0, 1fr); gap: 19px; }
+  .home-latest-actions { align-items: flex-start; gap: 16px; }
+  .home-latest-meta { justify-content: flex-start; }
+  .home-latest-actions .btn { align-self: stretch; }
+}
