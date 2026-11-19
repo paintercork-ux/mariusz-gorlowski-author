@@ -12,6 +12,7 @@ const text = {
     manual: 'Zaznacz tekst i skopiuj go ręcznie:', copyError: 'Przeglądarka nie udostępniła schowka. Tekst jest gotowy do ręcznego skopiowania.',
     imageError: 'Nie udało się przygotować grafiki. Spróbuj ponownie.',
     loadError: 'Nie udało się otworzyć notatnika. Możesz przeczytać go na osobnej stronie.',
+    copyShort: 'Kopiuj', saveShort: 'Grafika', sourceShort: 'Źródło', continue: 'Czytaj dalej',
     fallback: 'Przejdź do notatnika', collection: 'Kolekcja Mariusza Gorlowskiego', quote: 'Cytat',
   },
   en: {
@@ -25,6 +26,7 @@ const text = {
     manual: 'Select the text and copy it manually:', copyError: 'The browser could not access the clipboard. The text is ready to copy manually.',
     imageError: 'The image could not be prepared. Please try again.',
     loadError: 'The notebook could not be opened. You can read it on its own page.',
+    copyShort: 'Copy', saveShort: 'Image', sourceShort: 'Source', continue: 'Read on',
     fallback: 'Go to the notebook', collection: 'Selected by Mariusz Gorlowski', quote: 'Quotation',
   },
 };
@@ -36,6 +38,8 @@ let pages;
 let index = 0;
 let dialog;
 let imageDialog;
+let sourceDialog;
+let resizeFrame;
 let restoreFocus;
 let scrollY = 0;
 let openedWithHistory = false;
@@ -71,6 +75,7 @@ async function loadCollection() {
       if (!Array.isArray(data.entries) || data.entries.length !== 63) throw new Error('Invalid notebook');
       collection = data;
       pages = [{ id: 'intro', kind: 'intro' }, ...data.entries, { id: 'outro', kind: 'outro' }];
+      if (hashId() === 'intro-more') pages.splice(1, 0, { id: 'intro-more', kind: 'intro-more' });
     }).catch(error => { collectionPromise = undefined; throw error; });
   }
   return collectionPromise;
@@ -81,21 +86,25 @@ function makeDialog() {
   dialog.lang = initialLanguage;
   dialog.setAttribute('aria-labelledby', 'notebook-dialog-title');
   dialog.innerHTML = `
-    <div class="notebook-topline">
-      <p class="notebook-label" id="notebook-dialog-title"></p>
-      <div class="notebook-top-actions"><nav class="notebook-languages" aria-label="Language / Język"><a lang="en" hreflang="en" data-notebook-language="en">EN</a><a lang="pl" hreflang="pl" data-notebook-language="pl">PL</a></nav><button type="button" class="notebook-close" data-notebook-close autofocus></button></div>
-    </div>
     <div class="notebook-binding">
-      <nav class="notebook-tabs" aria-label="${initialLanguage === 'pl' ? 'Rozdziały' : 'Chapters'}"><button type="button" data-notebook-category="human"></button><button type="button" data-notebook-category="machine"></button><button type="button" data-notebook-category="future"></button></nav>
       <div class="notebook-spread">
         <aside class="notebook-frontmatter"><p class="notebook-imprint"></p><h2 class="notebook-book-title"></h2><div class="notebook-title-rule" aria-hidden="true"></div><p class="notebook-subtitle"></p><p class="notebook-credit"></p><button type="button" class="notebook-contents-link" data-notebook-intro></button></aside>
-        <div class="notebook-page" data-notebook-page tabindex="0" role="region" aria-label="${initialLanguage === 'pl' ? 'Treść strony książki' : 'Book page'}"><div class="notebook-page-inner" data-notebook-page-inner></div></div>
+        <section class="notebook-page" data-notebook-page tabindex="-1" role="region" aria-label="${initialLanguage === 'pl' ? 'Treść strony książki' : 'Book page'}">
+          <div class="notebook-topline"><button type="button" class="notebook-label" id="notebook-dialog-title" data-notebook-title></button><div class="notebook-top-actions"><nav class="notebook-languages" aria-label="Language / Język"><a lang="en" hreflang="en" data-notebook-language="en">EN</a><a lang="pl" hreflang="pl" data-notebook-language="pl">PL</a></nav><button type="button" class="notebook-close" data-notebook-close autofocus></button></div></div>
+          <div class="notebook-head-rule" aria-hidden="true"></div>
+          <nav class="notebook-tabs" aria-label="${initialLanguage === 'pl' ? 'Rozdziały' : 'Chapters'}"><button type="button" data-notebook-category="human"></button><button type="button" data-notebook-category="machine"></button><button type="button" data-notebook-category="future"></button></nav>
+          <div class="notebook-page-inner" data-notebook-page-inner></div>
+          <nav class="notebook-pagination" aria-label="${initialLanguage === 'pl' ? 'Strony książki' : 'Book pages'}"><button type="button" data-notebook-previous></button><div class="notebook-page-number" data-notebook-page-number aria-live="polite" aria-atomic="true"></div><button type="button" data-notebook-next></button></nav>
+        </section>
       </div>
     </div>
-    <nav class="notebook-pagination" aria-label="${initialLanguage === 'pl' ? 'Strony książki' : 'Book pages'}"><button type="button" data-notebook-previous></button><div class="notebook-page-number" data-notebook-page-number aria-live="polite" aria-atomic="true"></div><button type="button" data-notebook-next></button></nav>
     <p class="notebook-status" data-notebook-status role="status" aria-live="polite" aria-atomic="true"></p>`;
   bySelector('.notebook-label').textContent = ui.notebook;
-  bySelector('[data-notebook-close]').textContent = ui.close;
+  bySelector('[data-notebook-title]').title = ui.intro;
+  bySelector('[data-notebook-title]').addEventListener('click', () => showPage(0));
+  bySelector('[data-notebook-close]').textContent = '×';
+  bySelector('[data-notebook-close]').setAttribute('aria-label', ui.close);
+  bySelector('[data-notebook-close]').title = ui.close;
   bySelector('[data-notebook-previous]').textContent = ui.previous;
   bySelector('[data-notebook-next]').textContent = ui.next;
   bySelector('.notebook-imprint').textContent = 'Mariusz Gorlowski';
@@ -133,6 +142,94 @@ function makeDialog() {
   document.body.append(dialog);
 }
 
+function updateBookViewport() {
+  if (!dialog?.open) return;
+  const height = window.visualViewport?.height ?? window.innerHeight;
+  dialog.style.setProperty('--notebook-viewport-height', `${Math.floor(height)}px`);
+}
+
+function schedulePageFit() {
+  cancelAnimationFrame(resizeFrame);
+  resizeFrame = requestAnimationFrame(fitCurrentPage);
+}
+
+function fitCurrentPage() {
+  if (!dialog?.open) return;
+  updateBookViewport();
+  const inner = bySelector('[data-notebook-page-inner]');
+  const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  inner.classList.remove('notebook-compact');
+  inner.style.removeProperty('--notebook-text-size');
+  inner.style.removeProperty('--notebook-title-size');
+  inner.style.removeProperty('--notebook-outro-size');
+  const quote = inner.querySelector('.notebook-quote-body');
+  if (quote) {
+    const startSize = parseFloat(getComputedStyle(quote).fontSize);
+    for (let size = startSize; size >= rootSize * 1.125; size -= .5) {
+      inner.style.setProperty('--notebook-text-size', `${size / rootSize}rem`);
+      if (inner.scrollHeight <= inner.clientHeight + 1) break;
+    }
+  } else if (inner.dataset.kind === 'intro') {
+    const copy = inner.querySelector('.notebook-intro-copy');
+    const title = inner.querySelector('.notebook-mobile-title h2');
+    const startSize = parseFloat(getComputedStyle(copy).fontSize);
+    for (let size = startSize; size >= rootSize; size -= .25) {
+      inner.style.setProperty('--notebook-text-size', `${size / rootSize}rem`);
+      if (inner.scrollHeight <= inner.clientHeight + 1) break;
+    }
+    if (inner.scrollHeight > inner.clientHeight + 1 && title) {
+      for (let size = 30; size >= 24; size -= 1) {
+        inner.style.setProperty('--notebook-title-size', `${size / 16}rem`);
+        if (inner.scrollHeight <= inner.clientHeight + 1) break;
+      }
+    }
+  } else if (inner.dataset.kind === 'outro') {
+    inner.style.setProperty('--notebook-text-size', '1rem');
+    const question = inner.querySelector('.notebook-outro-question');
+    const startSize = parseFloat(getComputedStyle(question).fontSize);
+    for (let size = startSize; size >= rootSize * 1.25; size -= .5) {
+      inner.style.setProperty('--notebook-outro-size', `${size / rootSize}rem`);
+      if (inner.scrollHeight <= inner.clientHeight + 1) break;
+    }
+  }
+  if (inner.scrollHeight > inner.clientHeight + 1) inner.classList.add('notebook-compact');
+  inner.dataset.fitted = String(inner.scrollHeight <= inner.clientHeight + 1);
+  if (inner.dataset.kind === 'intro' && inner.dataset.fitted === 'false' && pages[1].id !== 'intro-more') {
+    pages.splice(1, 0, { id: 'intro-more', kind: 'intro-more' });
+    showPage(0, { updateHistory: false, animate: false });
+    fitCurrentPage();
+  }
+}
+
+function auxiliaryDialog(title) {
+  if (!sourceDialog) {
+    sourceDialog = element('dialog', 'notebook-source-dialog');
+    sourceDialog.lang = initialLanguage;
+    sourceDialog.setAttribute('aria-labelledby', 'notebook-source-title');
+    document.body.append(sourceDialog);
+  }
+  sourceDialog.replaceChildren();
+  const header = element('div', 'notebook-image-head');
+  const heading = element('h2', '', title); heading.id = 'notebook-source-title';
+  const close = element('button', 'notebook-secondary', ui.close); close.type = 'button';
+  close.addEventListener('click', () => sourceDialog.close()); header.append(heading, close);
+  sourceDialog.append(header);
+  return sourceDialog;
+}
+
+function showSource(page) {
+  const panel = auxiliaryDialog(ui.source);
+  panel.append(element('p', 'notebook-author', translated(page.author)), element('p', 'notebook-source', `${translated(page.source)} · ${translated(page.year)}`));
+  if (translated(page.translation)) panel.append(element('p', 'notebook-translation', translated(page.translation)));
+  panel.append(element('p', 'notebook-context-copy', translated(page.context)));
+  const link = element('a', 'notebook-primary', ui.original);
+  link.href = sourceAddress(page); link.target = '_blank'; link.rel = 'noopener noreferrer';
+  panel.append(link); panel.showModal();
+}
+
+window.addEventListener('resize', schedulePageFit);
+window.visualViewport?.addEventListener('resize', schedulePageFit);
+
 function say(message) {
   clearTimeout(statusTimer);
   bySelector('[data-notebook-status]').textContent = message;
@@ -150,25 +247,28 @@ function showPage(nextIndex, { updateHistory = true, animate = true } = {}) {
   const inner = bySelector('[data-notebook-page-inner]');
   const activeBefore = document.activeElement;
   const focusWasOnPage = inner.contains(activeBefore);
+  inner.dataset.fitted = 'pending';
   inner.replaceChildren();
   say('');
-  const label = page.category ? ui[page.category] : ui[page.kind];
+  const label = page.category ? ui[page.category] : page.kind === 'intro-more' ? ui.intro : ui[page.kind];
   inner.append(element('p', 'notebook-page-label', label));
   const article = element('article', 'notebook-article');
   if (page.kind === 'intro') {
     const mobileTitle = element('div', 'notebook-mobile-title');
     mobileTitle.append(element('h2', '', translated(collection.title)), element('span', 'notebook-mobile-subtitle', translated(collection.subtitle)));
     article.append(mobileTitle);
-    const heading = element('h3', '', ui.intro);
-    heading.className = 'notebook-desktop-intro-heading';
+    const heading = element('h3', 'notebook-desktop-intro-heading', ui.intro);
     article.append(heading);
     const copy = element('div', 'notebook-intro-copy');
-    paragraphs(copy, translated(collection.intro));
+    paragraphs(copy, pages[1].id === 'intro-more' ? translated(collection.intro).slice(0, 1) : translated(collection.intro));
     article.append(copy);
     inner.append(article);
-    const start = element('button', 'notebook-primary', ui.start);
-    start.type = 'button'; start.addEventListener('click', () => showPage(1));
-    inner.append(start);
+  } else if (page.kind === 'intro-more') {
+    article.append(element('h3', '', ui.intro));
+    const copy = element('div', 'notebook-intro-copy');
+    paragraphs(copy, translated(collection.intro).slice(1));
+    article.append(copy, element('p', 'notebook-signature notebook-foreword-signature', 'Mariusz Gorlowski'));
+    inner.append(article);
   } else if (page.kind === 'outro') {
     const values = translated(collection.outro);
     article.append(element('h3', '', ui.outro), element('p', 'notebook-intro-copy', values[0]), element('p', 'notebook-outro-question', values[1]), element('p', 'notebook-signature', values[2]));
@@ -189,19 +289,15 @@ function showPage(nextIndex, { updateHistory = true, animate = true } = {}) {
     caption.append(element('cite', 'notebook-source', `${translated(page.source)} · ${translated(page.year)}`));
     if (translated(page.translation)) caption.append(element('span', 'notebook-translation', translated(page.translation)));
     figure.append(caption); article.append(figure);
-    const details = element('details', 'notebook-source-details');
-    details.append(element('summary', '', ui.source));
-    if (translated(page.context)) details.append(element('p', '', translated(page.context)));
-    const sourceLink = element('a', '', ui.original);
-    sourceLink.href = sourceAddress(page); sourceLink.target = '_blank'; sourceLink.rel = 'noopener noreferrer';
-    details.append(sourceLink); article.append(details);
     inner.append(article);
     const tools = element('div', 'notebook-page-tools');
-    const copy = element('button', '', ui.copy); copy.type = 'button'; copy.dataset.notebookCopy = '';
+    const copy = element('button', '', ui.copyShort); copy.setAttribute('aria-label', ui.copy); copy.type = 'button'; copy.dataset.notebookCopy = '';
     copy.addEventListener('click', () => copyQuotation(page));
-    const save = element('button', '', ui.save); save.type = 'button'; save.dataset.notebookSave = '';
+    const save = element('button', '', ui.saveShort); save.setAttribute('aria-label', ui.save); save.type = 'button'; save.dataset.notebookSave = '';
     save.addEventListener('click', () => prepareImage(page, save));
-    tools.append(copy, save); inner.append(tools);
+    const source = element('button', '', ui.sourceShort); source.type = 'button'; source.dataset.notebookSource = ''; source.setAttribute('aria-label', ui.source);
+    source.addEventListener('click', () => showSource(page));
+    tools.append(copy, save, source); inner.append(tools);
   }
   bySelector('[data-notebook-previous]').disabled = index === 0;
   bySelector('[data-notebook-next]').disabled = index === pages.length - 1;
@@ -217,7 +313,10 @@ function showPage(nextIndex, { updateHistory = true, animate = true } = {}) {
   for (const button of dialog.querySelectorAll('[data-notebook-category]')) button.setAttribute('aria-pressed', String(button.dataset.notebookCategory === page.category));
   for (const link of dialog.querySelectorAll('[data-notebook-language]')) link.href = currentPath(page.id, link.dataset.notebookLanguage);
   bySelector('[data-notebook-page]').scrollTop = 0;
+  inner.dataset.kind = page.kind;
+  bySelector('[data-notebook-next]').textContent = page.kind === 'intro' ? pages[1].id === 'intro-more' ? ui.continue : ui.start : page.kind === 'intro-more' ? ui.start : ui.next;
   if (animate) { inner.classList.remove('notebook-turned'); void inner.offsetWidth; inner.classList.add('notebook-turned'); }
+  if (dialog.open) fitCurrentPage();
   if (animate && (focusWasOnPage || activeBefore?.disabled)) bySelector('[data-notebook-page]').focus({ preventScroll: true });
   if (updateHistory && dialog.open) history.replaceState({ ...history.state, notebook: page.id }, '', `#notebook/${encodeURIComponent(page.id)}`);
 }
@@ -238,9 +337,11 @@ async function openBook(trigger, pushHistory = true) {
     document.body.classList.add('notebook-is-open');
     document.body.style.top = `-${scrollY}px`;
     dialog.showModal();
+    updateBookViewport();
+    fitCurrentPage();
     openedWithHistory = pushHistory;
     if (pushHistory) history.pushState({ ...history.state, notebook: pages[index].id }, '', `#notebook/${encodeURIComponent(pages[index].id)}`);
-    // Native dialog traps focus. The page remains scrollable within the fixed book shell.
+    // Native dialog traps focus; the book is sized to the browser's visible viewport.
     bySelector('[data-notebook-close]').focus({ preventScroll: true });
   } catch {
     const previous = document.querySelector('.notebook-error'); previous?.remove();
@@ -255,6 +356,7 @@ async function openBook(trigger, pushHistory = true) {
 function requestClose() {
   if (!dialog?.open) return;
   if (imageDialog?.open) { imageDialog.close(); return; }
+  if (sourceDialog?.open) { sourceDialog.close(); return; }
   dialog.close();
   if (openedWithHistory && /^#notebook/u.test(location.hash)) history.back();
   else if (/^#notebook/u.test(location.hash)) history.replaceState(history.state, '', location.pathname + location.search);
@@ -297,11 +399,11 @@ async function copyQuotation(page) {
     }
     say(ui.copied);
   } catch {
-    bySelector('.notebook-manual-copy')?.remove();
+    const panel = auxiliaryDialog(ui.manual);
     const fallback = element('div', 'notebook-manual-copy');
     const label = element('label', '', ui.manual); label.htmlFor = 'notebook-copy-text';
     const input = element('textarea'); input.id = 'notebook-copy-text'; input.readOnly = true; input.value = value;
-    fallback.append(label, input); bySelector('[data-notebook-page-inner]').append(fallback);
+    fallback.append(label, input); panel.append(fallback); panel.showModal();
     input.focus(); input.select(); say(ui.copyError);
   }
 }
@@ -396,7 +498,7 @@ async function prepareImage(page, button) {
     imageDialog.querySelector('[data-image-share]').hidden = !navigator.canShare?.({ files: [imageFile] });
     imageDialog.showModal();
   } catch { say(ui.imageError); }
-  finally { button.disabled = false; button.textContent = ui.save; }
+  finally { button.disabled = false; button.textContent = ui.saveShort; }
 }
 
 // Map the real book in the existing image, including object-fit cropping on phones.
@@ -436,7 +538,7 @@ window.addEventListener('popstate', () => {
   if (/^#notebook/u.test(location.hash)) {
     if (dialog?.open) showPage(Math.max(0, pages.findIndex(page => page.id === hashId())), { updateHistory: false });
     else openBook(null, false);
-  } else if (dialog?.open) { imageDialog?.close(); dialog.close(); }
+  } else if (dialog?.open) { imageDialog?.close(); sourceDialog?.close(); dialog.close(); }
 });
 window.addEventListener('pagehide', event => { if (!event.persisted && imageURL) URL.revokeObjectURL(imageURL); });
 if (/^#notebook(?:\/|$)/u.test(location.hash) || document.body.hasAttribute('data-notebook-auto-open')) openBook(null, false);
