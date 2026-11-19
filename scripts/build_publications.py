@@ -4,7 +4,7 @@ Source of truth:
   data/publications.json      — original posts, dates, selection and external URLs
   data/publications_pl.json   — Polish editorial titles and descriptions
   data/essays/<id>.txt        — approved English complete essays
-  data/essays/pl/<id>.txt     — Polish review translations
+  data/essays/pl/<id>.txt     — complete Polish essays
 
 Never fetch automatically from social platforms or publish manuscripts.
 """
@@ -30,6 +30,12 @@ for p in posts:
     for link in p["links"]:
         assert urlsplit(link["url"]).scheme == "https"
 
+def inline_text(text):
+    safe = escape(text)
+    safe = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", safe)
+    return re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", safe)
+
+
 def essay_full_text(item, lang):
     filename = item["id"] + ".txt"
     src = ROOT / "data" / "essays" / (("pl/" if lang == "pl" else "") + filename)
@@ -37,21 +43,28 @@ def essay_full_text(item, lang):
         raise FileNotFoundError("Featured essay needs full text: " + str(src))
     title = pl[item["id"]]["title"] if lang == "pl" else item["title"]
     blocks = re.split(r"\n\s*\n", src.read_text(encoding="utf-8").strip())
-    if blocks and blocks[0].strip().casefold() == title.casefold():
+    if blocks and blocks[0].strip().removeprefix("# ").casefold() == title.casefold():
         blocks.pop(0)
     output = []
     for block in blocks:
         block = " ".join(block.split())
         if not block:
             continue
+        if block == "---":
+            output.append('<hr class="v4-gold-rule" aria-hidden="true"/>')
+            continue
+        label = block.replace("**", "")
         klass = ("v4-essay-signature" if block == "Mariusz Gorlowski" else
-                 "v4-research-label" if block in ("Research reference:", "Źródło naukowe:") else "")
+                 "v4-research-label" if label in ("Research reference:", "Reference", "Źródło naukowe:") else "")
         attr = f' class="{klass}"' if klass else ""
+        doi_link = re.fullmatch(r"\[(https://doi\.org/[^\]]+)\]\(\1\)", block)
+        if doi_link:
+            block = doi_link.group(1)
         if block.startswith("https://doi.org/"):
             safe = escape(block, quote=True)
             output.append(f'<p class="v4-source-link"><a href="{safe}" target="_blank" rel="noopener noreferrer">{escape(block)}</a></p>')
         else:
-            output.append(f"<p{attr}>{escape(block)}</p>")
+            output.append(f"<p{attr}>{inline_text(block)}</p>")
     return "\n".join(output)
 
 def date_label(s, lang):
@@ -88,12 +101,23 @@ def build(kind, lang):
         else:
             accordion = ""
         label = ("Esej autorski" if lang == "pl" else "Independent essay") if kind == "essay" else "QR FINDER"
+        meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time> · {label}'
+        if kind == "essay" and item.get("status") == "published":
+            published = "Opublikowane" if lang == "pl" else "Published"
+            meta = (
+                f'<span>{meta}</span><span class="v4-essay-status">'
+                f'<span class="v4-status-dot" aria-hidden="true"></span>{published}</span>'
+            )
+            meta_class = "v4-article-meta v4-essay-meta"
+        else:
+            meta_class = "v4-article-meta"
+        links_html = f'<div class="v4-article-links">{links}</div>' if links else ""
         rendered.append(
             '<article class="v4-article">'
-            f'<div class="v4-article-meta"><time datetime="{item["date"]}">{date_label(item["date"], lang)}</time> · {label}</div>'
+            f'<div class="{meta_class}">{meta}</div>'
             f'<h3>{escape(title)}</h3>'
             f'<p class="v4-article-lead">{escape(desc)}</p>'
-            f'{accordion}<div class="v4-article-links">{links}</div></article>'
+            f'{accordion}{links_html}</article>'
         )
     divider = '\n<hr class="v4-gold-rule v4-essay-divider" aria-hidden="true"/>\n' if kind == "essay" else "\n"
     return divider.join(rendered)
