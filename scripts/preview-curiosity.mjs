@@ -51,7 +51,9 @@ const server = createServer(async (request, response) => {
     let body = await readFile(path);
     const type = contentTypes[extname(path)] ?? 'application/octet-stream';
     if (type.startsWith('text/html')) {
-      body = Buffer.from(body.toString().replaceAll('https://mariuszgorlowski.com/', '/'));
+      body = Buffer.from(body.toString()
+        .replaceAll('https://mariuszgorlowski.com/', '/')
+        .replaceAll('https://mariusz-author-curiosity.getqrfinder.workers.dev/api/curiosity/visit', '/api/curiosity/visit'));
     }
     response.writeHead(200, {
       'Content-Type': type,
