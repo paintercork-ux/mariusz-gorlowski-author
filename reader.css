@@ -60,13 +60,34 @@ a:focus-visible, button:focus-visible { outline: 3px solid #b48e50; outline-offs
 .quote-dialog { width: min(520px, calc(100% - 24px)); max-width: none; max-height: calc(100dvh - 24px); padding: 0; border: 1px solid #b3945f; border-radius: 12px; color: #26363b; background: #fcfbf7; }
 .quote-dialog::backdrop { background: rgb(5 12 16 / 74%); }
 .quote-dialog-shell { display: flex; flex-direction: column; gap: 13px; padding: 14px; }
+.quote-card-panel { display: flex; flex-direction: column; gap: 13px; }
+.quote-card-panel[hidden], .quote-editor[hidden] { display: none; }
 .quote-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 .quote-dialog-head h2 { margin: 0; font-size: 17px; font-weight: 600; }
 .quote-dialog-head form { margin: 0; }
 .quote-close { min-height: 44px; padding: 8px 11px; border: 1px solid #d7cbb7; border-radius: 7px; background: #fff; color: #4a514c; font-size: 14px; cursor: pointer; }
-.quote-preview-image { display: block; width: 100%; height: auto; max-height: calc(100dvh - 190px); object-fit: contain; background: #050505; }
+.quote-preview-image { display: block; width: 100%; height: auto; max-height: calc(100dvh - 247px); object-fit: contain; background: #050505; }
 .quote-download { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 18px; border: 1px solid #b59a6c; border-radius: 8px; color: #fff; background: #182f37; text-decoration: none; font: 600 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 .quote-download:hover { background: #29444e; }
+.quote-choose, .quote-cancel, .quote-apply { min-height: 44px; border: 1px solid #b59663; border-radius: 8px; padding: 9px 14px; font: 600 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; cursor: pointer; }
+.quote-choose, .quote-cancel { color: #344348; background: #fff; }
+.quote-choose:hover, .quote-cancel:hover { background: #f7f1e5; }
+.quote-apply { color: #fff; background: #182f37; }
+.quote-apply:disabled { opacity: .5; cursor: wait; }
+.quote-editor { display: flex; flex-direction: column; gap: 11px; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-editor p { margin: 0; }
+.quote-picker-help { color: #5c605c; }
+.quote-passages { max-height: 25dvh; min-height: 120px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid #d7cbb7; border-radius: 8px; background: #fff; }
+.quote-passage { display: block; width: 100%; min-height: 44px; margin: 0; padding: 13px; border: 0; border-bottom: 1px solid #e7dfd0; border-radius: 0; background: #fff; color: #253337; text-align: left; font: inherit; cursor: pointer; }
+.quote-passage:last-child { border-bottom: 0; }
+.quote-passage:hover, .quote-passage[aria-pressed="true"] { background: #f7f0e2; }
+.quote-editor label { font-weight: 600; }
+.quote-editor textarea { width: 100%; min-height: 108px; resize: vertical; padding: 11px; border: 1px solid #b59663; border-radius: 8px; background: #fff; color: #253337; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-editor textarea:focus-visible { outline: 3px solid #b48e50; outline-offset: 2px; }
+.quote-editor-meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; color: #6a6459; font-size: 14px; }
+.quote-editor-meta output { white-space: nowrap; }
+.quote-edit-error { color: #923a32; }
+.quote-editor-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 @media (max-width: 370px) {
   .reader-topbar-inner { padding-right: 14px; padding-left: 14px; gap: 8px; }
   .reader-brand { font-size: 12px; gap: 7px; }

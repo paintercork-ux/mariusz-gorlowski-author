@@ -16,9 +16,9 @@
 <meta property="og:image" content="https://mariuszgorlowski.com/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261119-quotes-1">
+<link rel="stylesheet" href="/reader.css?v=20261119-quotes-2">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v=20261119-quotes-1" defer></script>
+<script src="/reader-quotes.js?v=20261119-quotes-2" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Co, jeśli zadzwoni ktoś, kogo już nie ma?", "description": "Wyobraź sobie telefon od bliskiej osoby, której już nie ma. Wiesz, że jej głos odtworzyła sztuczna inteligencja. Czy przyniósłby Ci ukojenie, czy utrudnił pogodzenie się ze stratą? Fikcyjna historia rodziny o żałobie, więzi i granicach technologii.", "inLanguage": "pl", "datePublished": "2026-11-13", "mainEntityOfPage": "https://mariuszgorlowski.com/pl/writing/essays/co-jesli-zadzwoni-ktos-kogo-juz-nie-ma/", "author": {"@type": "Person", "name": "Mariusz Gorlowski", "url": "https://mariuszgorlowski.com/"}}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">Przejdź do tekstu</a>
@@ -86,8 +86,20 @@
 <p class="quote-error" data-quote-error role="status" hidden>Nie udało się przygotować grafiki. Spróbuj ponownie.</p></section>
 <dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
 <div class="quote-dialog-head"><h2 id="quote-dialog-title">Zapisz myśl</h2><form method="dialog"><button class="quote-close" type="submit">Zamknij</button></form></div>
+<div class="quote-card-panel" data-quote-card>
+<button class="quote-choose" type="button" data-quote-choose>Wybierz inny fragment</button>
 <img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
 <a class="quote-download" data-quote-download download>Pobierz grafikę</a>
+</div>
+<form class="quote-editor" data-quote-editor hidden>
+<p class="quote-picker-help">Wybierz akapit z eseju. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu.</p>
+<div class="quote-passages" data-quote-passages role="group" aria-label="Fragmenty eseju"></div>
+<label for="quote-excerpt">Fragment do zapisania</label>
+<textarea id="quote-excerpt" data-quote-excerpt rows="4" maxlength="500" aria-describedby="quote-limit quote-count quote-edit-error"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit">Do 500 znaków, aby karta pozostała czytelna.</p><output id="quote-count" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>Anuluj</button><button class="quote-apply" type="submit" data-quote-apply>Podgląd karty</button></div>
+</form>
 </div></dialog>
 <aside class="reader-next"><p>Przeczytaj także</p><a href="/pl/writing/essays/dzien-w-ktorym-przestaniemy-mowic-nie/">Dzień, w którym przestaniemy mówić „nie”</a></aside>
 <footer class="reader-footer"><a href="/pl/writing/essays/">Wszystkie eseje</a><br><a href="/pl/">mariuszgorlowski.com</a></footer>
