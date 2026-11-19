@@ -95,6 +95,15 @@
 .v4-system .qr-card .qr-intro>div{min-width:0;}
 .v4-system .qr-card .feature-grid{margin-top:15px;}
 .v4-system .qr-card .qr-bottom{margin-top:31px;}
+/* Let the status and contact action wrap inside narrow phone screens. */
+.v4-system .qr-heading>div{min-width:0;flex:1;}
+.v4-system .qr-heading .qr-mark{flex:none;}
+.v4-system .qr-bottom .btn{max-width:100%;white-space:normal;text-align:center;}
+@media(max-width:360px){
+ .v4-system .qr-heading{gap:12px;}
+ .v4-system .qr-heading h2{font-size:28px;}
+ .v4-system .qr-heading .qr-mark{font-size:32px;}
+}
 @media(max-width:520px){
  .v4-gold-rule{margin:23px 0 25px;}
  .v4-book-status{font-size:12px;padding:12px 11px;}
