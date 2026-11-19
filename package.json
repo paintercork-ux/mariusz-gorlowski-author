@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/preview-curiosity.mjs",
-    "test": "node --test tests/curiosity-counter.test.mjs",
+    "test": "node --test tests/*.test.mjs",
     "build:preview": "node scripts/build-preview.mjs"
   }
 }
