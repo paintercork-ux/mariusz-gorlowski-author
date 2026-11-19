@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "mariusz-author-curiosity",
+  "main": "index.mjs",
+  "compatibility_date": "2026-11-19",
+  "workers_dev": true,
+  "durable_objects": {
+    "bindings": [
+      { "name": "CURIOSITY_COUNTER", "class_name": "CuriosityCounter" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["CuriosityCounter"] }
+  ]
+}

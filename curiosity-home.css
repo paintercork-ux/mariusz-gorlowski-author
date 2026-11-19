@@ -1,0 +1,49 @@
+/* The QR occupies the open space beside the existing portrait. */
+.profile-card .curiosity-qr {
+  position: absolute;
+  top: 14px;
+  right: 34px;
+  width: 112px;
+  height: 112px;
+  display: block;
+  padding: 7px;
+  border: 1px solid #c6ab77;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(21 32 38 / 5%);
+}
+.curiosity-qr img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+.curiosity-qr:hover {
+  border-color: #73551f;
+}
+.curiosity-qr:focus-visible {
+  outline: 3px solid #a67b34;
+  outline-offset: 5px;
+}
+@media (min-width: 761px) {
+  .v4-home .profile-card { padding-top: 139px; }
+}
+@media (max-width: 760px) {
+  .profile-card .curiosity-qr {
+    top: 10px;
+    right: 23px;
+    width: 92px;
+    height: 92px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .v4-home .profile-card { padding-top: 120px; }
+}
+@media (max-width: 520px) {
+  .profile-card .curiosity-qr {
+    right: 19px;
+    width: 88px;
+    height: 88px;
+  }
+  .v4-home .profile-card { padding-top: 113px; }
+}

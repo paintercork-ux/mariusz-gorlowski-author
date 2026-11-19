@@ -1,0 +1,10 @@
+{
+  "name": "mariusz-gorlowski-author",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/preview-curiosity.mjs",
+    "test": "node --test tests/curiosity-counter.test.mjs",
+    "build:preview": "node scripts/build-preview.mjs"
+  }
+}
