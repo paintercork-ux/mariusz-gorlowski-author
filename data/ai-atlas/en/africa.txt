@@ -1,0 +1,33 @@
+A worker in Kenya told a TIME reporter that an image from a particularly distressing passage kept coming back to him after he read it. On his screen was a piece of text and a job to do. He had to read it, then mark it so a system could learn to detect similar content. When he had finished, the software could move on to the next passage. His memory worked at a different pace. [1]
+
+In late 2021, OpenAI hired Sama to label texts that included descriptions of violence and hateful material. Three workers described an expectation of between 150 and 250 passages in a nine-hour shift. TIME’s reporting put take-home pay at roughly $1.32 to $2 an hour, depending on role and performance. Their judgements helped provide examples for a system designed to detect harmful content. [1]
+
+## Before the filter learns to respond
+
+To build such a filter, somebody has to gather examples and decide how to mark each one. The model gets a signal that a piece of writing belongs to a category. Given many examples, it can learn which features are useful for assessing another piece of text. The label may be short. Behind it is a decision by a person about what they have read and how to understand it.
+
+The boundaries are sometimes difficult. A passage may describe violence because its author wants to condemn it. Another can contain a threat expressed in ordinary words. A reader has to consider context, intention and sometimes uses of language that make sense to people in a particular community. How should they mark a passage that suggests violence and could also be a witness’s account? A difficult case may call for a conversation with someone who knows the policy and has time to think. If the schedule mainly measures how many passages people finish, that pause becomes a cost.
+
+For someone using AI, the result may be a brief message in a chat window. For a worker labelling data, it can be one decision after another, including when they still have the last passage in mind. A customer usually knows which company offers the service. The people whose judgements helped build a layer of protection remain a lot harder to find.
+
+The worker’s judgement can carry different weight at different points in the job. While they are assessing a passage, their ability to understand the language and context matters. When the size of the next batch of texts is set, attention may shift to projected output across the team. A person who is central to the quality of the dataset can have little influence on how many examples they have to read and in what conditions. The first contribution shows up in the finished work. The second appears in decisions about whether somebody can pause after a difficult text and return without losing pay.
+
+## What the price of the filter covered
+
+This case is documented through records and interviews published by TIME. The reporter spoke to four workers on condition of anonymity. They described psychological support as infrequent or of little help. Sama said trained professionals were available for both group and individual sessions. For someone on a shift, practical questions include when they can reach that support and whether there is time for it in the schedule. The accounts concern a particular project and period. [1]
+
+One company orders the work. Another employs the person who reads the passages. To the buyer, the most visible result is a set of correctly labelled texts. The finished file tells it less about whether a worker could pause after a difficult case or move to another assignment. The buyer can influence deadlines and the way work is measured. The employer has responsibility for the person asked to meet those targets. When an email arrives asking for a certain number of results the next day, decisions made at both levels come together on one screen.
+
+In 2025, Fairwork reviewed conditions at Sama’s operations in Kenya and Uganda. In a follow-up to its 2023 assessment, it recorded 22 changes or new commitments. They covered areas including overtime, leave, minimum pay and ways to report concerns. The assessment covered a wider range of work and a later period than the OpenAI filtering project. It shows that conditions in the supply chain can be assessed even when the finished tools are already a familiar part of daily life. [2]
+
+Those assessments raise practical questions for companies buying labelled data. Does the contract pay for training and for time spent deciding hard cases? Who hears a concern when a piece of writing is more disturbing than a worker was prepared for? Can the employer adjust targets if the material is longer or needs closer reading? Answers say something about the quality of an order, just as the volume of labels does. The conditions that made a safety tool possible can otherwise stay out of a customer’s sight.
+
+## Who sets the task
+
+African researchers are also deciding what it is worth teaching models. In 2020, the Masakhane initiative published a study about organising research into machine translation for African languages with few digital resources. Participants created translation data and published ways to assess results for more than 30 languages. People evaluated some of the results directly, and people without formal computing training contributed. Knowing a language was a skill needed to do the research. [3]
+
+The two stories have something in common. AI draws on judgements made by people close enough to the text to understand what it means. In Masakhane, speakers of the languages could help define the research. In Kenya, people labelling passages did work commissioned by a distant customer. Who sets the task, its aims and what people are paid changes their position in relation to the technology.
+
+It also matters how much work goes into finding out what a model can detect in different languages. Testing a filter chiefly in languages with large datasets can tell its designers a lot about selected users. Understanding its effect in other languages takes similar work with the people who speak them. In one case, it may mean seeing less intrusive content. In another, it can determine whether an ordinary remark is understood properly at all.
+
+The next time a chatbot declines to show disturbing material, the reply on screen will be brief. It is worth asking about the conditions in which people taught a system to make that distinction. If their judgement is worth building into a product that reaches around the world, the experience of the people supplying that judgement deserves the same attention.

@@ -1,0 +1,308 @@
+{
+  "ui": {
+    "pl": {
+      "title": "Siedem twarzy AI",
+      "subtitle": "Czego nie widać na ekranie.",
+      "entry": "Otwórz mapę Siedem twarzy AI",
+      "home": "Wróć do gabinetu",
+      "continent": "Wybierz kontynent na mapie.",
+      "read": "Czytaj historię"
+    },
+    "en": {
+      "title": "Seven Faces of AI",
+      "subtitle": "What you don’t see on the screen.",
+      "entry": "Open the Seven Faces of AI map",
+      "home": "Back to the study",
+      "continent": "Choose a continent on the map.",
+      "read": "Read the story"
+    }
+  },
+  "articles": [
+    {
+      "id": "north-america",
+      "pin": [
+        26.9796,
+        19.4714
+      ],
+      "sources": [
+        [
+          "OpenAI, zapowiedź wycofania starszych modeli Completions API, 2023",
+          "OpenAI, announcement on retiring older Completions API models, 2023",
+          "https://openai.com/index/gpt-4-api-general-availability/"
+        ],
+        [
+          "Federal Trade Commission, raport o partnerstwach i inwestycjach w AI, 2025",
+          "Federal Trade Commission, staff report on AI partnerships and investments, 2025",
+          "https://www.ftc.gov/reports/ftc-staff-report-ai-partnerships-investments-6b-study"
+        ],
+        [
+          "Competition and Markets Authority, badanie rynku usług chmurowych, raport końcowy z 2025 r.",
+          "Competition and Markets Authority, cloud services market investigation, final report, 2025",
+          "https://www.gov.uk/cma-cases/cloud-services-market-investigation"
+        ]
+      ],
+      "pl": {
+        "region": "Ameryka Północna",
+        "slug": "ameryka-polnocna",
+        "title": "Kto może wyłączyć twoją firmę?",
+        "description": "Dostajesz pieniądze na rozwój AI. W umowie zobowiązujesz się wydać znaczną część na korzystanie z serwerów inwestora. Amerykańska FTC opisała takie układy. Jeśli na tej usłudze opiera się twój biznes, kto decyduje, ile jutro zapłacisz za jej działanie?",
+        "quote": "W chwili gdy dostawca podejmie następną decyzję, ile decyzji nadal będzie należało do ciebie?"
+      },
+      "en": {
+        "region": "North America",
+        "slug": "north-america",
+        "title": "Who can pull the plug on your business?",
+        "description": "You get funding to develop AI. The contract requires you to spend a large share of it on cloud services sold by the investor. The US Federal Trade Commission documented deals like these. If your business runs on that service, who decides what it will cost you tomorrow?",
+        "quote": "When the supplier makes its next decision, how many decisions will still be yours?"
+      }
+    },
+    {
+      "id": "south-america",
+      "pin": [
+        34.6755,
+        61.0014
+      ],
+      "sources": [
+        [
+          "Tribunal Superior Eleitoral, rozstrzygnięcie w sprawie 0600201-63.2024.6.06.0118",
+          "Brazil’s Superior Electoral Court, ruling in case 0600201-63.2024.6.06.0118",
+          "https://sjur-servicos.tse.jus.br/sjur-servicos/rest/download/pdf/3513709"
+        ],
+        [
+          "Tribunal Superior Eleitoral, rezolucja nr 23.732 z 27 lutego 2024 r.",
+          "Brazil’s Superior Electoral Court, Resolution No. 23.732 of 27 February 2024",
+          "https://www.tse.jus.br/legislacao/compilada/res/2024/resolucao-no-23-732-de-27-de-fevereiro-de-2024"
+        ],
+        [
+          "Cristian Vaccari i Andrew Chadwick, Deepfakes and Disinformation, 2020",
+          "Cristian Vaccari and Andrew Chadwick, Deepfakes and Disinformation, 2020",
+          "https://doi.org/10.1177/2056305120903408"
+        ]
+      ],
+      "pl": {
+        "region": "Ameryka Południowa",
+        "slug": "ameryka-poludniowa",
+        "title": "Poparcie, którego nie było",
+        "description": "Znane osoby popierają kandydata na burmistrza brazylijskiej Fortalezy. Tak wyglądał film z kampanii. Sąd ustalił, że ich wizerunki i głosy przerobiono przy użyciu AI, by stworzyć wrażenie poparcia. Do wyborcy sprostowanie może dotrzeć dopiero po oddaniu głosu.",
+        "quote": "Co ma zrobić człowiek, który widzi i słyszy coś niemal przekonującego, a do zamknięcia lokalu wyborczego zostało mu zaledwie kilka godzin?"
+      },
+      "en": {
+        "region": "South America",
+        "slug": "south-america",
+        "title": "An endorsement that never happened",
+        "description": "Famous faces appear to back a candidate for mayor of Fortaleza, Brazil. That is what the campaign video showed. A court found that AI had been used to alter their likenesses and voices, giving a false impression of support. A correction can reach a voter after the ballot has been cast.",
+        "quote": "What do you do with a video that looks almost convincing when the polling station closes in a few hours?"
+      }
+    },
+    {
+      "id": "europe",
+      "pin": [
+        53.5869,
+        15.7221
+      ],
+      "sources": [
+        [
+          "U.S. Equal Employment Opportunity Commission, komunikat o ugodzie z iTutorGroup, 2023",
+          "US Equal Employment Opportunity Commission, iTutorGroup settlement announcement, 2023",
+          "https://www.eeoc.gov/newsroom/itutorgroup-pay-365000-settle-eeoc-discriminatory-hiring-suit"
+        ],
+        [
+          "Rozporządzenie (UE) 2024/1689, art. 6, 9–16, 26, 43, 57 i 86, załącznik III pkt 4",
+          "Regulation (EU) 2024/1689, Articles 6, 9–16, 26, 43, 57 and 86, Annex III point 4",
+          "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        ],
+        [
+          "Komisja Europejska, harmonogram stosowania AI Act i objaśnienia obowiązków",
+          "European Commission, AI Act timeline and explanation of obligations",
+          "https://digital-strategy.ec.europa.eu/en/faqs/navigating-ai-act"
+        ],
+        [
+          "Information Commissioner’s Office, wyniki audytów narzędzi AI do rekrutacji, 2024",
+          "Information Commissioner’s Office, findings from audits of AI recruitment tools, 2024",
+          "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2024/11/ico-intervention-into-ai-recruitment-tools-leads-to-better-data-protection-for-job-seekers"
+        ]
+      ],
+      "pl": {
+        "region": "Europa",
+        "slug": "europa",
+        "title": "Kogo stać na europejską biurokrację?",
+        "description": "Chcesz sprzedawać AI do odsiewania CV. Unijne przepisy przewidują dokumentację działania systemu i nadzór człowieka. To ma chronić kandydatów. Co, jeśli koszt przejścia przez procedury da przewagę firmom, które już mają całe działy prawne?",
+        "quote": "Czy człowiek znajdzie odpowiedź na to, dlaczego odpadł, i czy na zadanie tych samych pytań stać firmę, która dopiero wchodzi na rynek?"
+      },
+      "en": {
+        "region": "Europe",
+        "slug": "europe",
+        "title": "Who can afford Europe’s red tape?",
+        "description": "You want to sell AI that screens CVs. EU rules call for documentation of how the system works and for human oversight. That is meant to protect job applicants. What if the cost of complying gives an edge to companies that already have entire legal departments?",
+        "quote": "Can the candidate learn why they were turned down, and can a new supplier afford to answer the questions we need answered?"
+      }
+    },
+    {
+      "id": "africa",
+      "pin": [
+        55.8155,
+        47.2319
+      ],
+      "sources": [
+        [
+          "Billy Perrigo, reportaż TIME o pracy dla OpenAI w Kenii, 2023",
+          "Billy Perrigo, TIME’s report on work for OpenAI in Kenya, 2023",
+          "https://time.com/6247678/openai-chatgpt-kenya-workers/"
+        ],
+        [
+          "Fairwork, ocena warunków w firmie Sama w Kenii i Ugandzie, 2025",
+          "Fairwork, assessment of Sama’s operations in Kenya and Uganda, 2025",
+          "https://fairwork.oii.ox.ac.uk/en/fw/publications/fairwork-ai-supply-chain-assessment-sama-2025/"
+        ],
+        [
+          "Wilhelmina Nekoto i in., badanie Masakhane nad tłumaczeniem języków afrykańskich, 2020",
+          "Wilhelmina Nekoto et al., Masakhane research on machine translation for African languages, 2020",
+          "https://aclanthology.org/2020.findings-emnlp.195/"
+        ]
+      ],
+      "pl": {
+        "region": "Afryka",
+        "slug": "afryka",
+        "title": "Po pracy obrazy wracały",
+        "description": "W Kenii ludzie pomagający zbudować filtr AI mieli oznaczać do 250 fragmentów na zmianę. Według TIME zarabiali na rękę od około 1,32 dolara za godzinę. Jeden z nich opowiadał, że obraz szczególnie drastycznej sceny z tekstu wracał do niego później.",
+        "quote": "Kiedy kończył czytać, program mógł podsunąć mu kolejny fragment. Pamięć działała w innym tempie."
+      },
+      "en": {
+        "region": "Africa",
+        "slug": "africa",
+        "title": "The images came back after work",
+        "description": "In Kenya, people helping to build an AI filter were expected to label up to 250 passages per shift. TIME reported take-home pay starting at about $1.32 an hour. One worker described how the image from a particularly disturbing passage kept coming back to him afterwards.",
+        "quote": "When he had finished, the software could move on to the next passage. His memory worked at a different pace."
+      }
+    },
+    {
+      "id": "asia",
+      "pin": [
+        74.0821,
+        22.341
+      ],
+      "sources": [
+        [
+          "Human Rights Watch, dokumentacja systemu nadzoru w Sinciangu, 2019",
+          "Human Rights Watch, findings on mass surveillance in Xinjiang, 2019",
+          "https://www.hrw.org/news/2019/05/01/china-how-mass-surveillance-works-xinjiang"
+        ],
+        [
+          "Biuro Wysokiego Komisarza ONZ ds. Praw Człowieka, ocena sytuacji w Sinciangu, 2022",
+          "UN Office of the High Commissioner for Human Rights, Xinjiang assessment, 2022",
+          "https://www.ohchr.org/sites/default/files/documents/countries/2022-08-31/22-08-31-final-assesment.pdf"
+        ],
+        [
+          "National Institute of Standards and Technology, badanie skuteczności rozpoznawania twarzy w różnych grupach, 2019",
+          "National Institute of Standards and Technology, study of demographic effects in face recognition, 2019",
+          "https://www.nist.gov/news-events/news/2019/12/nist-study-evaluates-effects-race-age-sex-face-recognition-software"
+        ]
+      ],
+      "pl": {
+        "region": "Azja",
+        "slug": "azja",
+        "title": "Krewny zmienia numer. Podejrzenie pada na ciebie.",
+        "description": "W Sinciangu system opisany przez Human Rights Watch uznawał za podejrzane osoby, których krewni dostali nowy numer telefonu. Dla policji była to wskazówka, kogo sprawdzić. Jak się tłumaczysz z decyzji, którą podjął ktoś inny?",
+        "quote": "Jakie znaczenie ma dokładność systemu, jeśli samo zdarzenie, które system ma wychwycić, jest za słabą podstawą do podejrzeń?"
+      },
+      "en": {
+        "region": "Asia",
+        "slug": "asia",
+        "title": "A relative gets a new number. You come under suspicion.",
+        "description": "In Xinjiang, a system documented by Human Rights Watch flagged people as suspicious when a relative got a new phone number. That gave police a reason to investigate. How do you explain a decision somebody else made?",
+        "quote": "How much does accuracy help when the event the machine is set up to find provides little reason to suspect anybody?"
+      }
+    },
+    {
+      "id": "oceania",
+      "pin": [
+        84.4909,
+        67.6725
+      ],
+      "sources": [
+        [
+          "Te Reo Irirangi o Te Hiku o Te Ika, Living by Māori Values, MAI Journal, 2022",
+          "Te Reo Irirangi o Te Hiku o Te Ika, Living by Māori Values, MAI Journal, 2022",
+          "https://doi.org/10.20507/MAIJournal.2022.11.1.4"
+        ],
+        [
+          "Te Hiku Media, Kaituhi i zasady przetwarzania nagrań",
+          "Te Hiku Media, Kaituhi and how recordings are processed",
+          "https://docs.tehiku.media/article/42-data-sovereignty"
+        ],
+        [
+          "Stats NZ, dane o językach ze spisu powszechnego z 2023 r.",
+          "Stats NZ, language data from the 2023 Census",
+          "https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+        ],
+        [
+          "Federal Trade Commission, wykorzystanie imitacji głosu AI w oszustwach, 2023",
+          "Federal Trade Commission, use of AI-generated voices in scams, 2023",
+          "https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes"
+        ],
+        [
+          "Kaituhi, licencja Kaitiakitanga i zasady korzystania z danych",
+          "Kaituhi, the Kaitiakitanga Licence and rules for data use",
+          "https://kaituhi.nz/kaitiakitanga"
+        ]
+      ],
+      "pl": {
+        "region": "Australia i Oceania",
+        "slug": "australia-i-oceania",
+        "title": "Twój głos bez twojej zgody",
+        "description": "Nagrywasz głos babci, żeby w rodzinie zostały jej słowa. To samo nagranie może posłużyć do wytrenowania modelu, który przemówi jej głosem. Te Hiku Media używa AI do zapisywania języka maoryskiego i daje opiekunom nagrań wpływ na ich dalsze wykorzystanie.",
+        "quote": "Komu przypada decyzja o dalszym życiu głosu, który raz nagrano?"
+      },
+      "en": {
+        "region": "Australia and Oceania",
+        "slug": "oceania",
+        "title": "Your voice without your consent",
+        "description": "You record your grandmother’s voice to keep her words in the family. The same recording could train a model to speak in her voice. Te Hiku Media uses AI to transcribe te reo Māori and gives the guardians of recordings a say in how they are used again.",
+        "quote": "Who gets to decide what happens to a voice once it has been recorded?"
+      }
+    },
+    {
+      "id": "antarctica",
+      "pin": [
+        52.0095,
+        93.3618
+      ],
+      "sources": [
+        [
+          "Anne Braakmann-Folgmann i in., badanie obrysów gór lodowych, The Cryosphere, 2023",
+          "Anne Braakmann-Folgmann et al., study of iceberg outlines, The Cryosphere, 2023",
+          "https://tc.copernicus.org/articles/17/4675/2023/"
+        ],
+        [
+          "NASA, pomiary utraty masy lądolodu Antarktydy w latach 2002–2025",
+          "NASA, measurements of Antarctic ice sheet mass loss, 2002–2025",
+          "https://svs.gsfc.nasa.gov/31158"
+        ],
+        [
+          "National Snow and Ice Data Center, szelfy lodowe i wpływ ich rozpadu na lodowce",
+          "National Snow and Ice Data Center, ice shelves and their effects on glaciers",
+          "https://nsidc.org/learn/parts-cryosphere/ice-shelves/quick-facts-about-ice-shelves"
+        ],
+        [
+          "Międzynarodowa Agencja Energetyczna, Key Questions on Energy and AI",
+          "International Energy Agency, Key Questions on Energy and AI",
+          "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary"
+        ]
+      ],
+      "pl": {
+        "region": "Antarktyda",
+        "slug": "antarktyda",
+        "title": "Katastrofa widoczna z orbity",
+        "description": "W latach 2002–2025 z Antarktydy ubywało średnio około 135 miliardów ton lodu rocznie. Ten ubytek podnosi poziom mórz. AI pomaga badać lód. Gdy centra danych zasilane są prądem z paliw kopalnych, rozwój tej samej technologii dokłada emisje do kryzysu, który pomaga obserwować.",
+        "quote": "Jeśli potrafimy tak uważnie śledzić granicę lodu, możemy z podobną uwagą przyjrzeć się pracy, jaką wykonujemy poza kadrem."
+      },
+      "en": {
+        "region": "Antarctica",
+        "slug": "antarctica",
+        "title": "A catastrophe visible from orbit",
+        "description": "Antarctica lost about 135 billion tonnes of ice a year on average from 2002 to 2025. That loss raises sea levels. AI helps us study the ice. When the electricity powering data centres comes from fossil fuels, the growth of that same technology adds emissions to the crisis it helps us observe.",
+        "quote": "The boundary of the ice deserves close attention. So does the work happening beyond the edge of the picture."
+      }
+    }
+  ]
+}

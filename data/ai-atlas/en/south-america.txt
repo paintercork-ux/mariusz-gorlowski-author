@@ -1,0 +1,33 @@
+Barack Obama, Taylor Swift, Tom Cruise and Cristiano Ronaldo appeared to speak with one voice in a Brazilian mayoral election. A video showing the four surfaced on a candidate’s TikTok account in Fortaleza in 2024. According to the findings set out by Brazil’s Superior Electoral Court, their speech had been altered with AI to imply that they supported the candidate. A fine of 15,000 Brazilian reais was reinstated in the case. [1]
+
+The cast is the strangest detail. Why would that particular group of people get behind the same candidate in a local election? On a phone, a viewer may recognise a face long before thinking to ask the question. The video may amuse them, infuriate them or convince them for a moment. Any of those reactions can be enough to make them show the clip to somebody else. News of a court ruling travels by a different route.
+
+## A familiar face in an unfamiliar election
+
+A deepfake here means a video in which someone’s likeness, voice or words have been changed to make a viewer attribute a statement to that person. Editing recordings and impersonating people are older than generative AI. The new tools can produce clips that would once have required original footage or somebody to play the part. In the Fortaleza campaign, the implied message was that famous people had personally taken a side. [1]
+
+The viewer hears words at the same moment they see someone who seems to be saying them. That leaves room for a vivid impression even if the person suspects a joke. Later, the scene may be easier to recall than the reason it seemed doubtful. The clip may also arrive from a friend, with a message suggesting what to think about it. By the time the context arrives, the viewer has already spent some time considering what the apparent endorsement means.
+
+Brazil’s electoral tribunal addressed this problem ahead of the 2024 local elections. It prohibited the use of deepfakes to favour or damage a candidacy. The rules also called for prominent disclosure when a separate labelling requirement applied to synthetic material. One of these provisions draws a boundary around campaign conduct. The other gives voters information about how something was made at the moment they encounter it. [2]
+
+The ruling in Fortaleza shows how the prohibition applied to a particular campaign video. The record establishes that it was posted and that a penalty followed. Measuring its effect on how particular people voted would require other evidence. What the election introduces is a deadline. A video takes moments to watch and forward. Investigating it, obtaining evidence and reaching a decision belong to a much longer process.
+
+Labelling helps when people see the same version the publisher put out. A clip can pass between groups and platforms, with some viewers seeing an extract or a recording of somebody else’s screen. The description may remain attached to the first upload while the faces and voices travel further. Determining that one post used synthetic material answers an important question about that post. There is still the work of finding where its copies went and giving the next people who see them the same information.
+
+## Doubt can travel as far as belief
+
+Researchers Cristian Vaccari and Andrew Chadwick ran an experiment in the United Kingdom on how people respond to synthetic political video. Participants were more likely to come away uncertain than to believe the misleading video was genuine. That uncertainty was associated with less trust in news on social media. The study concerned particular material in a British setting. It points to a consequence that extends beyond the first person who believes a fake. [3]
+
+A viewer may reject a manipulated video and become more suspicious of the next one. A real recording might then have less force than it would have had earlier. A politician caught doing something real gains a convenient explanation that supporters can offer on their behalf. When rival campaigns post contradictory clips and question each other’s footage, the cost falls on the person watching. They have to settle what took place, with the same time to make a choice they had before the arrival of these tools.
+
+That change can be harder to see than a spectacular hoax. If a friend shares a video in good faith, someone can send them a correction. Repeating this exercise makes a conversation more demanding. People have to look up the date, find the original source and compare versions. Some have an evening to spare. Others may withdraw from the discussion or put their trust in a small circle that offers a ready explanation.
+
+The person whose voice was used faces a different problem. The campaign can take place far from them, in a language they may not speak and for an audience they never meant to address. Somebody may already have asked about the supposed endorsement before they learn there was a clip. Restoring control over what those voters attribute to them takes time, local knowledge and access to the same audience. Part of the cost lands with someone who had no part in the original decision.
+
+## Before the polls close
+
+Listening for an odd inflection may feel like a good solution. In practice the same clip can be copied, shortened and filmed off somebody else’s screen. The history of publication becomes more valuable. Is there a complete version from the person shown? When did the clip appear, and what did its description say? Can a correction reach people through the same place they saw the first version? These questions remain useful when new technology smooths out flaws a viewer used to spot in an image or voice.
+
+An electoral body can hold a campaign to account after collecting evidence. A voter often needs a trustworthy answer sooner. Local reporters, election authorities, campaigns and people shown in a disputed clip can all help provide it. A useful correction says how the material was verified and makes that evidence easy to find. A single line buried at the end of a long statement may struggle against a short video people have already received from friends.
+
+In Fortaleza, familiar faces lent the appearance of an endorsement. In a different town, a voice people heard every week on their local radio station might carry more weight. AI can borrow the trust attached to those people. An electoral ruling arrives on a timetable set by evidence and procedure. Between those moments is the voter’s most pressing question. What do you do with a video that looks almost convincing when the polling station closes in a few hours?

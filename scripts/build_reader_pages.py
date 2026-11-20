@@ -6,11 +6,17 @@ import re
 ORIGIN = "https://mariuszgorlowski.com"
 
 
+def atlas_path(lang):
+    return "/pl/siedem-twarzy-ai/" if lang == "pl" else "/seven-faces-of-ai/"
+
+
 def reader_path(item, lang, translations):
     metadata = translations[item["id"]] if lang == "pl" else item
     slug = metadata.get("slug", item["id"])
     if not re.fullmatch(r"[a-z0-9-]+", slug):
         raise ValueError("Invalid essay slug: " + slug)
+    if item["type"] == "atlas":
+        return atlas_path(lang) + slug + "/"
     return ("/pl" if lang == "pl" else "") + "/writing/essays/" + slug + "/"
 
 
@@ -19,6 +25,7 @@ def quote_markup(item, lang, metadata, quotes):
     if not paragraphs:
         return ""
     polish = lang == "pl"
+    atlas = item["type"] == "atlas"
     caption = "Zabierz jedną myśl" if polish else "Take a thought with you"
     save = "Zapisz myśl" if polish else "Save a thought"
     close = "Zamknij" if polish else "Close"
@@ -31,7 +38,12 @@ def quote_markup(item, lang, metadata, quotes):
     generate = "Podgląd karty" if polish else "Preview card"
     cancel = "Anuluj" if polish else "Cancel"
     error = "Nie udało się przygotować grafiki. Spróbuj ponownie." if polish else "The image could not be prepared. Please try again."
-    payload = escape(json.dumps({"title": metadata["title"], "language": lang, "paragraphs": paragraphs, "filename": "mariusz-gorlowski-" + metadata.get("slug", item["id"]) + "-" + lang + ".png"}, ensure_ascii=False), quote=True)
+    data = {"title": metadata["title"], "language": lang, "paragraphs": paragraphs, "filename": "mariusz-gorlowski-" + metadata.get("slug", item["id"]) + "-" + lang + ".png"}
+    if atlas:
+        instructions = "Wybierz akapit z artykułu. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu." if polish else "Choose a paragraph from the article. You can shorten it to a sentence or paste another passage from this article."
+        passages = "Fragmenty artykułu" if polish else "Article passages"
+        data["article"] = True
+    payload = escape(json.dumps(data, ensure_ascii=False), quote=True)
     return f'''<section class="reader-quote-save" aria-label="{save}"><p>{caption}</p>
 <button class="reader-quote-button" type="button" data-save-quote data-quote="{payload}" disabled>{save}</button>
 <p class="quote-error" data-quote-error role="status" hidden>{error}</p></section>
@@ -56,6 +68,7 @@ def quote_markup(item, lang, metadata, quotes):
 
 def reader_html(item, lang, translations, render_body, date_label, next_item, quotes):
     polish = lang == "pl"
+    atlas = item["type"] == "atlas"
     meta = translations[item["id"]] if polish else item
     title, description = escape(meta["title"]), escape(meta["description"], quote=True)
     path = reader_path(item, lang, translations)
@@ -74,10 +87,20 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
     next_path = reader_path(next_item, lang, translations)
     en_current = ' aria-current="page"' if not polish else ""
     pl_current = ' aria-current="page"' if polish else ""
+    if atlas:
+        listing = atlas_path(lang) + "#" + item["id"]
+        back = "Wróć do mapy" if polish else "Back to the map"
+        skip = "Przejdź do artykułu" if polish else "Skip to the article"
+        reader_meta = escape(meta["region"])
+        quote_version = "20261120-atlas"
+    else:
+        reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
+        quote_version = "20261119-quotes-2"
+    published_schema = {"datePublished": item["date"]} if not atlas else {}
     structured = json.dumps({
         "@context": "https://schema.org", "@type": "Article",
         "headline": meta["title"], "description": meta["description"],
-        "inLanguage": lang, "datePublished": item["date"],
+        "inLanguage": lang, **published_schema,
         "mainEntityOfPage": ORIGIN + path,
         "author": {"@type": "Person", "name": "Mariusz Gorlowski", "url": ORIGIN + "/"},
     }, ensure_ascii=False).replace("<", "\\u003c")
@@ -99,9 +122,9 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 <meta property="og:image" content="{ORIGIN}/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261119-quotes-2">
+<link rel="stylesheet" href="/reader.css?v={quote_version}">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v=20261119-quotes-2" defer></script>
+<script src="/reader-quotes.js?v={quote_version}" defer></script>
 <script type="application/ld+json">{structured}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">{skip}</a>
@@ -112,7 +135,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 <main class="reader-main" id="essay">
 <div class="reader-tools"><a class="reader-back" href="{listing}">{back}</a>
 <div class="reader-size" role="group" aria-label="{group_label}"><button type="button" data-reader-smaller aria-label="{smaller}" title="{smaller}" disabled>A−</button><button type="button" data-reader-larger aria-label="{larger}" title="{larger}" disabled>A+</button></div></div>
-<article aria-labelledby="reader-title"><div class="reader-meta"><time datetime="{item['date']}">{date_label(item['date'], lang)}</time><span class="reader-published">{published}</span></div>
+<article aria-labelledby="reader-title"><div class="reader-meta">{reader_meta}</div>
 <h1 class="reader-title" id="reader-title">{title}</h1>
 <p class="reader-byline">Mariusz Gorlowski</p><hr class="reader-rule" aria-hidden="true">
 <div class="essay-reader-body" data-reader-body>

@@ -46,6 +46,14 @@ button, .reader-topbar, .reader-tools, .reader-meta, .reader-next, .reader-foote
 .essay-reader-body .v4-source-link { font-size: 1rem; overflow-wrap: anywhere; }
 .essay-reader-body .v4-source-link a { color: #785c33; text-underline-offset: 4px; }
 .essay-reader-body .v4-gold-rule { height: 1px; border: 0; margin: 35px 0; background: #dfd3bf; }
+.reader-section-title { margin: 1.5em 0 .6em; font-size: 1.22em; line-height: 1.28; font-weight: 600; }
+.reader-citations { margin-left: .22em; color: #785c33; font-size: .65em; line-height: 0; }
+.reader-citations a + a { margin-left: .2em; }
+.reader-sources { margin-top: 2.25em; border-top: 1px solid #e2d8c6; padding-top: 1.1em; font-size: 1rem; }
+.reader-sources h2 { margin: 0; font-size: 1.2rem; }
+.reader-sources ol { padding-inline-start: 1.5em; }
+.reader-sources li { padding: .18em 0; scroll-margin-top: 84px; }
+.reader-sources a { color: #785c33; text-underline-offset: 4px; }
 .reader-next { border-top: 1px solid #e2d8c6; margin-top: 48px; padding-top: 26px; }
 .reader-next p { margin: 0 0 9px; color: #826942; font-size: 14px; }
 .reader-next a { display: inline-block; min-height: 44px; font: 25px/1.35 Georgia, serif; color: #25363b; text-underline-offset: 6px; }

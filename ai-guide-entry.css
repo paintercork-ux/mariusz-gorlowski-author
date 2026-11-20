@@ -11,7 +11,6 @@
   min-width: 44px;
   min-height: 44px;
   transform: translate(-50%, -40%);
-  color: #f5e3bd;
   text-decoration: none;
   touch-action: manipulation;
 }
@@ -29,86 +28,42 @@
   transform: translate(-50%, -50%);
 }
 
-.ai-guide-hotspot-label {
-  position: absolute;
-  right: calc(50% + 12px);
-  top: 40%;
-  transform: translateY(-50%);
-  padding: 4px 9px;
-  border: 1px solid #b0915d;
-  border-radius: 5px;
-  background: #1b201af2;
-  color: #f5e3bd;
-  font: 400 12px/1.4 Georgia, 'Times New Roman', serif;
-  white-space: nowrap;
-}
-
-.ai-guide-hotspot-label::before {
-  position: absolute;
-  top: calc(50% - 3px);
-  right: -4px;
-  width: 6px;
-  height: 6px;
-  border-top: 1px solid #b0915d;
-  border-right: 1px solid #b0915d;
-  background: #1b201a;
-  transform: rotate(45deg);
-  content: '';
-}
-
-.ai-guide-hotspot:hover .ai-guide-hotspot-label,
-.ai-guide-hotspot:focus-visible .ai-guide-hotspot-label {
-  border-color: #e8c47e;
-  color: #fff6de;
-}
-
 .ai-guide-hotspot:focus-visible {
   outline: 2px solid #e8c47e;
   outline-offset: 1px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .ai-guide-hotspot-point::after,
+  .atlas-entry-dot::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border: 1px solid #eac77c;
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
+    animation: cover-point-pulse 3.4s ease-out infinite;
+  }
+
+  .atlas-entry-dot::after {
+    animation-delay: .7s;
+  }
+}
+
+@keyframes cover-point-pulse {
+  0% { opacity: .8; transform: scale(.85); }
+  70%, 100% { opacity: 0; transform: scale(2.05); }
+}
+
 @media (max-width: 760px) {
   .ai-guide-hotspot {
     --ai-guide-pen-x: max(75cqw, calc(50cqw + 178px));
-    --ai-guide-label-x: max(clamp(137px, 38cqw, 167px), calc(var(--ai-guide-pen-x) - 190px));
-    --ai-guide-label-drop: 7px;
-  }
-
-  .ai-guide-hotspot-label {
-    /* Anchor the label to the desk beside the portrait and keep the point on the pen. */
-    left: calc(var(--ai-guide-label-x) - var(--ai-guide-pen-x) + 50%);
-    right: auto;
-    top: calc(40% + var(--ai-guide-label-drop));
-    padding-inline: 8px;
-    font-size: 11px;
-  }
-
-  .ai-guide-hotspot-label::before {
-    inset: calc(50% - var(--ai-guide-label-drop) - 1px) auto auto calc(100% - 1px);
-    /* End just before the pen marker, regardless of the label's width. */
-    width: max(0px, calc(var(--ai-guide-pen-x) - var(--ai-guide-label-x) - 100% - 8px));
-    height: calc(var(--ai-guide-label-drop) + 6px);
-    border: 0;
-    background: url('/assets/ai-guide-bubble-tail.svg') center / 100% 100% no-repeat;
-    transform: none;
-    pointer-events: none;
-  }
-
-  .ai-guide-hotspot-label::after {
-    position: absolute;
-    inset: -9px 0;
-    content: '';
   }
 }
 
 @media (max-width: 520px) {
   .ai-guide-hotspot {
     --ai-guide-pen-x: calc(66cqw + 55px);
-  }
-}
-
-@media (max-width: 380px) {
-  .ai-guide-hotspot {
-    --ai-guide-label-drop: 12px;
   }
 }

@@ -16,11 +16,14 @@
   if (!trigger || !dialog || !preview || !download) return;
   const suggested = JSON.parse(trigger.dataset.quote);
   const polish = suggested.language === 'pl';
+  const article = suggested.article === true;
   const normalize = text => text.replace(/\s+/gu, ' ').trim();
   const essayPassages = [];
   for (const paragraph of document.querySelectorAll('[data-reader-body] > p')) {
     if (paragraph.matches('.v4-essay-signature, .v4-research-label')) break;
-    const text = normalize(paragraph.textContent);
+    const copy = paragraph.cloneNode(true);
+    copy.querySelector('.reader-citations')?.remove();
+    const text = normalize(copy.textContent);
     if (text) essayPassages.push(text);
   }
   const essayText = essayPassages.join(' ');
@@ -163,9 +166,13 @@
       event.preventDefault();
       const text = normalize(excerpt.value);
       let message;
-      if (!text) message = polish ? 'Wybierz fragment eseju.' : 'Choose a passage from the essay.';
+      if (!text) message = article
+        ? (polish ? 'Wybierz fragment artykułu.' : 'Choose a passage from the article.')
+        : (polish ? 'Wybierz fragment eseju.' : 'Choose a passage from the essay.');
       else if (text.length > 500) message = polish ? 'Skróć fragment do 500 znaków.' : 'Shorten the passage to 500 characters.';
-      else if (!essayText.includes(text)) message = polish ? 'Wybierz fragment z eseju, zachowując jego oryginalne brzmienie.' : 'Choose a passage from the essay, keeping its original wording.';
+      else if (!essayText.includes(text)) message = article
+        ? (polish ? 'Wybierz fragment z artykułu, zachowując jego oryginalne brzmienie.' : 'Choose a passage from the article, keeping its original wording.')
+        : (polish ? 'Wybierz fragment z eseju, zachowując jego oryginalne brzmienie.' : 'Choose a passage from the essay, keeping its original wording.');
       if (message) {
         editError.textContent = message;
         editError.hidden = false;
