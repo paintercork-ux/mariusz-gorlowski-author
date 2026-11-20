@@ -131,6 +131,26 @@ def quote_markup(item, lang, metadata, quotes):
 </div></dialog>'''
 
 
+def reader_bookmark_ui(lang):
+    polish = lang == "pl"
+    save = "Zapisz miejsce" if polish else "Save my place"
+    resume = "Wróć do zakładki" if polish else "Resume reading"
+    remove = "Usuń zakładkę" if polish else "Remove bookmark"
+    saved = "Miejsce zapisane." if polish else "Your place is saved."
+    removed = "Zakładka usunięta." if polish else "Bookmark removed."
+    unavailable = "Zakładka jest niedostępna w tej przeglądarce." if polish else "Bookmarks are unavailable in this browser."
+    button = (
+        f'<button class="reader-bookmark" type="button" data-reader-bookmark aria-label="{save}" title="{save}" '
+        f'data-saved="{saved}" data-removed="{removed}" data-remove-label="{remove}" data-unavailable="{unavailable}" hidden>'
+        f'<span class="reader-bookmark-icon" aria-hidden="true"></span><span class="reader-bookmark-label">{save}</span></button>'
+    )
+    controls = (
+        '<div class="reader-bookmark-controls" data-reader-bookmark-controls hidden>'
+        f'<button class="reader-bookmark-resume" type="button" data-reader-resume>{resume}</button></div>'
+    )
+    return button, controls
+
+
 def reader_html(item, lang, translations, render_body, date_label, next_item, quotes):
     polish = lang == "pl"
     article = item["type"] in {"atlas", "article"}
@@ -156,7 +176,8 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
         next_markup = f'<aside class="reader-next"><p>{next_label}</p><a href="{next_path}">{escape(next_meta["title"])}</a></aside>'
     en_current = ' aria-current="page"' if not polish else ""
     pl_current = ' aria-current="page"' if polish else ""
-    reader_version = "20261120-quote-picker-1"
+    reader_version = "20261120-bookmark-2"
+    bookmark, bookmark_controls = reader_bookmark_ui(lang)
     if article or story:
         if item["type"] == "atlas":
             listing = atlas_path(lang) + "#" + item["id"]
@@ -167,14 +188,13 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
         if story:
             skip = "Przejdź do opowiadania" if polish else "Skip to the story"
             reader_meta = escape(meta["reading_note"])
-            reader_version = "20261120-story-1"
         else:
             skip = "Przejdź do artykułu" if polish else "Skip to the article"
             reader_meta = escape(meta["region"])
     else:
         reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
     published_schema = {"datePublished": item["date"]} if not (article or story) else {}
-    quote_script = "" if story else f'<script src="/reader-quotes.js?v={reader_version}" defer></script>'
+    quote_script = "" if story else '<script src="/reader-quotes.js?v=20261120-quote-picker-1" defer></script>'
     structured = json.dumps({
         "@context": "https://schema.org", "@type": "CreativeWork" if story else "Article",
         "headline": meta["title"], "description": meta["description"],
@@ -201,18 +221,19 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/reader.css?v={reader_version}">
-<script src="/reader.js?v=20261119-reading-1" defer></script>
+<script src="/reader.js?v={reader_version}" defer></script>
 {quote_script}
 <script type="application/ld+json">{structured}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">{skip}</a>
 <header class="reader-topbar"><div class="reader-topbar-inner">
 <a class="reader-brand" href="{home}"><span class="reader-monogram" aria-hidden="true">MG</span><span>Mariusz Gorlowski</span></a>
-<nav class="reader-languages" aria-label="Language / Język"><a href="{english}" lang="en" hreflang="en"{en_current}>EN</a><a href="{polish_path}" lang="pl" hreflang="pl"{pl_current}>PL</a></nav>
-</div><div class="reader-progress" aria-hidden="true"><span data-reader-progress></span></div></header>
+<div class="reader-topbar-actions">{bookmark}<nav class="reader-languages" aria-label="Language / Język"><a href="{english}" lang="en" hreflang="en"{en_current}>EN</a><a href="{polish_path}" lang="pl" hreflang="pl"{pl_current}>PL</a></nav></div>
+</div><div class="reader-progress" aria-hidden="true"><span data-reader-progress></span></div><p class="reader-bookmark-status" data-reader-bookmark-status role="status" aria-atomic="true"></p></header>
 <main class="reader-main" id="essay">
 <div class="reader-tools"><a class="reader-back" href="{listing}">{back}</a>
 <div class="reader-size" role="group" aria-label="{group_label}"><button type="button" data-reader-smaller aria-label="{smaller}" title="{smaller}" disabled>A−</button><button type="button" data-reader-larger aria-label="{larger}" title="{larger}" disabled>A+</button></div></div>
+{bookmark_controls}
 <article aria-labelledby="reader-title"><div class="reader-meta">{reader_meta}</div>
 <h1 class="reader-title" id="reader-title">{title}</h1>
 <p class="reader-byline">Mariusz Gorlowski</p><hr class="reader-rule" aria-hidden="true">

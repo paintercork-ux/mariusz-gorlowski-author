@@ -20,6 +20,16 @@ button, .reader-topbar, .reader-tools, .reader-meta, .reader-next, .reader-foote
 .reader-topbar-inner { max-width: 1140px; margin: auto; min-height: 68px; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .reader-brand { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 650; text-decoration: none; white-space: nowrap; }
 .reader-monogram { width: 34px; height: 34px; border-radius: 50%; background: #13262d; color: #dfc38e; display: grid; place-items: center; font: 15px Georgia, serif; }
+.reader-topbar-actions { flex: none; display: flex; align-items: center; gap: 10px; }
+.reader-bookmark { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #d8d0c2; border-radius: 8px; color: #344348; background: #fff; font-size: 14px; cursor: pointer; }
+.reader-bookmark:hover { background: #f6f2e9; border-color: #b48e50; }
+.reader-bookmark-icon { position: relative; width: 14px; height: 18px; background: currentColor; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 73%, 0 100%); }
+.reader-bookmark-icon::after { content: ''; position: absolute; inset: 2px 2px 4px; background: #fff; clip-path: inherit; }
+.reader-bookmark:hover .reader-bookmark-icon::after { background: #f6f2e9; }
+.reader-bookmark[data-bookmarked] .reader-bookmark-icon { background: #936833; }
+.reader-bookmark[data-bookmarked] .reader-bookmark-icon::after { display: none; }
+.reader-bookmark-status { position: absolute; z-index: 2; inset-block-start: calc(100% + 10px); inset-inline-end: 14px; max-width: calc(100% - 28px); margin: 0; font-size: 14px; }
+.reader-bookmark-status:not(:empty) { padding: 10px 14px; border-radius: 8px; color: #fff; background: #182f37; }
 .reader-languages { display: flex; gap: 3px; border: 1px solid #c2a16b; padding: 3px; border-radius: 30px; background: #162c34; }
 .reader-languages a { min-width: 40px; min-height: 36px; display: grid; place-items: center; border-radius: 23px; color: #fff; font-size: 14px; text-decoration: none; }
 .reader-languages a[aria-current="page"] { background: #dfc38e; color: #192b32; font-weight: 700; }
@@ -27,6 +37,9 @@ button, .reader-topbar, .reader-tools, .reader-meta, .reader-next, .reader-foote
 .reader-progress span { display: block; width: 100%; height: 100%; background: #b48e50; transform: scaleX(0); transform-origin: left; }
 .reader-main { width: min(100% - 44px, 700px); margin: auto; padding: 25px 0 70px; }
 .reader-tools { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 35px; }
+.reader-bookmark-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin: -15px 0 28px; padding: 10px 12px; border: 1px solid #e2d8c6; border-radius: 8px; background: #fcfbf7; }
+.reader-bookmark-resume { min-height: 44px; padding: 0 10px; border: 1px solid #b59663; border-radius: 6px; color: #fff; background: #182f37; font-size: 14px; font-weight: 600; cursor: pointer; }
+.reader-bookmark[hidden], .reader-bookmark-controls[hidden] { display: none; }
 .reader-back { min-height: 44px; display: inline-flex; align-items: center; color: #6d624e; font-size: 14px; text-underline-offset: 4px; }
 .reader-size { display: flex; align-items: center; gap: 7px; }
 .reader-size button { width: 44px; height: 44px; border: 1px solid #d8d0c2; border-radius: 8px; background: #fff; color: #26383c; font-size: 18px; cursor: pointer; }
@@ -100,14 +113,20 @@ a:focus-visible, button:focus-visible { outline: 3px solid #b48e50; outline-offs
 .quote-editor-meta output { white-space: nowrap; }
 .quote-edit-error { color: #923a32; }
 .quote-editor-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+@media (max-width: 620px) {
+  .reader-bookmark-label { display: none; }
+}
 @media (max-width: 370px) {
   .reader-topbar-inner { padding-right: 14px; padding-left: 14px; gap: 8px; }
-  .reader-brand { font-size: 12px; gap: 7px; }
+  .reader-topbar-actions { gap: 5px; }
+  .reader-brand { min-width: 0; font-size: 12px; gap: 7px; }
+  .reader-brand span:last-child { overflow: hidden; text-overflow: ellipsis; }
+  .reader-monogram { flex: none; }
   .reader-languages a { min-width: 35px; }
   .reader-main { width: calc(100% - 36px); }
 }
 @media print {
-  .reader-topbar, .reader-tools, .reader-next, .reader-footer, .reader-quote-save, .quote-dialog { display: none; }
+  .reader-topbar, .reader-tools, .reader-bookmark-controls, .reader-next, .reader-footer, .reader-quote-save, .quote-dialog { display: none; }
   .reader-main { width: 100%; padding: 0; }
   .essay-reader-body { font-size: 12pt; }
 }
