@@ -17,7 +17,7 @@ def reader_path(item, lang, translations):
         raise ValueError("Invalid essay slug: " + slug)
     if item["type"] == "atlas":
         return atlas_path(lang) + slug + "/"
-    section = "/writing/" if item["type"] == "article" else "/writing/essays/"
+    section = "/writing/" if item["type"] in {"article", "story"} else "/writing/essays/"
     return ("/pl" if lang == "pl" else "") + section + slug + "/"
 
 
@@ -103,6 +103,7 @@ def quote_markup(item, lang, metadata, quotes):
 def reader_html(item, lang, translations, render_body, date_label, next_item, quotes):
     polish = lang == "pl"
     article = item["type"] in {"atlas", "article"}
+    story = item["type"] == "story"
     meta = translations[item["id"]] if polish else item
     title, description = escape(meta["title"]), escape(meta["description"], quote=True)
     path = reader_path(item, lang, translations)
@@ -116,27 +117,36 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
     smaller = "Zmniejsz tekst" if polish else "Decrease text size"
     larger = "Powiększ tekst" if polish else "Increase text size"
     group_label = "Wielkość tekstu" if polish else "Text size"
-    next_label = "Przeczytaj także" if polish else "Read next"
-    next_meta = translations[next_item["id"]] if polish else next_item
-    next_path = reader_path(next_item, lang, translations)
+    next_markup = ""
+    if next_item is not None:
+        next_label = "Przeczytaj także" if polish else "Read next"
+        next_meta = translations[next_item["id"]] if polish else next_item
+        next_path = reader_path(next_item, lang, translations)
+        next_markup = f'<aside class="reader-next"><p>{next_label}</p><a href="{next_path}">{escape(next_meta["title"])}</a></aside>'
     en_current = ' aria-current="page"' if not polish else ""
     pl_current = ' aria-current="page"' if polish else ""
-    if article:
+    if article or story:
         if item["type"] == "atlas":
             listing = atlas_path(lang) + "#" + item["id"]
             back = "Wróć do mapy" if polish else "Back to the map"
         else:
             listing = home + "#top"
             back = "Wróć do gabinetu" if polish else "Back to the study"
-        skip = "Przejdź do artykułu" if polish else "Skip to the article"
-        reader_meta = escape(meta["region"])
-        quote_version = "20261120-atlas"
+        if story:
+            skip = "Przejdź do opowiadania" if polish else "Skip to the story"
+            reader_meta = escape(meta["reading_note"])
+            reader_version = "20261120-story-1"
+        else:
+            skip = "Przejdź do artykułu" if polish else "Skip to the article"
+            reader_meta = escape(meta["region"])
+            reader_version = "20261120-atlas"
     else:
         reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
-        quote_version = "20261119-quotes-2"
-    published_schema = {"datePublished": item["date"]} if not article else {}
+        reader_version = "20261119-quotes-2"
+    published_schema = {"datePublished": item["date"]} if not (article or story) else {}
+    quote_script = "" if story else f'<script src="/reader-quotes.js?v={reader_version}" defer></script>'
     structured = json.dumps({
-        "@context": "https://schema.org", "@type": "Article",
+        "@context": "https://schema.org", "@type": "CreativeWork" if story else "Article",
         "headline": meta["title"], "description": meta["description"],
         "inLanguage": lang, **published_schema,
         "mainEntityOfPage": ORIGIN + path,
@@ -160,9 +170,9 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 <meta property="og:image" content="{ORIGIN}/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v={quote_version}">
+<link rel="stylesheet" href="/reader.css?v={reader_version}">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v={quote_version}" defer></script>
+{quote_script}
 <script type="application/ld+json">{structured}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">{skip}</a>
@@ -180,7 +190,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 {render_body(item, lang)}
 </div></article>
 {quote_markup(item, lang, meta, quotes)}
-<aside class="reader-next"><p>{next_label}</p><a href="{next_path}">{escape(next_meta['title'])}</a></aside>
+{next_markup}
 <footer class="reader-footer"><a href="{listing}">{back}</a><br><a href="{home}">mariuszgorlowski.com</a></footer>
 </main></body></html>
 '''
