@@ -76,8 +76,8 @@ function bindBookmark() {
     return null;
   }
 
-  function updateBookmark() {
-    const hasBookmark = !!readBookmark();
+  function updateBookmark(place = readBookmark()) {
+    const hasBookmark = !!place;
     const anchorTop = controls.hidden === hasBookmark ? content.getBoundingClientRect().top : null;
     controls.hidden = !hasBookmark;
     toggle.toggleAttribute('data-bookmarked', hasBookmark);
@@ -148,6 +148,19 @@ function bindBookmark() {
     return { block, fraction, offset };
   }
 
+  function goToBookmark(place, moveFocus = false) {
+    const block = blocks[place.block];
+    const rect = block.getBoundingClientRect();
+    const character = savedCharacterRect(block, place.offset);
+    const top = character?.height ? character.top : rect.top + rect.height * place.fraction;
+    const destination = Math.max(0, window.scrollY + top - readingLine());
+    if (moveFocus) {
+      block.tabIndex = -1;
+      block.focus({ preventScroll: true });
+    }
+    window.scrollTo(0, destination);
+  }
+
   toggle.addEventListener('click', () => {
     const hasBookmark = !!readBookmark();
     try {
@@ -168,16 +181,16 @@ function bindBookmark() {
       toggle.focus();
       return;
     }
-    const block = blocks[place.block];
-    const rect = block.getBoundingClientRect();
-    const character = savedCharacterRect(block, place.offset);
-    const top = character?.height ? character.top : rect.top + rect.height * place.fraction;
-    block.tabIndex = -1;
-    block.focus({ preventScroll: true });
-    window.scrollTo({ top: window.scrollY + top - readingLine(), behavior: 'instant' });
+    goToBookmark(place, true);
   });
 
-  window.addEventListener('pageshow', updateBookmark);
+  window.addEventListener('pageshow', () => {
+    requestAnimationFrame(() => {
+      const place = readBookmark();
+      updateBookmark(place);
+      if (place && !location.hash) goToBookmark(place);
+    });
+  });
   window.addEventListener('storage', event => {
     if (event.key === storageKey || event.key === null) updateBookmark();
   });

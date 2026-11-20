@@ -136,7 +136,7 @@ def reader_bookmark_ui(lang):
     save = "Zapisz miejsce" if polish else "Save my place"
     resume = "Wróć do zakładki" if polish else "Resume reading"
     remove = "Usuń zakładkę" if polish else "Remove bookmark"
-    saved = "Miejsce zapisane." if polish else "Your place is saved."
+    saved = "Miejsce zapisane. Wrócisz tu po ponownym otwarciu tekstu." if polish else "Place saved. You'll return here the next time you open this text."
     removed = "Zakładka usunięta." if polish else "Bookmark removed."
     unavailable = "Zakładka jest niedostępna w tej przeglądarce." if polish else "Bookmarks are unavailable in this browser."
     button = (
@@ -176,7 +176,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
         next_markup = f'<aside class="reader-next"><p>{next_label}</p><a href="{next_path}">{escape(next_meta["title"])}</a></aside>'
     en_current = ' aria-current="page"' if not polish else ""
     pl_current = ' aria-current="page"' if polish else ""
-    reader_version = "20261120-bookmark-2"
+    reader_version = "20261120-bookmark-3"
     bookmark, bookmark_controls = reader_bookmark_ui(lang)
     if article or story:
         if item["type"] == "atlas":
