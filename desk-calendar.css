@@ -1,0 +1,422 @@
+html:has(.desk-calendar[open]) {
+  overflow: hidden;
+}
+
+.desk-calendar {
+  --calendar-ink: #263337;
+  --calendar-accent: #705431;
+  --calendar-border: #ddcfb9;
+  --calendar-gutter: clamp(.9rem, 4vw, 2.75rem);
+  --calendar-measure: 42rem;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #fff;
+  color: var(--calendar-ink);
+}
+
+.desk-calendar[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.desk-calendar::backdrop {
+  background: #0c1420;
+}
+
+.desk-calendar[data-current="menu"] {
+  --calendar-measure: 35rem;
+  background: radial-gradient(ellipse at 50% 5%, #fffcf6, #f3eee5 78%);
+}
+
+.desk-calendar[data-current="yesterday"] {
+  --calendar-ink: #3a2b21;
+  --calendar-accent: #694a2f;
+  --calendar-border: #b89b73;
+  background:
+    radial-gradient(ellipse at 0 0, #a9784252, transparent 35%),
+    radial-gradient(ellipse at 100% 100%, #9262374c, transparent 28%),
+    linear-gradient(90deg, #dbc4a2, #f5ebd9 9%, #fbf3e3 88%, #edddc2);
+}
+
+.desk-calendar[data-current="tomorrow"] {
+  --calendar-ink: #e9f3fe;
+  --calendar-accent: #a8e4ff;
+  --calendar-border: #78b3db64;
+  color-scheme: dark;
+  background:
+    radial-gradient(ellipse at 100% -9%, #29769a69, transparent 58%),
+    radial-gradient(ellipse at -12% 105%, #4c3a8580, transparent 58%),
+    linear-gradient(145deg, #101b30, #0b1425 60%, #141930);
+}
+
+.desk-calendar[data-current="tomorrow"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #8ecbff1c 1px, transparent 1px) center / 28px 28px,
+    linear-gradient(#8ecbff17 1px, transparent 1px) center / 28px 28px;
+  mask-image: linear-gradient(#000, #0002 50%, #0008);
+}
+
+.desk-calendar [hidden] {
+  display: none;
+}
+
+.calendar-toolbar {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  width: min(100%, calc(var(--calendar-measure) + 2 * var(--calendar-gutter)));
+  margin-inline: auto;
+  padding: max(.45rem, env(safe-area-inset-top)) var(--calendar-gutter) .45rem;
+}
+
+.calendar-heading,
+.calendar-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.calendar-heading {
+  margin: 0;
+  font-size: clamp(1.65rem, 5.8vw, 2.25rem);
+}
+
+.calendar-title {
+  margin: .15em 0 .6em;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+}
+
+.calendar-back,
+.calendar-close {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  color: var(--calendar-accent);
+  background: transparent;
+  cursor: pointer;
+}
+
+.calendar-back {
+  padding: .25rem .35rem .25rem 0;
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+
+.calendar-close {
+  width: 44px;
+  flex: none;
+  margin-inline-start: auto;
+  padding: 0;
+  border-radius: 50%;
+  font: 1.6rem/1 var(--sans);
+}
+
+.calendar-close:hover {
+  border-color: var(--calendar-accent);
+}
+
+.calendar-content {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  padding: clamp(.6rem, 2.2svh, 1.45rem) var(--calendar-gutter) max(1rem, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: auto;
+}
+
+.desk-calendar[data-current="menu"] .calendar-content {
+  display: flex;
+  flex-direction: column;
+  padding-block: max(1rem, env(safe-area-inset-bottom));
+}
+
+.calendar-menu,
+.calendar-leaf {
+  width: 100%;
+  max-width: var(--calendar-measure);
+  margin-inline: auto;
+}
+
+.calendar-menu {
+  display: grid;
+  flex: none;
+  gap: clamp(.55rem, 1.6svh, .95rem);
+  margin-block: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-tile {
+  --tile-accent: #ecd0a1;
+  --tile-inset: #dfc09254;
+  --tile-ink: #f8f1e8;
+  --tile-marker: 50%;
+  width: 100%;
+  min-height: 0;
+  padding: clamp(.73rem, 2.15svh, 1.25rem) clamp(.8rem, 3vw, 1.6rem);
+  gap: .32rem;
+  color: var(--tile-ink);
+  border-color: var(--tile-accent);
+  cursor: pointer;
+}
+
+.calendar-tile[data-calendar-select="yesterday"] {
+  --tile-accent: #e8bd85;
+  --tile-inset: #e8bd855e;
+  --tile-marker: 13%;
+  background: linear-gradient(120deg, #65412f, #38271f 71%, #51382a);
+}
+
+.calendar-tile[data-calendar-select="tomorrow"] {
+  --tile-accent: #c4d7ff;
+  --tile-inset: #b1c7fa62;
+  --tile-ink: #f1f4ff;
+  --tile-marker: 87%;
+  background: linear-gradient(125deg, #342b5e, #181d3a 64%, #243c61);
+}
+
+.calendar-tile::before {
+  border-color: var(--tile-inset);
+}
+
+.calendar-tile-mark {
+  display: block;
+  width: 1.8rem;
+  height: .45rem;
+  background:
+    radial-gradient(circle at var(--tile-marker) 50%, var(--tile-accent) 0 2.5px, transparent 3px),
+    linear-gradient(var(--tile-inset), var(--tile-inset)) center / 100% 1px no-repeat;
+}
+
+.desk-calendar button:focus-visible,
+.desk-calendar textarea:focus-visible {
+  outline: 2px solid var(--calendar-accent);
+  outline-offset: 2px;
+}
+
+.calendar-tile-title {
+  font-size: clamp(1.55rem, 5.4vw, 2.1rem);
+}
+
+.calendar-tile-preview {
+  max-width: 43ch;
+  color: var(--tile-ink);
+  font-size: clamp(.875rem, 3.2vw, 1rem);
+  line-height: 1.38;
+  text-wrap: balance;
+}
+
+.calendar-tile-open {
+  margin-top: .12rem;
+  padding: .19rem .85rem;
+  border-color: var(--tile-inset);
+  color: var(--tile-accent);
+  font-size: .84rem;
+}
+
+.calendar-tile:hover .calendar-tile-open {
+  border-color: var(--tile-accent);
+}
+
+.calendar-prose {
+  font: clamp(1.125rem, 3vw, 1.25rem)/1.74 var(--serif);
+  overflow-wrap: break-word;
+}
+
+.calendar-prose p {
+  margin: 0 0 1.1em;
+}
+
+.calendar-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.desk-calendar[data-current="tomorrow"] .calendar-toolbar {
+  border-bottom: 1px solid var(--calendar-border);
+}
+
+.desk-calendar[data-current="tomorrow"] :is(.calendar-back, .calendar-close) {
+  padding-inline: .75rem;
+  border: 1px solid var(--calendar-border);
+  border-radius: 5px;
+  background: #16324b85;
+  text-decoration: none;
+}
+
+.desk-calendar[data-current="tomorrow"] :is(.calendar-back, .calendar-close):hover {
+  border-color: var(--calendar-accent);
+}
+
+.calendar-future-header {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: clamp(1.4rem, 4.5vw, 2.1rem);
+  padding: clamp(1rem, 3.1vw, 1.7rem);
+  border: 1px solid var(--calendar-border);
+  border-left: 2px solid #9ee7ff;
+  border-radius: 0 1.15rem 0 0;
+  background:
+    radial-gradient(ellipse at 83% 100%, #328cad5c, transparent 55%),
+    linear-gradient(102deg, #132d49ef, #213258b8);
+  box-shadow: inset 0 0 34px #6fbbea24, 0 14px 32px #060e2145;
+}
+
+.calendar-future-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: clamp(.4rem, 4.8vw, 2.7rem);
+  width: clamp(4.8rem, 20vw, 9.4rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background:
+    radial-gradient(circle, #c5f5ff 0 2%, #65d6ff7d 3%, transparent 18%),
+    repeating-radial-gradient(circle, transparent 0 12%, #7bd4f08c 12.5% 13.5%, transparent 14% 25%),
+    conic-gradient(from 30deg, transparent 0 23%, #5ad1ff42 42%, transparent 44% 70%, #b7a4ff38 88%, transparent 91%);
+  mask-image: radial-gradient(circle, #000 53%, transparent 72%);
+}
+
+.calendar-future-header .calendar-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(2.25rem, 8vw, 4.3rem);
+  font-weight: 650;
+  letter-spacing: -.045em;
+  color: #e4f7ff;
+}
+
+.calendar-blank-date {
+  display: block;
+  width: 5.1rem;
+  height: .15rem;
+  margin: .12rem 0 .8rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #a2e6ff 0 19%, #7baedb61 19% 77%, transparent 77% 85%, #a5dbfd9c 85%);
+}
+
+.calendar-prose .calendar-final {
+  margin-top: 1.45em;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+.desk-calendar[data-current="tomorrow"] .calendar-prose {
+  font: clamp(1.0625rem, 2.7vw, 1.18rem)/1.7 var(--sans);
+}
+
+.desk-calendar[data-current="tomorrow"] .calendar-prose p:first-child,
+.desk-calendar[data-current="tomorrow"] .calendar-prose .calendar-final {
+  padding: .8rem clamp(.75rem, 2.8vw, 1.1rem);
+  border-left: 2px solid #8dddffbf;
+  background: linear-gradient(95deg, #21415d9c, #23345436);
+}
+
+.desk-calendar[data-current="tomorrow"] .calendar-prose .calendar-final {
+  color: #c8f0ff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .calendar-leaf:not([hidden]) {
+    animation: calendar-reveal .22s ease-out;
+  }
+
+  .calendar-future-header::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    inset-inline: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, #bdedff, transparent);
+    box-shadow: 0 0 12px #88dbff;
+    animation: calendar-scan .54s ease-out both;
+  }
+}
+
+@keyframes calendar-reveal {
+  from { opacity: .55; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes calendar-scan {
+  0% { top: 0; opacity: 0; }
+  25% { opacity: .82; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Quote styles from the essay reader. */
+.reader-quote-save { margin-top: 40px; padding-top: 25px; border-top: 1px solid #e2d8c6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.reader-quote-save p { margin: 0; font-size: 16px; color: #74634a; }
+.reader-quote-button { min-height: 48px; padding: 11px 22px; border: 1px solid #b59663; border-radius: 8px; color: #28383d; background: #fff; font-size: 16px; cursor: pointer; }
+.reader-quote-button:hover { background: #f7f1e5; }
+.reader-quote-button:disabled { opacity: .5; cursor: default; }
+.reader-quote-save .quote-error { width: 100%; font-size: 14px; color: #923a32; }
+.quote-dialog { width: min(520px, calc(100% - 24px)); max-width: none; max-height: calc(100dvh - 24px); padding: 0; border: 1px solid #b3945f; border-radius: 12px; color: #26363b; background: #fcfbf7; }
+.quote-dialog::backdrop { background: rgb(5 12 16 / 74%); }
+.quote-dialog-shell { display: flex; flex-direction: column; gap: 13px; padding: 14px; }
+.quote-card-panel { display: flex; flex-direction: column; gap: 13px; }
+.quote-card-panel[hidden], .quote-editor[hidden] { display: none; }
+.quote-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-dialog-head h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.quote-dialog-head form { margin: 0; }
+.quote-close { min-height: 44px; padding: 8px 11px; border: 1px solid #d7cbb7; border-radius: 7px; background: #fff; color: #4a514c; font-size: 14px; cursor: pointer; }
+.quote-preview-image { display: block; width: 100%; height: auto; max-height: calc(100dvh - 247px); object-fit: contain; background: #050505; }
+.quote-download { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 18px; border: 1px solid #b59a6c; border-radius: 8px; color: #fff; background: #182f37; text-decoration: none; font: 600 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-download:hover { background: #29444e; }
+.quote-choose, .quote-cancel, .quote-apply { min-height: 44px; border: 1px solid #b59663; border-radius: 8px; padding: 9px 14px; font: 600 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; cursor: pointer; }
+.quote-choose, .quote-cancel { color: #344348; background: #fff; }
+.quote-choose:hover, .quote-cancel:hover { background: #f7f1e5; }
+.quote-apply { color: #fff; background: #182f37; }
+.quote-apply:disabled { opacity: .5; cursor: wait; }
+.quote-editor { display: flex; flex-direction: column; gap: 11px; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-editor p { margin: 0; }
+.quote-picker-help { color: #5c605c; }
+.quote-passages { max-height: 25dvh; min-height: 120px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid #d7cbb7; border-radius: 8px; background: #fff; }
+.quote-passage { display: block; width: 100%; min-height: 44px; margin: 0; padding: 13px; border: 0; border-bottom: 1px solid #e7dfd0; border-radius: 0; background: #fff; color: #253337; text-align: left; font: inherit; cursor: pointer; }
+.quote-passage:last-child { border-bottom: 0; }
+.quote-passage:hover, .quote-passage[aria-pressed="true"] { background: #f7f0e2; }
+.quote-editor label { font-weight: 600; }
+.quote-editor textarea { width: 100%; min-height: 108px; resize: vertical; padding: 11px; border: 1px solid #b59663; border-radius: 8px; background: #fff; color: #253337; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.quote-editor textarea:focus-visible { outline: 3px solid #b48e50; outline-offset: 2px; }
+.quote-editor-meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; color: #6a6459; font-size: 14px; }
+.quote-editor-meta output { white-space: nowrap; }
+.quote-edit-error { color: #923a32; }
+.quote-editor-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+
+.desk-calendar .quote-dialog { color-scheme: light; }
+.desk-calendar .quote-card-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.desk-calendar .quote-card-actions > * { flex: 1 1 auto; }
+.desk-calendar :is(.quote-copy-status, .quote-save-help) { margin: 0; color: #344348; font-size: 15px; }
+.desk-calendar .quote-copy-status:empty { display: none; }
+.desk-calendar .reader-quote-trigger { display: flex; width: 100%; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 0; border: 0; font: inherit; text-align: start; background: transparent; cursor: pointer; }
+.desk-calendar .reader-quote-trigger:disabled { opacity: .5; cursor: default; }
+.desk-calendar .reader-quote-caption { color: #74634a; text-decoration: underline; text-underline-offset: .18em; }
+.desk-calendar .reader-quote-trigger .reader-quote-button { display: inline-flex; align-items: center; justify-content: center; }
+.desk-calendar .reader-quote-trigger:hover .reader-quote-button { background: #f7f1e5; }
+.desk-calendar[data-current="tomorrow"] .reader-quote-save { border-color: var(--calendar-border); }
+.desk-calendar[data-current="tomorrow"] .reader-quote-caption { color: var(--calendar-accent); }

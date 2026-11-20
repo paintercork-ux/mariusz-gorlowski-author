@@ -60,6 +60,7 @@ def quote_markup(item, lang, metadata, quotes):
         return ""
     polish = lang == "pl"
     article = item["type"] in {"atlas", "article"}
+    calendar = item["type"] == "calendar"
     caption = "Zabierz jedną myśl" if polish else "Take a thought with you"
     save = "Zapisz myśl" if polish else "Save a thought"
     close = "Zamknij" if polish else "Close"
@@ -77,26 +78,59 @@ def quote_markup(item, lang, metadata, quotes):
         instructions = "Wybierz akapit z artykułu. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu." if polish else "Choose a paragraph from the article. You can shorten it to a sentence or paste another passage from this article."
         passages = "Fragmenty artykułu" if polish else "Article passages"
         data["article"] = True
+    suffix = "-" + item["id"] if calendar else ""
+    copy_action = copy_status = ""
+    preview_actions = f'<a class="quote-download" data-quote-download download>{download}</a>'
+    maxlength = ' maxlength="500"'
+    if calendar:
+        instructions = "Wybierz akapit. Możesz go skrócić lub wkleić dowolny fragment tej kartki." if polish else "Choose a paragraph. You can shorten it or paste any passage from this page."
+        passages = "Fragmenty kartki" if polish else "Passages from this page"
+        limit = "Grafika może zawierać do 500 znaków." if polish else "The image can contain up to 500 characters."
+        copy_label = "Skopiuj cytat" if polish else "Copy quote"
+        device_save = "Zapisz lub udostępnij" if polish else "Save or share"
+        save_help = "Jeśli zapis w podglądzie nie ruszy, przytrzymaj obraz lub otwórz stronę w przeglądarce telefonu." if polish else "If saving does not start, press and hold the image or open the page in your phone’s browser."
+        copied = "Skopiowano." if polish else "Copied."
+        manual = "Użyj opcji Kopiuj dla zaznaczonego tekstu." if polish else "Use your device’s Copy option for the selected text."
+        copy_action = f'<button class="quote-choose" type="button" data-copy-quote>{copy_label}</button>'
+        preview_actions = (
+            f'<div class="quote-card-actions">{preview_actions}'
+            f'<button class="quote-choose" type="button" data-quote-device-save hidden>{device_save}</button>'
+            f'{copy_action}</div><p class="quote-save-help" data-quote-save-help hidden>{save_help}</p>'
+        )
+        copy_status = f'<p class="quote-copy-status" role="status" data-quote-copy-status data-copied="{copied}" data-manual="{manual}"></p>'
+        maxlength = ""
+        data["calendar"] = True
+        if metadata.get("prepared_cards"):
+            data["prepared_cards"] = metadata["prepared_cards"]
     payload = escape(json.dumps(data, ensure_ascii=False), quote=True)
-    return f'''<section class="reader-quote-save" aria-label="{save}"><p>{caption}</p>
-<button class="reader-quote-button" type="button" data-save-quote data-quote="{payload}" disabled>{save}</button>
+    dialog_id = ""
+    entry = f'<p>{caption}</p>\n<button class="reader-quote-button" type="button" data-save-quote data-quote="{payload}" disabled>{save}</button>'
+    if calendar:
+        dialog_id = f' id="quote-dialog{suffix}"'
+        entry = (
+            f'<button class="reader-quote-trigger" type="button" data-save-quote data-quote="{payload}"'
+            f' aria-haspopup="dialog" aria-controls="quote-dialog{suffix}" disabled>'
+            f'<span class="reader-quote-caption">{caption}</span>'
+            f'<span class="reader-quote-button">{save}</span></button>'
+        )
+    return f'''<section class="reader-quote-save" aria-label="{save}">{entry}
 <p class="quote-error" data-quote-error role="status" hidden>{error}</p></section>
-<dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
-<div class="quote-dialog-head"><h2 id="quote-dialog-title">{save}</h2><form method="dialog"><button class="quote-close" type="submit">{close}</button></form></div>
+<dialog class="quote-dialog" data-quote-dialog{dialog_id} aria-labelledby="quote-dialog-title{suffix}"><div class="quote-dialog-shell">
+<div class="quote-dialog-head"><h2 id="quote-dialog-title{suffix}">{save}</h2><form method="dialog"><button class="quote-close" type="submit">{close}</button></form></div>
 <div class="quote-card-panel" data-quote-card>
 <button class="quote-choose" type="button" data-quote-choose>{choose}</button>
 <img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
-<a class="quote-download" data-quote-download download>{download}</a>
+{preview_actions}
 </div>
 <form class="quote-editor" data-quote-editor hidden>
 <p class="quote-picker-help">{instructions}</p>
 <div class="quote-passages" data-quote-passages role="group" aria-label="{passages}"></div>
-<label for="quote-excerpt">{excerpt}</label>
-<textarea id="quote-excerpt" data-quote-excerpt rows="4" maxlength="500" aria-describedby="quote-limit quote-count quote-edit-error"></textarea>
-<div class="quote-editor-meta"><p id="quote-limit">{limit}</p><output id="quote-count" data-quote-count></output></div>
-<p class="quote-edit-error" id="quote-edit-error" data-quote-edit-error role="alert" hidden></p>
-<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>{cancel}</button><button class="quote-apply" type="submit" data-quote-apply>{generate}</button></div>
-</form>
+<label for="quote-excerpt{suffix}">{excerpt}</label>
+<textarea id="quote-excerpt{suffix}" data-quote-excerpt rows="4"{maxlength} aria-describedby="quote-limit{suffix} quote-count{suffix} quote-edit-error{suffix}"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit{suffix}">{limit}</p><output id="quote-count{suffix}" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error{suffix}" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>{cancel}</button>{copy_action}<button class="quote-apply" type="submit" data-quote-apply>{generate}</button></div>
+</form>{copy_status}
 </div></dialog>'''
 
 

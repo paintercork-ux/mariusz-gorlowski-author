@@ -24,11 +24,14 @@
 <link rel="stylesheet" href="curiosity-home.css?v=20261119-profile-1">
 <link rel="stylesheet" href="/latest-essay.css?v=20261119-reading-1">
 <link rel="stylesheet" href="/notebook.css?v=20261120-desk-points-2">
-<link rel="stylesheet" href="/ai-guide-entry.css?v=20261120-cup-1">
+<link rel="stylesheet" href="/ai-guide-entry.css?v=20261120-calendar">
 <script type="module" src="/notebook.js?v=20261120-desk-light"></script>
 <link rel="stylesheet" href="/share.css?v=20261119-profile-1">
 <script type="module" src="/share.js?v=20261119-profile-1"></script>
 <link rel="stylesheet" href="/ai-atlas.css?v=20261120-2">
+<link rel="stylesheet" href="/desk-calendar.css?v=20261120-6">
+<script type="module" src="/desk-calendar.js?v=20261120-4"></script>
+<script src="/reader-quotes.js?v=20261120-calendar-3" defer></script>
 </head><body class="v4-home"><a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar"><div class="container topbar-inner">
 <a aria-label="Mariusz Gorlowski — home" class="brand" href=""><span class="brand-symbol">MG</span><span>Mariusz Gorlowski</span></a>
@@ -47,6 +50,7 @@
 <!-- AUTO:AI_ATLAS:START --><a class="atlas-entry" href="/seven-faces-of-ai/" aria-label="Open the Seven Faces of AI map"><span class="atlas-entry-dot" aria-hidden="true"></span></a><!-- AUTO:AI_ATLAS:END -->
 <a class="lamp-entry" href="/writing/ai-energy/" aria-label="Read about how much electricity an AI answer uses"><span class="lamp-entry-point" aria-hidden="true"></span></a>
 <a class="cup-entry" href="/writing/two-cups/" aria-label="Read the short story Two Cups"><span class="cup-entry-point" aria-hidden="true"></span></a>
+<button class="calendar-entry" type="button" data-calendar-open aria-label="Open the desk calendar" aria-haspopup="dialog" aria-controls="desk-calendar" hidden><span class="calendar-entry-point" aria-hidden="true"></span></button>
 <div class="cover-content"><span class="cover-kicker">MARIUSZ GORLOWSKI · OFFICIAL WEBSITE</span><span class="cover-line">Writing about the future.<br/>Building for the present.</span></div>
 </div>
 <div class="profile-card">
@@ -94,4 +98,123 @@
 <a href="qr-finder/">QR FINDER</a>
 <a href="contact/">Contact</a><a href="privacy.html">Privacy</a></div>
 </div><div class="container footer-end"><span>© 2026 Mariusz Gorlowski · All rights reserved.</span>
-<span>Independent author website · Unpublished manuscripts clearly identified</span></div></footer></body></html>
+<span>Independent author website · Unpublished manuscripts clearly identified</span></div></footer>
+<dialog class="desk-calendar" id="desk-calendar" aria-labelledby="desk-calendar-title">
+  <header class="calendar-toolbar">
+    <h2 class="calendar-heading" id="desk-calendar-title" tabindex="-1">Calendar</h2>
+    <button class="calendar-back" type="button" data-calendar-back hidden>Back to the calendar</button>
+    <button class="calendar-close" type="button" data-calendar-close aria-label="Close calendar">×</button>
+  </header>
+  <div class="calendar-content" data-calendar-scroll>
+    <ul class="calendar-menu" data-calendar-view="menu">
+      <li>
+        <button class="v4-choice calendar-tile" type="button" data-calendar-select="yesterday">
+          <span class="calendar-tile-mark" aria-hidden="true"></span>
+          <span class="v4-choice-title calendar-tile-title">Yesterday</span>
+          <span class="v4-choice-desc calendar-tile-preview">Our grandfathers and fathers dug foundations with spades.</span>
+          <span class="v4-choice-cta calendar-tile-open" aria-hidden="true">Open</span>
+        </button>
+      </li>
+      <li>
+        <button class="v4-choice v4-choice-writing calendar-tile" type="button" data-calendar-select="today">
+          <span class="calendar-tile-mark" aria-hidden="true"></span>
+          <span class="v4-choice-title calendar-tile-title">Today</span>
+          <span class="v4-choice-desc calendar-tile-preview">We looked for answers in printed encyclopaedias.</span>
+          <span class="v4-choice-cta calendar-tile-open" aria-hidden="true">Open</span>
+        </button>
+      </li>
+      <li>
+        <button class="v4-choice calendar-tile" type="button" data-calendar-select="tomorrow">
+          <span class="calendar-tile-mark" aria-hidden="true"></span>
+          <span class="v4-choice-title calendar-tile-title">Tomorrow</span>
+          <span class="v4-choice-desc calendar-tile-preview">Who will ask the questions in our grandchildren’s world?</span>
+          <span class="v4-choice-cta calendar-tile-open" aria-hidden="true">Open</span>
+        </button>
+      </li>
+    </ul>
+    <article class="calendar-leaf" data-quote-reader data-calendar-view="yesterday" aria-labelledby="calendar-yesterday" hidden>
+      <h2 class="calendar-title" id="calendar-yesterday" tabindex="-1">Yesterday</h2>
+      <div class="calendar-prose" data-reader-body>
+        <p>Our grandfathers and fathers used to tell us about digging foundations with spades, laying bricks by hand and carrying building materials upstairs on their backs. When diggers and cranes arrived on building sites, they took over the heaviest work. Before the digger could get started, though, someone still had to stretch a string between two pegs and show the driver where to dig.</p>
+        <p>It was much the same with a simple computer program. We decided what it should calculate and gave it a rule to follow. <span>The computer could run that calculation thousands of times, and we still decided what to do with the result.</span></p>
+      </div>
+<section class="reader-quote-save" aria-label="Save a thought"><button class="reader-quote-trigger" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Yesterday&quot;, &quot;language&quot;: &quot;en&quot;, &quot;paragraphs&quot;: [&quot;The computer could run that calculation thousands of times, and we still decided what to do with the result.&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-calendar-yesterday-en.png&quot;, &quot;calendar&quot;: true, &quot;prepared_cards&quot;: {&quot;Our grandfathers and fathers used to tell us about digging foundations with spades, laying bricks by hand and carrying building materials upstairs on their backs. When diggers and cranes arrived on building sites, they took over the heaviest work. Before the digger could get started, though, someone still had to stretch a string between two pegs and show the driver where to dig.&quot;: &quot;mariusz-gorlowski-calendar-yesterday-en-1-5b1555b7.png&quot;, &quot;It was much the same with a simple computer program. We decided what it should calculate and gave it a rule to follow. The computer could run that calculation thousands of times, and we still decided what to do with the result.&quot;: &quot;mariusz-gorlowski-calendar-yesterday-en-2-b77a484d.png&quot;}}" aria-haspopup="dialog" aria-controls="quote-dialog-calendar-yesterday" disabled><span class="reader-quote-caption">Take a thought with you</span><span class="reader-quote-button">Save a thought</span></button>
+<p class="quote-error" data-quote-error role="status" hidden>The image could not be prepared. Please try again.</p></section>
+<dialog class="quote-dialog" data-quote-dialog id="quote-dialog-calendar-yesterday" aria-labelledby="quote-dialog-title-calendar-yesterday"><div class="quote-dialog-shell">
+<div class="quote-dialog-head"><h2 id="quote-dialog-title-calendar-yesterday">Save a thought</h2><form method="dialog"><button class="quote-close" type="submit">Close</button></form></div>
+<div class="quote-card-panel" data-quote-card>
+<button class="quote-choose" type="button" data-quote-choose>Choose another passage</button>
+<img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
+<div class="quote-card-actions"><a class="quote-download" data-quote-download download>Download image</a><button class="quote-choose" type="button" data-quote-device-save hidden>Save or share</button><button class="quote-choose" type="button" data-copy-quote>Copy quote</button></div><p class="quote-save-help" data-quote-save-help hidden>If saving does not start, press and hold the image or open the page in your phone’s browser.</p>
+</div>
+<form class="quote-editor" data-quote-editor hidden>
+<p class="quote-picker-help">Choose a paragraph. You can shorten it or paste any passage from this page.</p>
+<div class="quote-passages" data-quote-passages role="group" aria-label="Passages from this page"></div>
+<label for="quote-excerpt-calendar-yesterday">Passage to save</label>
+<textarea id="quote-excerpt-calendar-yesterday" data-quote-excerpt rows="4" aria-describedby="quote-limit-calendar-yesterday quote-count-calendar-yesterday quote-edit-error-calendar-yesterday"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit-calendar-yesterday">The image can contain up to 500 characters.</p><output id="quote-count-calendar-yesterday" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error-calendar-yesterday" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>Cancel</button><button class="quote-choose" type="button" data-copy-quote>Copy quote</button><button class="quote-apply" type="submit" data-quote-apply>Preview card</button></div>
+</form><p class="quote-copy-status" role="status" data-quote-copy-status data-copied="Copied." data-manual="Use your device’s Copy option for the selected text."></p>
+</div></dialog>
+    </article>
+    <article class="calendar-leaf" data-quote-reader data-calendar-view="today" aria-labelledby="calendar-today" hidden>
+      <h2 class="calendar-title" id="calendar-today" tabindex="-1">Today</h2>
+      <div class="calendar-prose" data-reader-body>
+        <p>We tell our children how we used to leaf through encyclopaedias, look things up in libraries and start every piece of writing with a blank sheet of paper. We could spend hours on a single piece, writing out the same page by hand several times over.</p>
+        <p>Today, AI can suggest an opening line, create an illustration or translate a passage. We still feel we’re at the controls because we type the first instruction. We might ask it to shorten a paragraph and, a moment later, let it decide what matters most. When it can do the work faster and more cheaply, without ever getting tired, it’s easy to accept its version. <span>First we hand over the work, then the decisions, and in the end we may step aside altogether.</span></p>
+      </div>
+<section class="reader-quote-save" aria-label="Save a thought"><button class="reader-quote-trigger" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Today&quot;, &quot;language&quot;: &quot;en&quot;, &quot;paragraphs&quot;: [&quot;First we hand over the work, then the decisions, and in the end we may step aside altogether.&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-calendar-today-en.png&quot;, &quot;calendar&quot;: true, &quot;prepared_cards&quot;: {&quot;We tell our children how we used to leaf through encyclopaedias, look things up in libraries and start every piece of writing with a blank sheet of paper. We could spend hours on a single piece, writing out the same page by hand several times over.&quot;: &quot;mariusz-gorlowski-calendar-today-en-1-9b9b506c.png&quot;, &quot;Today, AI can suggest an opening line, create an illustration or translate a passage. We still feel we’re at the controls because we type the first instruction. We might ask it to shorten a paragraph and, a moment later, let it decide what matters most. When it can do the work faster and more cheaply, without ever getting tired, it’s easy to accept its version. First we hand over the work, then the decisions, and in the end we may step aside altogether.&quot;: &quot;mariusz-gorlowski-calendar-today-en-2-5df96a35.png&quot;}}" aria-haspopup="dialog" aria-controls="quote-dialog-calendar-today" disabled><span class="reader-quote-caption">Take a thought with you</span><span class="reader-quote-button">Save a thought</span></button>
+<p class="quote-error" data-quote-error role="status" hidden>The image could not be prepared. Please try again.</p></section>
+<dialog class="quote-dialog" data-quote-dialog id="quote-dialog-calendar-today" aria-labelledby="quote-dialog-title-calendar-today"><div class="quote-dialog-shell">
+<div class="quote-dialog-head"><h2 id="quote-dialog-title-calendar-today">Save a thought</h2><form method="dialog"><button class="quote-close" type="submit">Close</button></form></div>
+<div class="quote-card-panel" data-quote-card>
+<button class="quote-choose" type="button" data-quote-choose>Choose another passage</button>
+<img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
+<div class="quote-card-actions"><a class="quote-download" data-quote-download download>Download image</a><button class="quote-choose" type="button" data-quote-device-save hidden>Save or share</button><button class="quote-choose" type="button" data-copy-quote>Copy quote</button></div><p class="quote-save-help" data-quote-save-help hidden>If saving does not start, press and hold the image or open the page in your phone’s browser.</p>
+</div>
+<form class="quote-editor" data-quote-editor hidden>
+<p class="quote-picker-help">Choose a paragraph. You can shorten it or paste any passage from this page.</p>
+<div class="quote-passages" data-quote-passages role="group" aria-label="Passages from this page"></div>
+<label for="quote-excerpt-calendar-today">Passage to save</label>
+<textarea id="quote-excerpt-calendar-today" data-quote-excerpt rows="4" aria-describedby="quote-limit-calendar-today quote-count-calendar-today quote-edit-error-calendar-today"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit-calendar-today">The image can contain up to 500 characters.</p><output id="quote-count-calendar-today" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error-calendar-today" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>Cancel</button><button class="quote-choose" type="button" data-copy-quote>Copy quote</button><button class="quote-apply" type="submit" data-quote-apply>Preview card</button></div>
+</form><p class="quote-copy-status" role="status" data-quote-copy-status data-copied="Copied." data-manual="Use your device’s Copy option for the selected text."></p>
+</div></dialog>
+    </article>
+    <article class="calendar-leaf" data-quote-reader data-calendar-view="tomorrow" aria-labelledby="calendar-tomorrow" hidden>
+      <header class="calendar-future-header">
+        <span class="calendar-blank-date" aria-hidden="true"></span>
+        <h2 class="calendar-title" id="calendar-tomorrow" tabindex="-1">Tomorrow</h2>
+      </header>
+      <div class="calendar-prose" data-reader-body>
+        <p>‘In our day, all AI could do was write a bit of text or make a picture.’ We might say that to our children or grandchildren one day, in much the same tone our grandfathers used when they talked about the days before diggers.</p>
+        <p>We’ve spent generations improving our tools, first to take some of the weight off our backs and later to do some of the thinking for us. The more we leave to machines, the harder it is to see when they start deciding what’s worth doing in the first place.</p>
+        <p>If our children look back on today’s AI as a toy that could piece together words and pictures, what exactly will their machines be doing for them? Perhaps the machines will come up with their own questions and get to work before anyone has even thought to ask.</p>
+        <p class="calendar-final"><strong>What will be left of us then?</strong></p>
+      </div>
+<section class="reader-quote-save" aria-label="Save a thought"><button class="reader-quote-trigger" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Tomorrow&quot;, &quot;language&quot;: &quot;en&quot;, &quot;paragraphs&quot;: [&quot;What will be left of us then?&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-calendar-tomorrow-en.png&quot;, &quot;calendar&quot;: true, &quot;prepared_cards&quot;: {&quot;‘In our day, all AI could do was write a bit of text or make a picture.’ We might say that to our children or grandchildren one day, in much the same tone our grandfathers used when they talked about the days before diggers.&quot;: &quot;mariusz-gorlowski-calendar-tomorrow-en-1-f28d26cd.png&quot;, &quot;We’ve spent generations improving our tools, first to take some of the weight off our backs and later to do some of the thinking for us. The more we leave to machines, the harder it is to see when they start deciding what’s worth doing in the first place.&quot;: &quot;mariusz-gorlowski-calendar-tomorrow-en-2-6772612c.png&quot;, &quot;If our children look back on today’s AI as a toy that could piece together words and pictures, what exactly will their machines be doing for them? Perhaps the machines will come up with their own questions and get to work before anyone has even thought to ask. What will be left of us then?&quot;: &quot;mariusz-gorlowski-calendar-tomorrow-en-3-badf9c97.png&quot;}}" aria-haspopup="dialog" aria-controls="quote-dialog-calendar-tomorrow" disabled><span class="reader-quote-caption">Take a thought with you</span><span class="reader-quote-button">Save a thought</span></button>
+<p class="quote-error" data-quote-error role="status" hidden>The image could not be prepared. Please try again.</p></section>
+<dialog class="quote-dialog" data-quote-dialog id="quote-dialog-calendar-tomorrow" aria-labelledby="quote-dialog-title-calendar-tomorrow"><div class="quote-dialog-shell">
+<div class="quote-dialog-head"><h2 id="quote-dialog-title-calendar-tomorrow">Save a thought</h2><form method="dialog"><button class="quote-close" type="submit">Close</button></form></div>
+<div class="quote-card-panel" data-quote-card>
+<button class="quote-choose" type="button" data-quote-choose>Choose another passage</button>
+<img class="quote-preview-image" data-quote-preview width="1080" height="1350" alt="">
+<div class="quote-card-actions"><a class="quote-download" data-quote-download download>Download image</a><button class="quote-choose" type="button" data-quote-device-save hidden>Save or share</button><button class="quote-choose" type="button" data-copy-quote>Copy quote</button></div><p class="quote-save-help" data-quote-save-help hidden>If saving does not start, press and hold the image or open the page in your phone’s browser.</p>
+</div>
+<form class="quote-editor" data-quote-editor hidden>
+<p class="quote-picker-help">Choose a paragraph. You can shorten it or paste any passage from this page.</p>
+<div class="quote-passages" data-quote-passages role="group" aria-label="Passages from this page"></div>
+<label for="quote-excerpt-calendar-tomorrow">Passage to save</label>
+<textarea id="quote-excerpt-calendar-tomorrow" data-quote-excerpt rows="4" aria-describedby="quote-limit-calendar-tomorrow quote-count-calendar-tomorrow quote-edit-error-calendar-tomorrow"></textarea>
+<div class="quote-editor-meta"><p id="quote-limit-calendar-tomorrow">The image can contain up to 500 characters.</p><output id="quote-count-calendar-tomorrow" data-quote-count></output></div>
+<p class="quote-edit-error" id="quote-edit-error-calendar-tomorrow" data-quote-edit-error role="alert" hidden></p>
+<div class="quote-editor-actions"><button class="quote-cancel" type="button" data-quote-cancel>Cancel</button><button class="quote-choose" type="button" data-copy-quote>Copy quote</button><button class="quote-apply" type="submit" data-quote-apply>Preview card</button></div>
+</form><p class="quote-copy-status" role="status" data-quote-copy-status data-copied="Copied." data-manual="Use your device’s Copy option for the selected text."></p>
+</div></dialog>
+    </article>
+  </div>
+</dialog>
+</body></html>

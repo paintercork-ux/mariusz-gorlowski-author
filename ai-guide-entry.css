@@ -9,7 +9,7 @@
 }
 
 /* Points are measured from the right edge and vertical centre of cover.webp (2172 × 724). */
-.v4-home .cover :is(.ai-guide-hotspot, .atlas-entry, .lamp-entry, .cup-entry) {
+.v4-home .cover :is(.ai-guide-hotspot, .atlas-entry, .lamp-entry, .cup-entry, .calendar-entry) {
   left: calc(100% - var(--desk-photo-width) * var(--desk-point-right) / 2172);
   top: calc(50% + var(--desk-photo-height) * var(--desk-point-y) / 724);
 }
@@ -70,8 +70,19 @@
   --desk-point-y: 58;
 }
 
+.calendar-entry {
+  --desk-point-right: 228;
+  --desk-point-y: 217;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .lamp-entry,
-.cup-entry {
+.cup-entry,
+.calendar-entry {
   position: absolute;
   z-index: 5;
   display: grid;
@@ -84,8 +95,13 @@
   touch-action: manipulation;
 }
 
+.calendar-entry[hidden] {
+  display: none;
+}
+
 .lamp-entry-point,
-.cup-entry-point {
+.cup-entry-point,
+.calendar-entry-point {
   position: relative;
   width: 11px;
   height: 11px;
@@ -96,7 +112,8 @@
 }
 
 .lamp-entry:focus-visible,
-.cup-entry:focus-visible {
+.cup-entry:focus-visible,
+.calendar-entry:focus-visible {
   outline: 2px solid #f3d491;
   outline-offset: 1px;
 }
@@ -105,7 +122,8 @@
   .ai-guide-hotspot-point::after,
   .atlas-entry-dot::after,
   .lamp-entry-point::after,
-  .cup-entry-point::after {
+  .cup-entry-point::after,
+  .calendar-entry-point::after {
     content: '';
     position: absolute;
     inset: -3px;
@@ -126,6 +144,10 @@
 
   .cup-entry-point::after {
     animation-delay: 2.1s;
+  }
+
+  .calendar-entry-point::after {
+    animation-delay: 2.8s;
   }
 }
 
