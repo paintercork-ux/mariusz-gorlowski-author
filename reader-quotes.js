@@ -21,6 +21,7 @@ function bindQuoteReader(root) {
   const polish = suggested.language === 'pl';
   const article = suggested.article === true;
   const calendar = suggested.calendar === true;
+  const quoteLimit = 500;
   const preparedCards = new Map(Object.entries(suggested.prepared_cards ?? {}));
   const normalize = text => text.replace(/\s+/gu, ' ').trim();
   const essayPassages = [];
@@ -40,6 +41,28 @@ function bindQuoteReader(root) {
   let current = suggested;
   let objectURL;
   let imageFile;
+
+  function splitPassage(text, segmenter) {
+    const fragments = [];
+    while (text.length > quoteLimit) {
+      let end = 0;
+      for (const { index, segment } of segmenter?.segment(text) ?? []) {
+        const sentenceEnd = index + segment.trimEnd().length;
+        if (sentenceEnd > quoteLimit) break;
+        end = sentenceEnd;
+      }
+      if (!end) end = text.lastIndexOf(' ', quoteLimit);
+      if (end <= 0) {
+        end = quoteLimit;
+        const lastUnit = text.charCodeAt(end - 1);
+        if (lastUnit >= 0xD800 && lastUnit <= 0xDBFF) end -= 1;
+      }
+      fragments.push(text.slice(0, end));
+      text = text.slice(end).trimStart();
+    }
+    if (text) fragments.push(text);
+    return fragments;
+  }
 
   function wrapText(context, text, width) {
     const lines = [];
@@ -132,21 +155,14 @@ function bindQuoteReader(root) {
       if (objectURL) URL.revokeObjectURL(objectURL);
       objectURL = undefined;
     } else {
-      if (!calendar) await document.fonts.ready;
-      const canvas = drawCard(data);
-      let blob;
-      if (calendar) {
-        // Use system fonts and encode during the click for shorter custom passages.
-        const png = canvas.toDataURL('image/png');
-        const pngPrefix = 'data:image/png;base64,';
-        if (!png.startsWith(pngPrefix)) throw new Error('Image unavailable');
-        const bytes = Uint8Array.from(atob(png.slice(pngPrefix.length)), char => char.charCodeAt(0));
-        file = new File([bytes], filename, { type: 'image/png' });
-        blob = file;
-      } else {
-        blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-        if (!blob) throw new Error('Image unavailable');
-      }
+      // These cards use system fonts and can be prepared during the click.
+      const png = drawCard(data).toDataURL('image/png');
+      const pngPrefix = 'data:image/png;base64,';
+      if (!png.startsWith(pngPrefix)) throw new Error('Image unavailable');
+      const bytes = Uint8Array.from(atob(png.slice(pngPrefix.length)), char => char.charCodeAt(0));
+      const type = 'image/png';
+      if (calendar) file = new File([bytes], filename, { type });
+      const blob = file ?? new Blob([bytes], { type });
       if (objectURL) URL.revokeObjectURL(objectURL);
       objectURL = URL.createObjectURL(blob);
       imageURL = objectURL;
@@ -177,7 +193,7 @@ function bindQuoteReader(root) {
   }
 
   function updateCount() {
-    count.textContent = `${normalize(excerpt.value).length} / 500`;
+    count.textContent = `${normalize(excerpt.value).length} / ${quoteLimit}`;
     editError.hidden = true;
     excerpt.removeAttribute('aria-invalid');
     if (copyStatus) copyStatus.textContent = '';
@@ -234,7 +250,11 @@ function bindQuoteReader(root) {
   }
 
   if (choose && editor && cardPanel && passages && excerpt && count && editError && cancel && apply) {
-    for (const text of essayPassages) {
+    const segmenter = !calendar && typeof Intl.Segmenter === 'function'
+      ? new Intl.Segmenter(suggested.language, { granularity: 'sentence' })
+      : null;
+    const options = calendar ? essayPassages : essayPassages.flatMap(text => splitPassage(text, segmenter));
+    for (const text of options) {
       const option = document.createElement('button');
       option.type = 'button';
       option.className = 'quote-passage';
@@ -265,7 +285,7 @@ function bindQuoteReader(root) {
         ? (polish ? 'Wybierz fragment artykułu.' : 'Choose a passage from the article.')
         : calendar ? (polish ? 'Wybierz fragment tej kartki.' : 'Choose a passage from this page.')
           : (polish ? 'Wybierz fragment eseju.' : 'Choose a passage from the essay.');
-      else if (text.length > 500) message = polish ? 'Skróć fragment do 500 znaków.' : 'Shorten the passage to 500 characters.';
+      else if (text.length > quoteLimit) message = polish ? 'Skróć fragment do 500 znaków.' : 'Shorten the passage to 500 characters.';
       else if (!essayText.includes(text)) message = article
         ? (polish ? 'Wybierz fragment z artykułu, zachowując jego oryginalne brzmienie.' : 'Choose a passage from the article, keeping its original wording.')
         : calendar ? (polish ? 'Wybierz fragment tej kartki, zachowując jego brzmienie.' : 'Choose a passage from this page, keeping its original wording.')

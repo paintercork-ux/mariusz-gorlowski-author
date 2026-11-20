@@ -16,9 +16,9 @@
 <meta property="og:image" content="https://mariuszgorlowski.com/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261120-atlas">
+<link rel="stylesheet" href="/reader.css?v=20261120-quote-picker-1">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v=20261120-atlas" defer></script>
+<script src="/reader-quotes.js?v=20261120-quote-picker-1" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Po pracy obrazy wracały", "description": "W Kenii ludzie pomagający zbudować filtr AI mieli oznaczać do 250 fragmentów na zmianę. Według TIME zarabiali na rękę od około 1,32 dolara za godzinę. Jeden z nich opowiadał, że obraz szczególnie drastycznej sceny z tekstu wracał do niego później.", "inLanguage": "pl", "mainEntityOfPage": "https://mariuszgorlowski.com/pl/siedem-twarzy-ai/afryka/", "author": {"@type": "Person", "name": "Mariusz Gorlowski", "url": "https://mariuszgorlowski.com/"}}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">Przejdź do artykułu</a>
@@ -55,10 +55,9 @@
 <ol><li id="source-1"><a href="https://time.com/6247678/openai-chatgpt-kenya-workers/">Billy Perrigo, reportaż TIME o pracy dla OpenAI w Kenii, 2023</a></li><li id="source-2"><a href="https://fairwork.oii.ox.ac.uk/en/fw/publications/fairwork-ai-supply-chain-assessment-sama-2025/">Fairwork, ocena warunków w firmie Sama w Kenii i Ugandzie, 2025</a></li><li id="source-3"><a href="https://aclanthology.org/2020.findings-emnlp.195/">Wilhelmina Nekoto i in., badanie Masakhane nad tłumaczeniem języków afrykańskich, 2020</a></li></ol>
 </section>
 </div></article>
-<section class="reader-quote-save" aria-label="Zapisz myśl"><p>Zabierz jedną myśl</p>
-<button class="reader-quote-button" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Po pracy obrazy wracały&quot;, &quot;language&quot;: &quot;pl&quot;, &quot;paragraphs&quot;: [&quot;Kiedy kończył czytać, program mógł podsunąć mu kolejny fragment. Pamięć działała w innym tempie.&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-afryka-pl.png&quot;, &quot;article&quot;: true}" disabled>Zapisz myśl</button>
+<section class="reader-quote-save" aria-label="Zapisz myśl"><button class="reader-quote-trigger" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Po pracy obrazy wracały&quot;, &quot;language&quot;: &quot;pl&quot;, &quot;paragraphs&quot;: [&quot;Kiedy kończył czytać, program mógł podsunąć mu kolejny fragment. Pamięć działała w innym tempie.&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-afryka-pl.png&quot;, &quot;article&quot;: true}" aria-haspopup="dialog" aria-controls="quote-dialog" disabled><span class="reader-quote-caption">Zabierz jedną myśl</span><span class="reader-quote-button">Zapisz myśl</span></button>
 <p class="quote-error" data-quote-error role="status" hidden>Nie udało się przygotować grafiki. Spróbuj ponownie.</p></section>
-<dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
+<dialog class="quote-dialog" data-quote-dialog id="quote-dialog" aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
 <div class="quote-dialog-head"><h2 id="quote-dialog-title">Zapisz myśl</h2><form method="dialog"><button class="quote-close" type="submit">Zamknij</button></form></div>
 <div class="quote-card-panel" data-quote-card>
 <button class="quote-choose" type="button" data-quote-choose>Wybierz inny fragment</button>
@@ -66,7 +65,7 @@
 <a class="quote-download" data-quote-download download>Pobierz grafikę</a>
 </div>
 <form class="quote-editor" data-quote-editor hidden>
-<p class="quote-picker-help">Wybierz akapit z artykułu. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu.</p>
+<p class="quote-picker-help">Wybierz fragment artykułu. Możesz go skrócić lub wkleić inny fragment tekstu.</p>
 <div class="quote-passages" data-quote-passages role="group" aria-label="Fragmenty artykułu"></div>
 <label for="quote-excerpt">Fragment do zapisania</label>
 <textarea id="quote-excerpt" data-quote-excerpt rows="4" maxlength="500" aria-describedby="quote-limit quote-count quote-edit-error"></textarea>

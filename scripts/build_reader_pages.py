@@ -66,7 +66,7 @@ def quote_markup(item, lang, metadata, quotes):
     close = "Zamknij" if polish else "Close"
     download = "Pobierz grafikę" if polish else "Download image"
     choose = "Wybierz inny fragment" if polish else "Choose another passage"
-    instructions = "Wybierz akapit z eseju. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu." if polish else "Choose a paragraph from the essay. You can shorten it to a sentence or paste another passage from this essay."
+    instructions = "Wybierz fragment eseju. Możesz go skrócić lub wkleić inny fragment tekstu." if polish else "Choose a passage from the essay. You can shorten it or paste another excerpt."
     passages = "Fragmenty eseju" if polish else "Essay passages"
     excerpt = "Fragment do zapisania" if polish else "Passage to save"
     limit = "Do 500 znaków, aby karta pozostała czytelna." if polish else "Up to 500 characters to keep the card readable."
@@ -75,7 +75,7 @@ def quote_markup(item, lang, metadata, quotes):
     error = "Nie udało się przygotować grafiki. Spróbuj ponownie." if polish else "The image could not be prepared. Please try again."
     data = {"title": metadata["title"], "language": lang, "paragraphs": paragraphs, "filename": "mariusz-gorlowski-" + metadata.get("slug", item["id"]) + "-" + lang + ".png"}
     if article:
-        instructions = "Wybierz akapit z artykułu. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu." if polish else "Choose a paragraph from the article. You can shorten it to a sentence or paste another passage from this article."
+        instructions = "Wybierz fragment artykułu. Możesz go skrócić lub wkleić inny fragment tekstu." if polish else "Choose a passage from the article. You can shorten it or paste another excerpt."
         passages = "Fragmenty artykułu" if polish else "Article passages"
         data["article"] = True
     suffix = "-" + item["id"] if calendar else ""
@@ -103,19 +103,16 @@ def quote_markup(item, lang, metadata, quotes):
         if metadata.get("prepared_cards"):
             data["prepared_cards"] = metadata["prepared_cards"]
     payload = escape(json.dumps(data, ensure_ascii=False), quote=True)
-    dialog_id = ""
-    entry = f'<p>{caption}</p>\n<button class="reader-quote-button" type="button" data-save-quote data-quote="{payload}" disabled>{save}</button>'
-    if calendar:
-        dialog_id = f' id="quote-dialog{suffix}"'
-        entry = (
-            f'<button class="reader-quote-trigger" type="button" data-save-quote data-quote="{payload}"'
-            f' aria-haspopup="dialog" aria-controls="quote-dialog{suffix}" disabled>'
-            f'<span class="reader-quote-caption">{caption}</span>'
-            f'<span class="reader-quote-button">{save}</span></button>'
-        )
+    dialog_id = f"quote-dialog{suffix}"
+    entry = (
+        f'<button class="reader-quote-trigger" type="button" data-save-quote data-quote="{payload}"'
+        f' aria-haspopup="dialog" aria-controls="{dialog_id}" disabled>'
+        f'<span class="reader-quote-caption">{caption}</span>'
+        f'<span class="reader-quote-button">{save}</span></button>'
+    )
     return f'''<section class="reader-quote-save" aria-label="{save}">{entry}
 <p class="quote-error" data-quote-error role="status" hidden>{error}</p></section>
-<dialog class="quote-dialog" data-quote-dialog{dialog_id} aria-labelledby="quote-dialog-title{suffix}"><div class="quote-dialog-shell">
+<dialog class="quote-dialog" data-quote-dialog id="{dialog_id}" aria-labelledby="quote-dialog-title{suffix}"><div class="quote-dialog-shell">
 <div class="quote-dialog-head"><h2 id="quote-dialog-title{suffix}">{save}</h2><form method="dialog"><button class="quote-close" type="submit">{close}</button></form></div>
 <div class="quote-card-panel" data-quote-card>
 <button class="quote-choose" type="button" data-quote-choose>{choose}</button>
@@ -159,6 +156,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
         next_markup = f'<aside class="reader-next"><p>{next_label}</p><a href="{next_path}">{escape(next_meta["title"])}</a></aside>'
     en_current = ' aria-current="page"' if not polish else ""
     pl_current = ' aria-current="page"' if polish else ""
+    reader_version = "20261120-quote-picker-1"
     if article or story:
         if item["type"] == "atlas":
             listing = atlas_path(lang) + "#" + item["id"]
@@ -173,10 +171,8 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
         else:
             skip = "Przejdź do artykułu" if polish else "Skip to the article"
             reader_meta = escape(meta["region"])
-            reader_version = "20261120-atlas"
     else:
         reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
-        reader_version = "20261119-quotes-2"
     published_schema = {"datePublished": item["date"]} if not (article or story) else {}
     quote_script = "" if story else f'<script src="/reader-quotes.js?v={reader_version}" defer></script>'
     structured = json.dumps({

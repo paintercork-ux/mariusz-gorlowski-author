@@ -16,9 +16,9 @@
 <meta property="og:image" content="https://mariuszgorlowski.com/assets/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/reader.css?v=20261119-quotes-2">
+<link rel="stylesheet" href="/reader.css?v=20261120-quote-picker-1">
 <script src="/reader.js?v=20261119-reading-1" defer></script>
-<script src="/reader-quotes.js?v=20261119-quotes-2" defer></script>
+<script src="/reader-quotes.js?v=20261120-quote-picker-1" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Am I Still Me?", "description": "It took one innocent question to spoil a family dinner.", "inLanguage": "en", "datePublished": "2026-11-19", "mainEntityOfPage": "https://mariuszgorlowski.com/writing/essays/am-i-still-me/", "author": {"@type": "Person", "name": "Mariusz Gorlowski", "url": "https://mariuszgorlowski.com/"}}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">Skip to the essay</a>
@@ -75,10 +75,9 @@
 <p>Hohenstein, J., Kizilcec, R. F., DiFranzo, D., et al. (2023). <em>Artificial intelligence in communication impacts language and social relationships.</em> Scientific Reports, 13, 5487.</p>
 <p class="v4-source-link"><a href="https://doi.org/10.1038/s41598-023-30938-9" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41598-023-30938-9</a></p>
 </div></article>
-<section class="reader-quote-save" aria-label="Save a thought"><p>Take a thought with you</p>
-<button class="reader-quote-button" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Am I Still Me?&quot;, &quot;language&quot;: &quot;en&quot;, &quot;paragraphs&quot;: [&quot;The family had their husband and father back.&quot;, &quot;But had he got himself back?&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-am-i-still-me-en.png&quot;}" disabled>Save a thought</button>
+<section class="reader-quote-save" aria-label="Save a thought"><button class="reader-quote-trigger" type="button" data-save-quote data-quote="{&quot;title&quot;: &quot;Am I Still Me?&quot;, &quot;language&quot;: &quot;en&quot;, &quot;paragraphs&quot;: [&quot;The family had their husband and father back.&quot;, &quot;But had he got himself back?&quot;], &quot;filename&quot;: &quot;mariusz-gorlowski-am-i-still-me-en.png&quot;}" aria-haspopup="dialog" aria-controls="quote-dialog" disabled><span class="reader-quote-caption">Take a thought with you</span><span class="reader-quote-button">Save a thought</span></button>
 <p class="quote-error" data-quote-error role="status" hidden>The image could not be prepared. Please try again.</p></section>
-<dialog class="quote-dialog" data-quote-dialog aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
+<dialog class="quote-dialog" data-quote-dialog id="quote-dialog" aria-labelledby="quote-dialog-title"><div class="quote-dialog-shell">
 <div class="quote-dialog-head"><h2 id="quote-dialog-title">Save a thought</h2><form method="dialog"><button class="quote-close" type="submit">Close</button></form></div>
 <div class="quote-card-panel" data-quote-card>
 <button class="quote-choose" type="button" data-quote-choose>Choose another passage</button>
@@ -86,7 +85,7 @@
 <a class="quote-download" data-quote-download download>Download image</a>
 </div>
 <form class="quote-editor" data-quote-editor hidden>
-<p class="quote-picker-help">Choose a paragraph from the essay. You can shorten it to a sentence or paste another passage from this essay.</p>
+<p class="quote-picker-help">Choose a passage from the essay. You can shorten it or paste another excerpt.</p>
 <div class="quote-passages" data-quote-passages role="group" aria-label="Essay passages"></div>
 <label for="quote-excerpt">Passage to save</label>
 <textarea id="quote-excerpt" data-quote-excerpt rows="4" maxlength="500" aria-describedby="quote-limit quote-count quote-edit-error"></textarea>
