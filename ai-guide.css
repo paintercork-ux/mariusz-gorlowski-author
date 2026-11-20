@@ -120,6 +120,11 @@
   flex: 0 0 auto;
 }
 
+.guide-actions,
+.guide-languages {
+  flex-wrap: nowrap;
+}
+
 .guide-topbar :is(button, a:not(.guide-identity)) {
   display: inline-flex;
   min-width: 44px;
@@ -145,6 +150,19 @@
   background: #ffffff0b;
   color: #fff3cf;
   font-weight: 650;
+}
+
+.guide-topbar a.guide-close {
+  flex: none;
+  padding: 0;
+  border-color: #ae905d;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.guide-topbar a.guide-close:hover {
+  border-color: #e0bc7b;
+  background: #ffffff12;
 }
 
 .guide-book {
@@ -578,6 +596,13 @@
     max-height: none;
   }
 
+  .guide-topbar {
+    position: sticky;
+    z-index: 3;
+    top: env(safe-area-inset-top);
+    background: #20291f;
+  }
+
   .guide-paper {
     grid-template-rows: auto 1fr auto;
   }
@@ -592,7 +617,7 @@
     outline-color: Highlight;
   }
 
-  .guide-topbar :is([aria-current="true"], [aria-current="page"], [aria-pressed="true"]),
+  .guide-topbar :is([aria-current="true"], [aria-current="page"], [aria-pressed="true"], .guide-close),
   .guide-paper :is(.guide-primary, .guide-nav button:last-child, .guide-copy) {
     border-color: ButtonText;
   }

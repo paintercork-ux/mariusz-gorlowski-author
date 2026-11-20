@@ -73,10 +73,22 @@ const pageCount = document.querySelector('.guide-page-count');
 const previous = document.querySelector('[data-guide-previous]');
 const next = document.querySelector('[data-guide-next]');
 const otherLanguage = document.querySelector('[data-guide-switch]');
+const closeLink = document.querySelector('.guide-close');
 let book;
 let pages = [];
 let index = 0;
 let readingPage;
+
+function setCloseDestination() {
+  const referrer = document.referrer ? new URL(document.referrer) : null;
+  const cameFromWriting = referrer?.origin === location.origin && /^\/(?:pl\/)?writing\/?$/u.test(referrer.pathname);
+  if (!cameFromWriting && new URLSearchParams(location.search).get('from') !== 'writing') return;
+
+  closeLink.href = language === 'pl' ? '/pl/writing/' : '/writing/';
+  const switchURL = new URL(otherLanguage.href);
+  switchURL.searchParams.set('from', 'writing');
+  otherLanguage.href = switchURL.href;
+}
 
 function pageTitle(text) {
   const heading = make('h1', 'guide-page-title', text);
@@ -264,4 +276,5 @@ document.addEventListener('keydown', event => {
   }
 });
 
+setCloseDestination();
 load();
