@@ -1,0 +1,79 @@
+I switch on my desk lamp and ask an AI a question. A moment later, the first words appear on the screen. To work out how much electricity the lamp used, I would need its power rating and the time it had been on. The answer is harder to account for. Some of the work took place just now, somewhere far from my desk. The world started paying for the rest before it had even occurred to me to ask.
+
+The first cost of an AI answer arises long before the first question. Someone has to extract the raw materials, make the chip and build a place for it to run. Then the model has to be trained and the service kept available. Each of those jobs has its own workers, its own meter and often its own country. The place to start is the one least likely to come to mind when talking to a chatbot.
+
+## It begins with a rock
+
+Inside an accelerator, the chip that performs calculations for AI, there is silicon. One route to it starts with silica-rich quartzite. The material is mined and processed, and the silicon is purified to a grade suitable for semiconductors. The wires, boards and power components have supply chains of their own. They may all end up inside one server, but the electricity used to make them is recorded at factories spread along the supply chain. [1] [2]
+
+Purified silicon becomes a thin, circular wafer. At the factory, layers and connections are added to its surface. The machinery works in controlled conditions, and the surface is repeatedly polished and rinsed with extremely pure water. Picture a single wafer that will yield many chips. Every additional manufacturing step takes time on a piece of equipment, which draws power while it works. [2]
+
+In a simulation by the Belgian research institute imec, electricity use per wafer more than tripled between the modelled 28-nanometre and 2-nanometre technologies under the study’s assumptions. That gives a sense of what a more complex manufacturing process can cost. A wafer can also accommodate more densely packed circuits. To judge the benefit, we need to know how many working chips came off that wafer and what each can do. Electricity per wafer answers a different question from electricity per completed task. [2]
+
+When the factory ships a finished chip, the electricity used to make it remains part of the product’s history. A comparison of two servers should account for the power they draw in service and the number of new machines that must be made to achieve the same performance. How long each lasts matters too. Replacing equipment can save power in a server hall. The wider balance depends on how large that saving is, how the new equipment was made and what happens to the equipment it replaces. [2] [4]
+
+Now consider the map. A server may run in a country that buys chips from a factory powered by a very different grid. The person opening the app may be in a third country. When water enters the picture, the location and season in which the factory draws it matter as well. The journey from material to service passes through particular places. Averaging the whole journey into a single figure can make those places disappear. [2] [4] [5]
+
+## A building that gives off heat
+
+Once the server reaches a data centre, it needs a network, memory and a stable supply of electricity. Its work produces heat that has to be carried away. Some installations rely mainly on moving air. Others use liquid to pick up heat close to the chips. That heat still has to leave the building. Fans, pumps and power conversion equipment add to the total. Some equipment draws power while a particular machine is waiting for its next job. [3] [5]
+
+There are at least two useful meter readings in a data centre. One records the electricity drawn by the computing equipment. The other covers the whole building. Divide the larger reading by the smaller and you get a measure called power usage effectiveness, or PUE. If the IT equipment uses 100 kWh in a given period and the PUE is 1.2, the building in that example uses 120 kWh altogether. The difference brings shared costs such as cooling and power delivery into view. [3]
+
+Some sites can also pass their heat into a district heating system. The BLOOM researchers note that some heat from the Jean Zay supercomputer is recovered by the network serving the Paris-Saclay campus. The benefit depends on having someone close enough to use it, at a time when they need heat. The electricity drawn by the machines remains on their meter. The benefit appears on the other side, where the recipient may be able to replace some of their own heating. [3] [4]
+
+Two centres with the same PUE can draw very different amounts of power. One houses a few rows of racks. The other has several large halls. The ratio tells us how efficiently the building supports its equipment. To understand the demand on the grid, we also need the kilowatt-hours and the hours in which the site draws them. Water deserves a reading of its own. Its use depends in part on the cooling system, and the chip factory has a separate need for water during production. [2] [3]
+
+## Months before the first question
+
+A language model learns from examples. It sees a piece of text, attempts to predict what follows, then adjusts its settings in response to the error. That work is done in batches across many chips at once. Smaller experiments can help a team settle on the size and design of the final model. Memory holds the data, and the machines communicate with one another. To the person who will eventually use the model, there is still nothing on the screen. [4]
+
+BLOOM, a language model trained on France’s Jean Zay supercomputer, offers a well-documented case. The final run lasted about 118 days. The researchers estimated that the graphics processors used about 433,000 kWh. They worked from processor-hours and the chips’ thermal design power as a proxy because they did not have a continuous live power reading for the whole run. Their paper also assessed things such as keeping the infrastructure ready, the footprint of manufacturing the equipment, and the electricity for earlier experiments. [4]
+
+Put that in household terms. In 2025 the median annual electricity use recorded by Irish residential meters was 3,228 kWh. If 134 households each used that much in a year, their combined consumption would be close to the electricity the researchers estimated for the graphics processors in BLOOM’s final training run. [4] [11]
+
+That gives us a tangible sense of what one training run can involve. A model may go on to answer millions of questions, or be replaced quickly by a newer version. Assigning a share of training to a single answer requires an assumption about how long and how widely the model will be used. Change the estimated number of answers and that share changes. The bill for the training itself stays the same.
+
+One company might use a small model for years for a particular job. Another might run several large versions and develop them in parallel. The word “training” can then cover very different things. A report may refer to the final run, months of research or the infrastructure the research relied on. The BLOOM team set out those stages, which lets us see some of the work that took place before the most prominent result. [4]
+
+There is a similar challenge in going from one model to a bill for the whole industry. The model in a study has a particular design and runs on particular machines. Two teams aiming for a similar result may work with different amounts of data and put in different numbers of attempts. BLOOM is valuable as a case that has been described in detail. It teaches us to look for where other researchers began counting. [4]
+
+## The moment I ask
+
+Back at the desk, the trained model now receives a specific job. The server must process my question and any relevant conversation. The model then computes the next pieces of the reply. Electricity use varies with the amount of text it has to process, the length of the answer, the model, and the way the servers share the work. The service may also generate several attempts before showing one to the user. [5] [7]
+
+In a study published by researchers at Google, the median text request in Gemini Apps used 0.24 watt-hours in May 2025. That included the AI chips and their host systems, a share of idle capacity, and overhead in the data centre. The figure describes one text service under a specified measurement method. Manufacturing the hardware, training the model and running the user’s device belong elsewhere in the wider account. [5]
+
+Suppose the desk lamp draws 10 watts. Left on for an hour, it uses 10 watt-hours. It would take about 86 seconds to use as much electricity as the median Gemini request in that study. We are comparing the same quantity in the same unit. It helps us see just how small a single answer can seem. It also lets us imagine a larger scale. If 100 million answers each took exactly 0.24 Wh to serve, together they would use 24 MWh, more than seven Irish households would use in a year at that median. In that example every answer deliberately uses an identical amount. A real service handles many different kinds of jobs. [5] [11]
+
+An image makes very different demands on a server. In a study presented at FAccT in 2024, the group of image-generation models under test averaged about 2.9 kWh for every thousand generations. That is about 2.9 Wh per image under the conditions of the experiment. Results varied widely between models. This was a benchmark across a set of models, while the figure of 0.24 Wh came from measuring a live text service. Think of them as two meter readings made at different places. [5] [6]
+
+There is another difference between one run and a job completed. A designer might sit down to make one image and look at twelve suggestions before choosing it. For the designer that is one assignment. The servers have carried out twelve operations, perhaps with more to come when the chosen image is adjusted. When comparing ways of working, the outcome someone wanted and the steps taken to reach it both matter. The same applies to writing and to assistants that initiate further steps on their own. [6] [7]
+
+For a video, ask about duration, resolution and the number of attempts. The button marked “generate” looks the same when it requests a short paragraph or another pass at a brief clip. The work it assigns to the server changes. If an app calls several tools, looks up material or retries an operation, more computation leads to the visible result. A useful measurement follows the whole task from the initial request to the finished result. [7]
+
+## Which electricity reaches the server?
+
+A kilowatt-hour on the data centre’s meter is the same amount of energy as a kilowatt-hour at home. Its effect on the climate depends on where and when it was generated. In one hour wind farms may supply a large share of electricity to the local grid. In another, gas-fired plants may supply more. A purchase agreement with a renewable generator can help finance new generation. The surrounding system still has to deliver electricity to the building every hour. [10]
+
+Power and energy tell us different things. Imagine a data centre drawing 20 MW throughout a day. It would use 480 MWh in those 24 hours. That is the daily energy bill. The grid operator also needs to know whether the connection can deliver 20 MW continuously, even in the hours when nearby buildings and factories draw power too. If several new centres want to connect in the same place, accommodating them may take new lines or transformers. [7] [10]
+
+Thinking about time helps us make sense of promises about low-emissions operation. A solar farm might generate as much in a year as a building uses in a year. Towards dusk it supplies less than at midday, and the servers are still working. The building’s electricity at that moment depends on the rest of the power supply, the grid and any storage available. Buying renewable power for the long term and keeping the lights on around the clock address two related problems. [10]
+
+This is why when and where computation takes place can matter. Someone sitting at a desk waiting for an answer expects it now. Some large jobs that take place in the background can be scheduled in advance and finished by a deadline. Where shifting work is possible, a company can take account of when electricity is available on the grid and where it comes from. Designing a service might begin by asking which work has to be done in this very second. [7] [10]
+
+## One small reading, a large bill
+
+The International Energy Agency estimates that data centres worldwide used around 485 TWh of electricity in 2025. That covers AI servers alongside storage and other digital services. In the Stated Policies Scenario of World Energy Outlook 2026, data centre use reaches around 1,000 TWh by 2030. Investments, access to the grid and improvements in hardware efficiency will help determine what actually happens. [7] [9]
+
+Ireland brings that question closer to home. Its Central Statistics Office reported that data centres used 7,663 GWh in 2025, or 23 per cent of the country’s metered electricity consumption. That covers the centres included in the statistics and the full range of jobs they do, including services unrelated to AI. The figure shows what it can mean for one electricity system to host a concentration of large users. [8]
+
+A more efficient model can complete the same job with less electricity. A company might use that saving to serve more people, add image generation or offer an assistant that turns one question into many operations. A smaller draw per job can come alongside a greater number of jobs. Watt-hours per answer help us recognise a technical improvement. The electricity meter for the entire building shows what was done with it. [7]
+
+At home, the easiest way to see AI at work is to watch one person type one question. A data centre also serves organisations that continually analyse documents, apps that suggest what to write, and software that acts without someone having to ask for each step. Those less visible uses are part of the scale of AI. Planning the grid connection, the cooling and the equipment depends on how much of that work will run at the same time. [7]
+
+## What the meter can tell us
+
+A good question about AI and electricity calls for more than one number. I want to know what job was measured and which model performed it. Did the meter cover a whole data centre or part of the equipment? When was the reading taken? If the question is about emissions, I also need to know what electricity supplied that site. If it is about the entire life of the equipment, I want to see manufacturing and the assumptions about how long the equipment will run. [2] [3] [4] [5] [10]
+
+I come back to the lamp. I switch it off and know what has changed on my meter. The answer I have just read has more meters. I can see the small reading at the end of the journey and remember that the journey began at a mine, went through a factory and continues through a power grid that other people need as well. A question about electricity becomes a question about where we want this technology to grow, and what has to be built for it to work there.

@@ -1,0 +1,29 @@
+{
+  "pl": {
+    "slug": "energia-ai",
+    "title": "Ile prądu kosztuje odpowiedź AI?",
+    "description": "Od wydobycia surowców i produkcji chipów po trening modelu i każdą odpowiedź. Gdzie sztuczna inteligencja potrzebuje prądu, jak go mierzymy i co to znaczy dla sieci energetycznej.",
+    "region": "Energia AI · około 12–15 minut lektury",
+    "quote": "Pierwszy koszt odpowiedzi AI pojawia się na długo przed pierwszym pytaniem."
+  },
+  "en": {
+    "slug": "ai-energy",
+    "title": "How much electricity does an AI answer use?",
+    "description": "From mining and making chips to training a model and serving an answer. Where AI uses electricity, how it is measured and what that means for the power grid.",
+    "region": "AI and energy · about 12–15 min read",
+    "quote": "The first cost of an AI answer arises long before the first question."
+  },
+  "sources": [
+    ["US Geological Survey, Mineral Commodity Summaries 2026, rozdział „Silicon”", "US Geological Survey, Mineral Commodity Summaries 2026, chapter on silicon", "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"],
+    ["Imec, ślad środowiskowy produkcji układów logicznych CMOS", "Imec, the environmental footprint of logic CMOS technologies", "https://www.imec-int.com/en/articles/environmental-footprint-logic-cmos-technologies"],
+    ["US Department of Energy, projektowanie efektywnych energetycznie centrów danych", "US Department of Energy, Best Practices Guide for Energy-Efficient Data Center Design", "https://www.energy.gov/sites/default/files/2024-07/best-practice-guide-data-center-design_0.pdf"],
+    ["Luccioni, Viguier i Ligozat, ślad węglowy modelu BLOOM, JMLR, 2023", "Luccioni, Viguier and Ligozat, the carbon footprint of BLOOM, JMLR, 2023", "https://jmlr.org/papers/volume24/23-0069/23-0069.pdf"],
+    ["Elsworth i in., pomiar zużycia energii przy obsłudze Gemini, Google, 2025", "Elsworth et al., measuring energy use in Gemini serving, Google, 2025", "https://arxiv.org/abs/2508.15734"],
+    ["Luccioni, Jernite i Strubell, Power Hungry Processing, ACM FAccT, 2024", "Luccioni, Jernite and Strubell, Power Hungry Processing, ACM FAccT, 2024", "https://arxiv.org/html/2311.16863v3"],
+    ["IEA, Key Questions on Energy and AI, kwiecień 2026", "IEA, Key Questions on Energy and AI, April 2026", "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary"],
+    ["Central Statistics Office Ireland, zmierzone zużycie prądu przez centra danych w 2025 r.", "Central Statistics Office Ireland, Data Centres Metered Electricity Consumption 2025", "https://www.cso.ie/en/releasesandpublications/ep/p-dcmec/datacentresmeteredelectricityconsumption2025/"],
+    ["IEA, World Energy Outlook 2026, wyniki scenariusza STEPS", "IEA, World Energy Outlook 2026, findings for the STEPS scenario", "https://www.iea.org/reports/world-energy-outlook-2026/overview-and-key-findings"],
+    ["IEA, World Energy Outlook 2026, zaopatrzenie centrów danych w energię, s. 84", "IEA, World Energy Outlook 2026, power supply for data centres, p. 84", "https://www.iea.org/files/9bd739f6-e4c8-4d09-902b-4e1eb7eb083f/WorldEnergyOutlook2026.pdf#page=84"],
+    ["Central Statistics Office Ireland, zużycie prądu w gospodarstwach domowych w 2025 r., tabela 2.4", "Central Statistics Office Ireland, Residential Metered Electricity Consumption 2025, table 2.4", "https://www-cloud.cso.ie/en/releasesandpublications/ep/p-mec/meteredelectricityconsumption2025/residential/"]
+  ]
+}

@@ -1,16 +1,38 @@
 .v4-home .cover {
-  container-type: inline-size;
+  container-type: size;
+  --desk-photo-width: max(100cqw, 300cqh);
+  --desk-photo-height: max(100cqh, calc(100cqw / 3));
+}
+
+.v4-home .cover-image {
+  object-position: 100% 50%;
+}
+
+/* Points are measured from the right edge and vertical centre of cover.webp (2172 × 724). */
+.v4-home .cover :is(.ai-guide-hotspot, .atlas-entry, .lamp-entry) {
+  left: calc(100% - var(--desk-photo-width) * var(--desk-point-right) / 2172);
+  top: calc(50% + var(--desk-photo-height) * var(--desk-point-y) / 724);
+}
+
+.v4-home .cover .notebook-hotspot {
+  --book-left: max(0px, calc(100cqw - var(--desk-photo-width) * 1023 / 2172));
+  --book-right: min(100cqw, calc(100cqw - var(--desk-photo-width) * 422 / 2172));
+  --book-top: max(0px, calc(50cqh + var(--desk-photo-height) * 21 / 724));
+  --book-bottom: min(100cqh, calc(50cqh + var(--desk-photo-height) * 203 / 724));
+  left: var(--book-left);
+  top: var(--book-top);
+  width: calc(var(--book-right) - var(--book-left));
+  height: calc(var(--book-bottom) - var(--book-top));
 }
 
 .ai-guide-hotspot {
-  --ai-guide-pen-x: max(75cqw, calc(50cqw + 218px));
+  --desk-point-right: 527;
+  --desk-point-y: 199;
   position: absolute;
   z-index: 4;
-  left: var(--ai-guide-pen-x);
-  top: max(79%, calc(50% + 9.5cqw));
   min-width: 44px;
   min-height: 44px;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
   text-decoration: none;
   touch-action: manipulation;
 }
@@ -18,7 +40,7 @@
 .ai-guide-hotspot-point {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   width: 10px;
   height: 5px;
   border: 1px solid #e8c47e;
@@ -33,9 +55,45 @@
   outline-offset: 1px;
 }
 
+.atlas-entry {
+  --desk-point-right: 1036;
+  --desk-point-y: -30;
+}
+
+.lamp-entry {
+  --desk-point-right: 154;
+  --desk-point-y: -229;
+  position: absolute;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.lamp-entry-point {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #ffedb5;
+  border-radius: 50%;
+  background: #e8be75;
+  box-shadow: 0 0 0 2px #534023, 0 0 10px 3px #ffd28499;
+}
+
+.lamp-entry:focus-visible {
+  outline: 2px solid #f3d491;
+  outline-offset: 1px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .ai-guide-hotspot-point::after,
-  .atlas-entry-dot::after {
+  .atlas-entry-dot::after,
+  .lamp-entry-point::after {
     content: '';
     position: absolute;
     inset: -3px;
@@ -49,6 +107,10 @@
   .atlas-entry-dot::after {
     animation-delay: .7s;
   }
+
+  .lamp-entry-point::after {
+    animation-delay: 1.4s;
+  }
 }
 
 @keyframes cover-point-pulse {
@@ -56,14 +118,40 @@
   70%, 100% { opacity: 0; transform: scale(2.05); }
 }
 
-@media (max-width: 760px) {
-  .ai-guide-hotspot {
-    --ai-guide-pen-x: max(75cqw, calc(50cqw + 178px));
+@media (max-width: 900px) {
+  .atlas-entry {
+    --desk-point-right: 572;
+    --desk-point-y: -213;
+  }
+
+  .lamp-entry {
+    --desk-point-y: -254;
+  }
+}
+
+@media (max-width: 350px) {
+  .v4-home .cover-kicker {
+    font-size: 7px;
+    letter-spacing: .12em;
   }
 }
 
 @media (max-width: 520px) {
-  .ai-guide-hotspot {
-    --ai-guide-pen-x: calc(66cqw + 55px);
+  .v4-home .cover::after {
+    background: linear-gradient(90deg, #061219e8, #061219ad 46%, #06121926 76%, #06121908);
+  }
+
+  .v4-home .cover-content {
+    gap: 12px;
+  }
+
+  .v4-home .cover-kicker {
+    max-width: 46%;
+  }
+
+  .v4-home .cover-line {
+    max-width: 61%;
+    font-size: clamp(16px, 4.6vw, 21px);
+    line-height: 1.22;
   }
 }

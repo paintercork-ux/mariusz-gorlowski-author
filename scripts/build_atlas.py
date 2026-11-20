@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import re
 
-from build_reader_pages import ORIGIN, atlas_path, reader_html, reader_path
+from build_reader_pages import ORIGIN, atlas_path, reader_html, reader_path, sourced_article_body
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -21,37 +21,7 @@ QUOTES = {
 
 def article_body(item, lang):
     body = (ROOT / "data/ai-atlas" / lang / f"{item['id']}.txt").read_text(encoding="utf-8")
-    source_label = "Źródła" if lang == "pl" else "Sources"
-    source_name = "Źródło" if lang == "pl" else "Source"
-    bibliography = SOURCES[item["id"]]
-    paragraphs = []
-    for block in re.split(r"\n\s*\n", body.strip()):
-        if block.startswith("## "):
-            paragraphs.append(f'<h2 class="reader-section-title">{escape(block[3:])}</h2>')
-            continue
-        references = re.search(r"(?:\s*\[\d+\])+$", block)
-        if references is None:
-            paragraphs.append(f"<p>{escape(block)}</p>")
-            continue
-        numbers = [int(number) for number in re.findall(r"\d+", references.group())]
-        if any(not 1 <= number <= len(bibliography) for number in numbers):
-            raise ValueError(f"Missing source for {item['id']} in {lang}")
-        citation_links = "".join(
-            f'<a href="#source-{n}" aria-label="{source_name} {n}">[{n}]</a>'
-            for n in numbers
-        )
-        paragraphs.append(
-            f'<p>{escape(block[:references.start()])}<sup class="reader-citations">{citation_links}</sup></p>'
-        )
-    sources = []
-    for n, (pl_label, en_label, url) in enumerate(bibliography, 1):
-        label = pl_label if lang == "pl" else en_label
-        sources.append(f'<li id="source-{n}"><a href="{escape(url, quote=True)}">{escape(label)}</a></li>')
-    return "\n".join(paragraphs) + f'''
-<section class="reader-sources" aria-labelledby="reader-sources-title">
-<h2 id="reader-sources-title">{source_label}</h2>
-<ol>{''.join(sources)}</ol>
-</section>'''
+    return sourced_article_body(body, SOURCES[item["id"]], item["id"], lang)
 
 
 def map_page(lang):

@@ -1,0 +1,79 @@
+Zapalam lampkę i zadaję sztucznej inteligencji pytanie. Po chwili na ekranie pojawiają się pierwsze słowa. Gdybym chciał sprawdzić, ile prądu zużyła lampka, wystarczyłaby jej moc i czas świecenia. Z odpowiedzią AI jest trudniej. Część pracy odbyła się właśnie teraz, gdzieś daleko od mojego biurka. Za resztę świat zaczął płacić, zanim to pytanie w ogóle przyszło mi do głowy.
+
+Pierwszy koszt odpowiedzi AI pojawia się na długo przed pierwszym pytaniem. Najpierw ktoś musi wydobyć surowce, wyprodukować chip i zbudować miejsce, w którym chip będzie mógł pracować. Potem trzeba wytrenować model i utrzymywać usługę dostępną dla ludzi. Każde z tych działań ma innego wykonawcę, inny licznik i często inny kraj. Zacznijmy od miejsca, którego w rozmowie z chatbotem najtrudniej się domyślić.
+
+## Najpierw jest kamień
+
+Pod obudową akceleratora, układu wykonującego obliczenia dla AI, znajduje się krzem. Jedna z dróg do niego zaczyna się od kwarcytu bogatego w krzemionkę. Po wydobyciu surowiec trzeba przetworzyć, a krzem oczyścić do jakości wymaganej przez przemysł półprzewodników. Osobną drogę mają przewody, płytki i elementy zasilania. Nawet jeśli wszystko to trafi do jednego serwera, prąd potrzebny przy produkcji zostanie zapisany w fabrykach rozsianych po całym łańcuchu dostaw. [1] [2]
+
+Z oczyszczonego krzemu powstaje cienki, okrągły plaster. W fabryce przybywa na nim warstw i połączeń. Urządzenia pracują w kontrolowanych warunkach. Powierzchnię wielokrotnie poleruje się i płucze wodą o wyjątkowo wysokiej czystości. Żeby to zobaczyć, dobrze przez chwilę pomyśleć o płytce, na której ma powstać wiele układów. Każda dodatkowa operacja zajmuje czas narzędzia, a narzędzie w tym czasie pobiera energię. [2]
+
+Belgijski instytut imec obliczył, że przy założeniach jego symulacji ilość prądu potrzebna na jeden plaster krzemowy wzrosła ponad trzykrotnie między modelowanymi technologiami 28 i 2 nanometrów. To przykład kosztu coraz bardziej złożonej produkcji. Na plastrze mogą też zmieścić się gęściej upakowane układy. Żeby ocenić korzyść, trzeba wiedzieć, ile sprawnych chipów wyszło z danego plastra i co potrafi każdy z nich. Porównanie wykonane na jeden plaster odpowiada na inne pytanie niż porównanie na jedno wykonane zadanie. [2]
+
+Gdy fabryka oddaje gotowy układ, prąd użyty do jego wytworzenia pozostaje częścią historii produktu. Przy porównaniu dwóch serwerów znaczenie mają zatem i zużycie podczas pracy, i to, ile nowych urządzeń trzeba wyprodukować, żeby osiągnąć tę samą wydajność. Ważny jest również czas użytkowania. Wymiana sprzętu może przynieść oszczędność w serwerowni, a całościowy bilans zależy od skali tej oszczędności oraz od produkcji i dalszych losów urządzeń. [2] [4]
+
+Spójrzmy jeszcze na mapę. Kraj, w którym pracuje serwer, może kupić chipy z fabryki zasilanej zupełnie inną siecią. Kraj, w którym użytkownik otwiera aplikację, może być jeszcze gdzie indziej. Jeśli zainteresuje nas zużycie wody, liczy się również, z którego obszaru i w jakiej porze pobrana została woda dla fabryki. Pełna droga od surowca do gotowej usługi przebiega przez konkretne miejsca. Uśrednienie wszystkich etapów w jednej liczbie potrafi te miejsca ukryć. [2] [4] [5]
+
+## Budynek, który oddaje ciepło
+
+Kiedy serwer trafia do centrum danych, do pracy potrzebuje sieci, pamięci i stabilnego zasilania. W budynku powstaje ciepło, które trzeba odprowadzić. W jednych instalacjach robi się to głównie za pomocą powietrza, w innych ciecz odbiera ciepło bliżej układów. Potem ciepło opuszcza budynek. Wentylatory, pompy i przekształcanie energii dokładają swoje zużycie. Część wyposażenia pracuje także wtedy, gdy dany komputer akurat czeka na zlecenie. [3] [5]
+
+W centrum danych są więc co najmniej dwa interesujące odczyty. Pierwszy obejmuje prąd pobierany przez urządzenia informatyczne. Drugi obejmuje cały obiekt. Stosunek większego odczytu do mniejszego nazywa się PUE. Gdy sprzęt w pewnym okresie zużył 100 kWh, a PUE wynosi 1,2, na cały obiekt w tym przykładzie przypada 120 kWh. Różnica pomaga zobaczyć wspólne koszty, od chłodzenia po zasilanie. [3]
+
+Można też zapytać, co się dzieje z ciepłem. Część instalacji ma możliwość przekazania go do sieci ciepłowniczej. W badaniu BLOOM autorzy wspominają, że część ciepła z superkomputera Jean Zay wykorzystuje sieć obsługująca kampus Paris-Saclay. Zysk zależy między innymi od tego, czy w pobliżu jest odbiorca ciepła i czy potrzebuje go wtedy, gdy serwery pracują. Prąd zużyty przez maszyny wciąż jest widoczny na ich liczniku. Korzyść pojawia się po stronie odbiorcy, który może zastąpić część własnego ogrzewania. [3] [4]
+
+Dwa centra z takim samym PUE mogą mieć zupełnie inny apetyt na prąd. Jedno mieści kilka rzędów szaf, drugie wiele hal. Wskaźnik opisuje sprawność budynku względem pracującego w nim sprzętu. Żeby zrozumieć pobór z sieci, potrzebujemy również odczytu w kilowatogodzinach i informacji, kiedy budynek korzysta z prądu. Podobnie z wodą. Jej zużycie zależy między innymi od sposobu chłodzenia, a w fabryce chipów mamy jeszcze odrębny pobór na potrzeby produkcji. [2] [3]
+
+## Miesiące przed pierwszym pytaniem
+
+Model językowy uczy się na przykładach. Otrzymuje fragment tekstu, próbuje przewidzieć jego dalszy ciąg, a następnie koryguje swoje ustawienia na podstawie błędu. Ta praca odbywa się w partiach na wielu układach równocześnie. Do ostatecznego treningu dochodzą mniejsze próby, które pomagają wybrać rozmiar i budowę modelu. Pamięć przechowuje dane, a serwery komunikują się ze sobą. Z perspektywy użytkownika wciąż jeszcze nic nie pojawiło się na ekranie. [4]
+
+Dobrze udokumentowany przypadek to BLOOM, model językowy wytrenowany na francuskim superkomputerze Jean Zay. Końcowa sesja trwała około 118 dni. Autorzy oszacowali zużycie pracujących układów graficznych na około 433 tys. kWh. Obliczyli tę liczbę na podstawie godzin pracy i znamionowej wartości TDP układów, przyjętej jako przybliżenie pobieranej mocy, ponieważ przez cały okres nie rejestrowali wskazania mocy na żywo. W badaniu wyliczali osobno m.in. koszt gotowości infrastruktury i wpływ wytworzenia sprzętu. Badali też energię wcześniejszych eksperymentów. [4]
+
+Dla porównania weźmy dom w Irlandii. W 2025 roku mediana rocznego zużycia prądu według tamtejszych liczników mieszkaniowych wyniosła 3 228 kWh. Gdyby 134 gospodarstwa zużywały po tyle prądu przez rok, ich łączny wynik byłby zbliżony do zużycia oszacowanego dla układów graficznych podczas końcowego treningu BLOOM. [4] [11]
+
+To daje nam konkretne wyobrażenie, jak dużym przedsięwzięciem bywa jeden trening. Później model może obsłużyć miliony pytań, może też zostać szybko zastąpiony jego nowszą wersją. Jeżeli chcemy przypisać część kosztu treningu jednej odpowiedzi, potrzebujemy założenia o tym, przez ile czasu i jak intensywnie ktoś będzie używać modelu. Wynik zmieni się, kiedy zmienimy przewidywaną liczbę odpowiedzi. Rachunek za całe szkolenie pozostaje ten sam.
+
+W praktyce jedna firma może przez długi czas używać niewielkiego modelu w ściśle określonym celu. Inna uruchomi wiele wersji dużego modelu i będzie je doskonaliła równolegle. Samo słowo „trening” wtedy niewiele mówi. Trzeba wiedzieć, czy raport obejmuje ostatnią sesję, kilka miesięcy badań, czy całą infrastrukturę, z której te badania korzystały. Zespół BLOOM rozpisał te etapy, więc widać także to, co działo się przed najbardziej znanym wynikiem. [4]
+
+Podobny problem wraca, kiedy od wyniku jednego modelu ktoś próbuje przejść do rachunku całej branży. Testowany model ma własną architekturę i działa na konkretnym sprzęcie. Dwa zespoły mogą dążyć do podobnego efektu, korzystając z innej ilości danych i wykonując różną liczbę prób. Dlatego BLOOM jest przydatny przede wszystkim jako dobrze opisany przypadek. Na jego przykładzie można nauczyć się czytać inne raporty i sprawdzać, gdzie zaczęto liczyć. [4]
+
+## Chwila, w której wpisuję pytanie
+
+Pora wrócić do biurka. Wytrenowany model dostaje teraz konkretne zadanie. Na serwerze trzeba przetworzyć moje pytanie i treść rozmowy, do której się odnosi. Następnie model wylicza kolejne fragmenty odpowiedzi. Koszt zależy między innymi od ilości tekstu do przejrzenia, długości odpowiedzi, użytego modelu i sposobu, w jaki serwery dzielą pracę. Na wyniku może się też odbić decyzja o wygenerowaniu kilku prób przed pokazaniem jednej z nich. [5] [7]
+
+W pomiarze opublikowanym przez zespół Google mediana dla tekstowego zapytania w aplikacjach Gemini wyniosła 0,24 Wh w maju 2025 roku. Odczyt obejmował pracę układów AI, zużycie systemu serwera, gotowość części maszyn i udział infrastruktury centrum danych. Jest to liczba dla usługi tekstowej i określonej metody pomiaru. Produkcja sprzętu, trening modelu i urządzenie użytkownika mają w rachunku własne miejsce. [5]
+
+Załóżmy, że lampka na biurku pobiera 10 W. Przez godzinę zużyje 10 Wh. W przybliżeniu potrzebowałaby 86 sekund, żeby zużyć tyle prądu, ile wyniosła ta mediana Gemini. To porównanie jednej wielkości, podanej w tej samej jednostce. Pokazuje, że pojedyncza odpowiedź może wydawać się mała. Pomaga też wyobrazić sobie skalę. Gdyby każda ze stu milionów odpowiedzi zużyła dokładnie 0,24 Wh, ich obsługa pochłonęłaby 24 MWh, czyli tyle, ile ponad siedem takich irlandzkich gospodarstw zużywa w ciągu roku. W tej kalkulacji każda odpowiedź ma celowo takie samo zużycie. Rzeczywista usługa składa się z wielu różniących się zadań. [5] [11]
+
+Obraz stawia przed serwerem inne zadanie. W badaniu opublikowanym na konferencji FAccT w 2024 roku zestaw testowanych modeli do generowania obrazów potrzebował średnio około 2,9 kWh na tysiąc wygenerowań. W przeliczeniu wychodzi około 2,9 Wh za obraz w warunkach tego badania. Wyniki między modelami były mocno zróżnicowane. W dodatku był to test zestawu modeli, a wcześniejsze 0,24 Wh pochodzi z pomiaru działającej usługi tekstowej. Najuczciwiej patrzeć na te przykłady jak na dwa odczyty wykonane w różnych miejscach. [5] [6]
+
+Jest jeszcze różnica między jednym uruchomieniem a zakończoną pracą. Projektant może usiąść z zamiarem stworzenia jednego obrazu i obejrzeć dwanaście propozycji, zanim wybierze właściwą. Dla niego to jedno zlecenie. Serwery wykonały dwanaście operacji i być może kolejne przy poprawianiu wybranego obrazu. Przy porównaniu metod liczy się efekt, jaki ktoś naprawdę chciał uzyskać, oraz droga, którą do niego doszedł. To samo dotyczy pisania tekstu i korzystania z asystenta, który sam uruchamia następne kroki. [6] [7]
+
+Przy filmie warto jeszcze zapytać o długość, rozdzielczość i liczbę prób. Z punktu widzenia użytkownika przycisk „wygeneruj” wygląda tak samo, gdy prosi o krótki tekst i gdy każe poprawić kilkusekundowy klip. Po stronie serwera zmienia się rodzaj zlecenia. Jeśli aplikacja uruchamia kilka narzędzi, wyszukuje materiały lub ponawia operację, do widocznego efektu prowadzi więcej obliczeń. Najbardziej przydatny jest pomiar wykonania całego zadania od początku do końca. [7]
+
+## Który prąd płynie do serwerowni?
+
+Kilowatogodzina na liczniku serwerowni ma ten sam rozmiar co kilowatogodzina w domu. Jej wpływ na klimat zależy od miejsca i chwili wytworzenia. W jednej godzinie do lokalnej sieci dużo energii oddają źródła wiatrowe, w innej rośnie udział bloków gazowych. Podpisanie umowy zakupu energii z producentem odnawialnym może pomóc sfinansować nowe źródło. Równolegle w każdej godzinie trzeba sprawdzić, czy pobliska sieć jest w stanie fizycznie dostarczyć zasilanie. [10]
+
+Energia i moc mówią o dwóch różnych sprawach. Wyobraźmy sobie centrum pobierające 20 MW przez całą dobę. Zużyje w tym czasie 480 MWh. Tyle mówi rachunek za energię za dany dzień. Dla operatora sieci kluczowe jest też to, czy na przyłączu można stale dostarczać 20 MW, nawet w godzinach, kiedy pobliskie budynki i zakłady również potrzebują prądu. Jeżeli kilka nowych centrów chce podłączyć się w tym samym miejscu, obsłużenie ich może wymagać nowych linii lub transformatorów. [7] [10]
+
+Ćwiczenie z myśleniem o czasie bardzo pomaga przy obietnicach niskoemisyjnej pracy. Roczna produkcja z farmy słonecznej może na papierze odpowiadać rocznemu zużyciu budynku. O zmierzchu farma przestaje dostarczać tyle prądu co w środku dnia, a serwery dalej wykonują zadania. O zdolności systemu do zasilenia obiektu w tym momencie decydują pozostałe źródła, sieć i dostępne magazyny. Długa umowa na odnawialną energię i pewne zasilanie przez całą dobę rozwiązują dwa powiązane problemy. [10]
+
+Stąd znaczenie wyboru, gdzie i kiedy uruchomić obliczenia. Osoba czekająca na odpowiedź przy biurku liczy na wynik od razu. Część dużych zadań wykonywanych w tle można zaplanować wcześniej i zakończyć przed umówionym terminem. Gdy takie przesunięcie jest możliwe, firma może uwzględnić dostępność prądu w sieci i jego pochodzenie. Przy projektowaniu całej usługi warto zacząć od pytania, która praca naprawdę musi zostać zrobiona w tej sekundzie. [7] [10]
+
+## Jeden mały odczyt, duży rachunek
+
+Międzynarodowa Agencja Energetyczna szacuje, że centra danych na świecie zużyły w 2025 roku około 485 TWh prądu. W zestawieniu tym mieszczą się serwery dla AI, a także przechowywanie danych i inne usługi cyfrowe. W scenariuszu STEPS z raportu World Energy Outlook 2026, opartym na zadeklarowanych kierunkach polityki energetycznej, do 2030 roku zużycie przez centra danych sięga około tysiąca TWh. Na wynik wpłyną m.in. liczba inwestycji, dostęp do sieci i tempo poprawy sprawności sprzętu. [7] [9]
+
+Irlandia dobrze pokazuje, jak ta sprawa wygląda bliżej domu. Tamtejszy urząd statystyczny podał, że centra danych zużyły w 2025 roku 7 663 GWh, czyli 23 procent energii elektrycznej objętej pomiarem licznikowym w kraju. W tym wyniku mieszczą się wszystkie objęte badaniem centra danych i ich zastosowania, także te niezwiązane z AI. Liczba mówi przede wszystkim o koncentracji dużych odbiorców prądu w jednym systemie. [8]
+
+Sprawniejszy model może wykonywać tę samą czynność mniejszym kosztem. Jednocześnie firma może wykorzystać tę oszczędność, by obsługiwać więcej osób, dodać generowanie obrazów albo uruchomić asystenta, który z jednego pytania zrobi wiele operacji. Wtedy obok niższego poboru na zadanie pojawia się wzrost liczby zadań. Wskaźnik w Wh na odpowiedź pozwala docenić postęp techniczny. Odczyt energii całego obiektu pozwala zobaczyć, co z tym postępem zrobiono. [7]
+
+W skali domu najłatwiej zobaczyć użycie AI, kiedy jedno pytanie wpisuje jedna osoba. W skali centrum danych do tego obrazu dochodzą instytucje, które ciągle analizują dokumenty, aplikacje podpowiadające treść i automaty wykonujące zadania bez osobnego polecenia człowieka przy każdym kroku. Rozmowa o skali AI obejmuje te mniej widoczne zastosowania. Na decyzje o przyłączu, chłodzeniu i zakupie sprzętu wpływa to, ile takich obciążeń będzie pracować równocześnie. [7]
+
+## Co zostaje na liczniku
+
+Dobrze postawione pytanie o energię AI prosi o więcej niż jedną liczbę. Chcę wiedzieć, jakiego zadania dotyczy pomiar i jaki model je wykonał. Czy na liczniku była cała serwerownia, czy część sprzętu? Z jakiego okresu pochodzi wynik? Jeżeli rozmowa dotyczy emisji, potrzebuję jeszcze informacji o prądzie używanym w danym miejscu. Jeżeli dotyczy całego cyklu życia, chcę widzieć także produkcję sprzętu i podstawę do oszacowania, jak długo będzie pracował. [2] [3] [4] [5] [10]
+
+Wracam do lampki. Wyłączam ją i wiem, co zmieniło się na moim liczniku. Odpowiedź, którą przeczytałem przed chwilą, ma więcej liczników. Mogę zobaczyć jej niewielki odczyt na końcu drogi i zarazem pamiętać, że ta droga zaczęła się w kopalni, przeszła przez fabrykę i dalej prowadzi przez sieć energetyczną, z której korzystają inni ludzie. W pytaniu o prąd kryje się zatem pytanie o to, gdzie ta technologia ma się rozwijać i co trzeba zbudować, żeby mogła tam działać.

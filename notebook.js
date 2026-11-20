@@ -501,38 +501,11 @@ async function prepareImage(page, button) {
   finally { button.disabled = false; button.textContent = ui.saveShort; }
 }
 
-// Map the real book in the existing image, including object-fit cropping on phones.
-function alignBookHotspot() {
-  const image = document.querySelector('.cover-image');
-  const hotspot = document.querySelector('.notebook-hotspot');
-  if (!image || !hotspot || !image.naturalWidth) return;
-  const style = getComputedStyle(image);
-  const positions = style.objectPosition.split(' ').map(value => parseFloat(value) / 100);
-  const sx = Number.isFinite(positions[0]) ? positions[0] : .5;
-  const sy = Number.isFinite(positions[1]) ? positions[1] : .5;
-  const scale = Math.max(image.clientWidth / image.naturalWidth, image.clientHeight / image.naturalHeight);
-  const x = (image.clientWidth - image.naturalWidth * scale) * sx;
-  const y = (image.clientHeight - image.naturalHeight * scale) * sy;
-  // Original 2172 × 724 hero: the closed black book, not the foreground notebook.
-  const box = { left: 1149, top: 383, right: 1750, bottom: 565 };
-  const left = Math.max(0, x + box.left * scale), top = Math.max(0, y + box.top * scale);
-  const right = Math.min(image.clientWidth, x + box.right * scale), bottom = Math.min(image.clientHeight, y + box.bottom * scale);
-  if (right <= left || bottom <= top) { hotspot.style.visibility = 'hidden'; return; }
-  hotspot.style.cssText = `left:${left}px;top:${top}px;width:${right - left}px;height:${bottom - top}px;`;
-}
-
 for (const trigger of document.querySelectorAll('[data-notebook-open]')) {
   trigger.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
     event.preventDefault(); openBook(trigger);
   });
-}
-const coverImage = document.querySelector('.cover-image');
-if (coverImage) {
-  coverImage.addEventListener('load', alignBookHotspot);
-  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(alignBookHotspot).observe(coverImage);
-  else window.addEventListener('resize', alignBookHotspot);
-  alignBookHotspot();
 }
 window.addEventListener('popstate', () => {
   if (/^#notebook/u.test(location.hash)) {

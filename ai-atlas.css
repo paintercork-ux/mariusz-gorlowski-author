@@ -1,12 +1,6 @@
-/*
- * Positions refer to the original 3:1 photograph and its three cover crops.
- * The hit area is larger than the visible point.
- */
 .atlas-entry {
   position: absolute;
   z-index: 5;
-  left: calc(50% + max(2.5cqw, 22.05px));
-  top: calc(50% - max(2cqw, 17.64px));
   display: grid;
   width: 44px;
   height: 44px;
@@ -26,13 +20,6 @@
   box-shadow: 0 0 0 3px #1c211cbf, 0 0 0 5px #ebc77c66, 0 0 13px 3px #f2c26b55;
 }
 .atlas-entry:focus-visible { outline: 2px solid #f3d491; }
-
-@media (max-width: 760px) {
-  .atlas-entry { left: calc(50% + 154.8px); top: 16.2%; }
-}
-@media (max-width: 520px) {
-  .atlas-entry { left: calc(66% + 34.32px); }
-}
 
 .atlas-page [hidden] { display: none; }
 

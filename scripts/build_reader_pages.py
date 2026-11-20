@@ -17,7 +17,41 @@ def reader_path(item, lang, translations):
         raise ValueError("Invalid essay slug: " + slug)
     if item["type"] == "atlas":
         return atlas_path(lang) + slug + "/"
-    return ("/pl" if lang == "pl" else "") + "/writing/essays/" + slug + "/"
+    section = "/writing/" if item["type"] == "article" else "/writing/essays/"
+    return ("/pl" if lang == "pl" else "") + section + slug + "/"
+
+
+def sourced_article_body(body, bibliography, item_id, lang):
+    source_label = "Źródła" if lang == "pl" else "Sources"
+    source_name = "Źródło" if lang == "pl" else "Source"
+    paragraphs = []
+    for block in re.split(r"\n\s*\n", body.strip()):
+        if block.startswith("## "):
+            paragraphs.append(f'<h2 class="reader-section-title">{escape(block[3:])}</h2>')
+            continue
+        references = re.search(r"(?:\s*\[\d+\])+$", block)
+        if references is None:
+            paragraphs.append(f"<p>{escape(block)}</p>")
+            continue
+        numbers = [int(number) for number in re.findall(r"\d+", references.group())]
+        if any(not 1 <= number <= len(bibliography) for number in numbers):
+            raise ValueError(f"Missing source for {item_id} in {lang}")
+        citation_links = "".join(
+            f'<a href="#source-{n}" aria-label="{source_name} {n}">[{n}]</a>'
+            for n in numbers
+        )
+        paragraphs.append(
+            f'<p>{escape(block[:references.start()])}<sup class="reader-citations">{citation_links}</sup></p>'
+        )
+    sources = []
+    for n, (pl_label, en_label, url) in enumerate(bibliography, 1):
+        label = pl_label if lang == "pl" else en_label
+        sources.append(f'<li id="source-{n}"><a href="{escape(url, quote=True)}">{escape(label)}</a></li>')
+    return "\n".join(paragraphs) + f'''
+<section class="reader-sources" aria-labelledby="reader-sources-title">
+<h2 id="reader-sources-title">{source_label}</h2>
+<ol>{''.join(sources)}</ol>
+</section>'''
 
 
 def quote_markup(item, lang, metadata, quotes):
@@ -25,7 +59,7 @@ def quote_markup(item, lang, metadata, quotes):
     if not paragraphs:
         return ""
     polish = lang == "pl"
-    atlas = item["type"] == "atlas"
+    article = item["type"] in {"atlas", "article"}
     caption = "Zabierz jedną myśl" if polish else "Take a thought with you"
     save = "Zapisz myśl" if polish else "Save a thought"
     close = "Zamknij" if polish else "Close"
@@ -39,7 +73,7 @@ def quote_markup(item, lang, metadata, quotes):
     cancel = "Anuluj" if polish else "Cancel"
     error = "Nie udało się przygotować grafiki. Spróbuj ponownie." if polish else "The image could not be prepared. Please try again."
     data = {"title": metadata["title"], "language": lang, "paragraphs": paragraphs, "filename": "mariusz-gorlowski-" + metadata.get("slug", item["id"]) + "-" + lang + ".png"}
-    if atlas:
+    if article:
         instructions = "Wybierz akapit z artykułu. Możesz też skrócić go do wybranego zdania lub wkleić inny fragment tego tekstu." if polish else "Choose a paragraph from the article. You can shorten it to a sentence or paste another passage from this article."
         passages = "Fragmenty artykułu" if polish else "Article passages"
         data["article"] = True
@@ -68,7 +102,7 @@ def quote_markup(item, lang, metadata, quotes):
 
 def reader_html(item, lang, translations, render_body, date_label, next_item, quotes):
     polish = lang == "pl"
-    atlas = item["type"] == "atlas"
+    article = item["type"] in {"atlas", "article"}
     meta = translations[item["id"]] if polish else item
     title, description = escape(meta["title"]), escape(meta["description"], quote=True)
     path = reader_path(item, lang, translations)
@@ -87,16 +121,20 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
     next_path = reader_path(next_item, lang, translations)
     en_current = ' aria-current="page"' if not polish else ""
     pl_current = ' aria-current="page"' if polish else ""
-    if atlas:
-        listing = atlas_path(lang) + "#" + item["id"]
-        back = "Wróć do mapy" if polish else "Back to the map"
+    if article:
+        if item["type"] == "atlas":
+            listing = atlas_path(lang) + "#" + item["id"]
+            back = "Wróć do mapy" if polish else "Back to the map"
+        else:
+            listing = home + "#top"
+            back = "Wróć do gabinetu" if polish else "Back to the study"
         skip = "Przejdź do artykułu" if polish else "Skip to the article"
         reader_meta = escape(meta["region"])
         quote_version = "20261120-atlas"
     else:
         reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
         quote_version = "20261119-quotes-2"
-    published_schema = {"datePublished": item["date"]} if not atlas else {}
+    published_schema = {"datePublished": item["date"]} if not article else {}
     structured = json.dumps({
         "@context": "https://schema.org", "@type": "Article",
         "headline": meta["title"], "description": meta["description"],
