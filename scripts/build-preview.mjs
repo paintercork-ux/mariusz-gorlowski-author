@@ -7,7 +7,7 @@ rmSync(output, { recursive: true, force: true });
 mkdirSync(output, { recursive: true });
 for (const item of readdirSync(root, { withFileTypes: true })) {
   const isPageAsset = item.isFile() && /\.(html|css|js|xml)$/u.test(item.name);
-  const isPageFolder = ['assets', 'data', 'writing', 'qr-finder', 'contact', 'pl', 'curiosity', 'notebook'].includes(item.name);
+  const isPageFolder = ['assets', 'data', 'writing', 'qr-finder', 'contact', 'pl', 'curiosity', 'notebook', 'ai-guide'].includes(item.name);
   if (isPageAsset || isPageFolder) cpSync(resolve(root, item.name), resolve(output, item.name), { recursive: true });
 }
 console.log('Author site preview built in dist.');
