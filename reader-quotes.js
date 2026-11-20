@@ -1,3 +1,14 @@
+let lastQuoteDownloadTime = 0;
+
+function timestampedQuoteFilename(filename) {
+  const now = new Date(Math.max(Date.now(), lastQuoteDownloadTime + 1));
+  lastQuoteDownloadTime = now.getTime();
+  const time = [now.getHours(), now.getMinutes(), now.getSeconds()]
+    .map(value => String(value).padStart(2, '0')).join('-');
+  const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+  return filename.replace(/\.png$/u, `_${time}-${milliseconds}.png`);
+}
+
 function bindQuoteReader(root) {
   const trigger = root.querySelector('[data-save-quote]');
   const dialog = root.querySelector('[data-quote-dialog]');
@@ -170,7 +181,10 @@ function bindQuoteReader(root) {
     preview.src = imageURL;
     preview.alt = `${data.paragraphs.join(' ')} — Mariusz Gorlowski`;
     download.href = imageURL;
-    download.download = filename;
+    download.download = timestampedQuoteFilename(filename);
+    download.onclick = () => {
+      download.download = timestampedQuoteFilename(filename);
+    };
     if (deviceSave && saveHelp) {
       imageFile = undefined;
       if (file && typeof navigator.share === 'function' && typeof navigator.canShare === 'function') {
@@ -323,7 +337,8 @@ function bindQuoteReader(root) {
     deviceSave.addEventListener('click', async () => {
       if (!imageFile) return;
       try {
-        await navigator.share({ files: [imageFile] });
+        const file = new File([imageFile], timestampedQuoteFilename(imageFile.name), { type: imageFile.type });
+        await navigator.share({ files: [file] });
       } catch (error) {
         if (error.name !== 'AbortError') saveHelp.hidden = false;
       }

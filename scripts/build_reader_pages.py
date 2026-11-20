@@ -194,7 +194,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
     else:
         reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
     published_schema = {"datePublished": item["date"]} if not (article or story) else {}
-    quote_script = "" if story else '<script src="/reader-quotes.js?v=20261120-quote-picker-1" defer></script>'
+    quote_script = "" if story else '<script src="/reader-quotes.js?v=20261120-download-time-1" defer></script>'
     structured = json.dumps({
         "@context": "https://schema.org", "@type": "CreativeWork" if story else "Article",
         "headline": meta["title"], "description": meta["description"],
