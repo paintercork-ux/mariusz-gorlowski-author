@@ -152,19 +152,6 @@
   font-weight: 650;
 }
 
-.guide-topbar a.guide-close {
-  flex: none;
-  padding: 0;
-  border-color: #ae905d;
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.guide-topbar a.guide-close:hover {
-  border-color: #e0bc7b;
-  background: #ffffff12;
-}
-
 .guide-book {
   position: relative;
   display: grid;
@@ -223,10 +210,7 @@
 
 .guide-page-head,
 .guide-footer {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 4px 12px;
   min-width: 0;
   color: var(--guide-muted);
@@ -234,7 +218,24 @@
 }
 
 .guide-page-head {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
   border-bottom: 1px solid var(--guide-rule);
+}
+
+.guide-close {
+  display: grid;
+  justify-self: end;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 4px;
+  font: 1.5rem/1 var(--guide-sans);
+  text-decoration: none;
+}
+
+.guide-close:hover {
+  background: #b28a4521;
 }
 
 .guide-chapter {
@@ -471,6 +472,9 @@
 }
 
 .guide-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   position: relative;
   padding-top: 4px;
   border-top: 1px solid var(--guide-rule);
@@ -564,6 +568,10 @@
     gap: 1px 4px;
   }
 
+  .guide-page-head {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+  }
+
   .guide-paper :is(button, .guide-primary, .guide-secondary, .guide-return) {
     padding-inline: 8px;
   }
@@ -607,8 +615,19 @@
     grid-template-rows: auto 1fr auto;
   }
 
+  .guide-page-head {
+    position: sticky;
+    z-index: 2;
+    top: calc(44px + env(safe-area-inset-top));
+    background: var(--guide-paper);
+  }
+
   .guide-content {
     overflow: visible;
+  }
+
+  .guide-content :is(a, button, [tabindex]) {
+    scroll-margin-top: calc(96px + env(safe-area-inset-top));
   }
 }
 
@@ -617,7 +636,7 @@
     outline-color: Highlight;
   }
 
-  .guide-topbar :is([aria-current="true"], [aria-current="page"], [aria-pressed="true"], .guide-close),
+  .guide-topbar :is([aria-current="true"], [aria-current="page"], [aria-pressed="true"]),
   .guide-paper :is(.guide-primary, .guide-nav button:last-child, .guide-copy) {
     border-color: ButtonText;
   }

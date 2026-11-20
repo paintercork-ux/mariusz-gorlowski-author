@@ -3,9 +3,10 @@
 }
 
 .ai-guide-hotspot {
+  --ai-guide-pen-x: max(75cqw, calc(50cqw + 218px));
   position: absolute;
   z-index: 4;
-  left: max(75%, calc(50% + 218px));
+  left: var(--ai-guide-pen-x);
   top: max(79%, calc(50% + 9.5cqw));
   min-width: 44px;
   min-height: 44px;
@@ -33,10 +34,6 @@
   right: calc(50% + 12px);
   top: 40%;
   transform: translateY(-50%);
-}
-
-.ai-guide-hotspot-label,
-.ai-guide-profile-label {
   padding: 4px 9px;
   border: 1px solid #b0915d;
   border-radius: 5px;
@@ -70,42 +67,43 @@
   outline-offset: 1px;
 }
 
-.ai-guide-profile-link {
-  display: none;
-}
-
 @media (max-width: 760px) {
   .ai-guide-hotspot {
-    left: max(75%, calc(50% + 178px));
+    --ai-guide-pen-x: max(75cqw, calc(50cqw + 178px));
   }
+
   .ai-guide-hotspot-label {
-    display: none;
+    /* Anchor the label to the desk beside the portrait and keep the point on the pen. */
+    left: calc(clamp(137px, 38cqw, 167px) - var(--ai-guide-pen-x) + 50%);
+    right: auto;
+    top: calc(40% + 7px);
   }
-  .ai-guide-profile-link {
+
+  .ai-guide-hotspot-label::before {
+    top: calc(50% - 8px);
+  }
+
+  .ai-guide-hotspot-label::after {
     position: absolute;
-    top: 62px;
-    left: 23px;
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    text-decoration: none;
-    touch-action: manipulation;
-  }
-  .ai-guide-profile-link:hover .ai-guide-profile-label {
-    background: #30372a;
-  }
-  .ai-guide-profile-link:focus-visible {
-    outline: 2px solid #8d682e;
-    outline-offset: 2px;
-    border-radius: 5px;
+    inset: -9px 0;
+    content: '';
   }
 }
 
 @media (max-width: 520px) {
   .ai-guide-hotspot {
-    left: calc(66% + 55px);
+    --ai-guide-pen-x: calc(66cqw + 55px);
   }
-  .ai-guide-profile-link {
-    left: 19px;
+}
+
+@media (max-width: 380px) {
+  .ai-guide-hotspot-label {
+    top: calc(40% + 12px);
+    padding-inline: 7px;
+    font-size: .75rem;
+  }
+
+  .ai-guide-hotspot-label::before {
+    top: calc(50% - 11px);
   }
 }
