@@ -1,7 +1,7 @@
 """Build the Brevo essay feeds and export bilingual campaign emails."""
 
 import argparse
-from datetime import date, datetime, time, timezone
+from datetime import datetime, timezone
 from email.utils import format_datetime
 from html import escape
 import json
@@ -63,6 +63,17 @@ def essay_details(post, lang, translations):
 
 def write_essay_feeds(root, posts, translations):
     essays = [post for post in published_essays(posts) if post["id"] not in ARCHIVE_IDS]
+    paths = {lang: root / copy["section"].lstrip("/") / "feed.xml" for lang, copy in COPY.items()}
+    published_dates = {}
+    for path in paths.values():
+        if path.is_file():
+            for item in ET.parse(path).findall("channel/item"):
+                essay_id = item.findtext("guid").rsplit("/", 1)[1]
+                published_dates.setdefault(essay_id, item.findtext("pubDate"))
+
+    # Brevo uses publication times to select entries for each mailing window.
+    # Reuse the first feed timestamp when an existing essay is edited or rebuilt.
+    build_date = format_datetime(datetime.now(timezone.utc), usegmt=True)
     for lang, copy in COPY.items():
         feed = ET.Element("rss", version="2.0")
         channel = ET.SubElement(feed, "channel")
@@ -81,13 +92,11 @@ def write_essay_feeds(root, posts, translations):
             ET.SubElement(item, "guid", isPermaLink="false").text = (
                 f"tag:mariuszgorlowski.com,2026:essay/{lang}/{post['id']}"
             )
-            published = datetime.combine(date.fromisoformat(post["date"]), time.min, timezone.utc)
-            ET.SubElement(item, "pubDate").text = format_datetime(published, usegmt=True)
+            ET.SubElement(item, "pubDate").text = published_dates.get(post["id"], build_date)
 
         ET.indent(feed)
-        path = root / copy["section"].lstrip("/") / "feed.xml"
         xml = ET.tostring(feed, encoding="utf-8", xml_declaration=True).decode("utf-8")
-        write_text(path, xml + "\n")
+        write_text(paths[lang], xml + "\n")
 
 
 def essay_email(lang, sample=None):
