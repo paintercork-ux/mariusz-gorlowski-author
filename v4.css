@@ -187,6 +187,9 @@
 
 /* Jonathan Eyers: original editorial-report quotations, signature only. */
 .v4-books .tlc-review{margin:23px 0 25px;padding:20px 23px 18px;border:0;border-left:2px solid #b69760;background:#faf7ef;border-radius:0 7px 7px 0;min-width:0;}
+.v4-books .tlc-review--opening{margin-bottom:0;}
+.v4-books .book-description{margin-top:25px;}
+.v4-books .paper-card .book-description > p{max-width:none;}
 .v4-books .tlc-review blockquote{margin:0;padding:0;border:0;}
 .v4-books .paper-card .tlc-review p{margin:0;max-width:none;font-family:var(--serif);font-size:1.0625rem;font-style:italic;font-weight:400;line-height:1.75;color:#344248;overflow-wrap:break-word;}
 .v4-books .tlc-review figcaption{margin:13px 0 0;font-family:var(--sans);font-size:.875rem;font-style:normal;font-weight:600;line-height:1.5;letter-spacing:.01em;color:#80602e;}
