@@ -14,6 +14,7 @@ from urllib.parse import urlsplit
 import json
 import re
 from datetime import date
+from build_essay_newsletter import write_essay_feeds
 from build_newsletter import write_newsletters
 from build_reader_pages import reader_path, write_reading_pages
 
@@ -133,4 +134,5 @@ for lang, root in (("en", ""), ("pl", "pl/")):
         path.write_text(updated, encoding="utf-8")
 write_reading_pages(ROOT, posts, pl, essay_full_text, date_label)
 write_newsletters(ROOT)
-print("Updated EN/PL publication cards, individual reading pages and latest home essays.")
+write_essay_feeds(ROOT, posts, pl)
+print("Updated EN/PL publication cards, individual reading pages, latest home essays and essay feeds.")
