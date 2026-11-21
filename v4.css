@@ -197,6 +197,10 @@
 .v4-books .tlc-review-pair .tlc-review{margin:0;}
 .v4-books .tlc-review--closing{margin:27px auto 0;padding:28px 26px 16px;border-left:0;border-top:1px solid #d9c8a8;border-radius:0;background:none;text-align:center;}
 .v4-books .paper-card .tlc-review--closing p{max-width:47ch;margin:0 auto;font-size:clamp(1.25rem,2vw,1.5625rem);line-height:1.6;color:#4e422e;}
+@media(min-width:761px){
+ .v4-books .newsletter-card .newsletter-copy,
+ .v4-books .newsletter-card .newsletter-form{max-width:none;}
+}
 @media(max-width:760px){
  .v4-books .tlc-review-pair{grid-template-columns:1fr;gap:15px;}
  .v4-books .tlc-review{padding:18px 19px 17px;}
