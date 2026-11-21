@@ -195,6 +195,8 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
         reader_meta = f'<time datetime="{item["date"]}">{date_label(item["date"], lang)}</time><span class="reader-published">{published}</span>'
     published_schema = {"datePublished": item["date"]} if not (article or story) else {}
     quote_script = "" if story else '<script src="/reader-quotes.js?v=20261120-download-time-1" defer></script>'
+    newsletter_head = "<!-- AUTO:NEWSLETTER_HEAD:START --><!-- AUTO:NEWSLETTER_HEAD:END -->\n" if item["type"] == "essay" else ""
+    newsletter_block = "<!-- AUTO:NEWSLETTER:START --><!-- AUTO:NEWSLETTER:END -->\n" if item["type"] == "essay" else ""
     structured = json.dumps({
         "@context": "https://schema.org", "@type": "CreativeWork" if story else "Article",
         "headline": meta["title"], "description": meta["description"],
@@ -223,7 +225,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 <link rel="stylesheet" href="/reader.css?v={reader_version}">
 <script src="/reader.js?v={reader_version}" defer></script>
 {quote_script}
-<script type="application/ld+json">{structured}</script>
+{newsletter_head}<script type="application/ld+json">{structured}</script>
 </head><body class="essay-reader">
 <a class="reader-skip" href="#essay">{skip}</a>
 <header class="reader-topbar"><div class="reader-topbar-inner">
@@ -242,7 +244,7 @@ def reader_html(item, lang, translations, render_body, date_label, next_item, qu
 </div></article>
 {quote_markup(item, lang, meta, quotes)}
 {next_markup}
-<footer class="reader-footer"><a href="{listing}">{back}</a><br><a href="{home}">mariuszgorlowski.com</a></footer>
+{newsletter_block}<footer class="reader-footer"><a href="{listing}">{back}</a><br><a href="{home}">mariuszgorlowski.com</a></footer>
 </main></body></html>
 '''
 

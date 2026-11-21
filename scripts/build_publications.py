@@ -14,6 +14,7 @@ from urllib.parse import urlsplit
 import json
 import re
 from datetime import date
+from build_newsletter import write_newsletters
 from build_reader_pages import reader_path, write_reading_pages
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -131,4 +132,5 @@ for lang, root in (("en", ""), ("pl", "pl/")):
             raise RuntimeError(f"Expected one {marker} block in {path}, got {count}")
         path.write_text(updated, encoding="utf-8")
 write_reading_pages(ROOT, posts, pl, essay_full_text, date_label)
+write_newsletters(ROOT)
 print("Updated EN/PL publication cards, individual reading pages and latest home essays.")
