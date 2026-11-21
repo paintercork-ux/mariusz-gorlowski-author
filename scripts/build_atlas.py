@@ -8,7 +8,7 @@ from build_reader_pages import ORIGIN, atlas_path, reader_html, reader_path, sou
 
 
 ROOT = Path(__file__).resolve().parent.parent
-ATLAS_STYLE_LINK = '<link rel="stylesheet" href="/ai-atlas.css?v=20261120-2">'
+ATLAS_STYLE_LINK = '<link rel="stylesheet" href="/ai-atlas.css?v=20261121-1">'
 CATALOG = json.loads((ROOT / "data/ai-atlas.json").read_text(encoding="utf-8"))
 ARTICLES = [{"type": "atlas", "id": entry["id"], **entry["en"]} for entry in CATALOG["articles"]]
 TRANSLATIONS = {entry["id"]: entry["pl"] for entry in CATALOG["articles"]}

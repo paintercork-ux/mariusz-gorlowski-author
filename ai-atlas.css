@@ -23,6 +23,7 @@
 
 .atlas-page [hidden] { display: none; }
 
+html:has(> body.atlas-view) { scrollbar-gutter: stable; }
 body.atlas-view { background: #101c22; }
 .atlas-page {
   --atlas-gold: #e6c48b;
@@ -101,6 +102,7 @@ body.atlas-view { background: #101c22; }
 .atlas-map {
   position: relative;
   isolation: isolate;
+  align-self: start;
   aspect-ratio: 1000 / 515;
   margin: 0;
 }
