@@ -1,5 +1,26 @@
 [
   {
+    "id": "2026-11-26-love-machine",
+    "type": "essay",
+    "date": "2026-11-26",
+    "title": "Can You Fall in Love with a Machine?",
+    "description": "After several failed relationships, she had stopped believing that the perfect partner was waiting for her somewhere out there.",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/122101706787546956/posts/122112967545546956"
+      }
+    ],
+    "status": "published",
+    "featured": true,
+    "display_order": 1,
+    "slug": "can-you-fall-in-love-with-a-machine",
+    "image": "/assets/essay-love-machine.webp",
+    "image_alt": "A woman raising a glass of wine towards a phone in a miniature armchair at a table set for two.",
+    "image_width": 1400,
+    "image_height": 788
+  },
+  {
     "id": "2026-11-19-still-me",
     "type": "essay",
     "date": "2026-11-19",
@@ -8,7 +29,7 @@
     "links": [],
     "status": "published",
     "featured": true,
-    "display_order": 1,
+    "display_order": 2,
     "slug": "am-i-still-me"
   },
   {
@@ -43,7 +64,7 @@
       }
     ],
     "featured": true,
-    "display_order": 2,
+    "display_order": 3,
     "status": "published",
     "slug": "what-if-someone-whos-gone-called-you"
   },
@@ -74,8 +95,8 @@
         "url": "https://www.facebook.com/122101706787546956/posts/122098148013546956"
       }
     ],
-    "featured": true,
-    "display_order": 3,
+    "featured": false,
+    "display_order": 4,
     "status": "published",
     "slug": "the-day-we-stop-saying-no"
   }

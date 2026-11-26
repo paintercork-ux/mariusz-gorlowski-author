@@ -63,7 +63,7 @@ def essay_full_text(item, lang):
         doi_link = re.fullmatch(r"\[(https://doi\.org/[^\]]+)\]\(\1\)", block)
         if doi_link:
             block = doi_link.group(1)
-        if block.startswith("https://doi.org/"):
+        if re.fullmatch(r"https://[^\s]+", block):
             safe = escape(block, quote=True)
             output.append(f'<p class="v4-source-link"><a href="{safe}" target="_blank" rel="noopener noreferrer">{escape(block)}</a></p>')
         else:
@@ -75,9 +75,12 @@ def date_label(s, lang):
     return f"{d.day} {months_pl[d.month-1]} {d.year}" if lang == "pl" else d.strftime("%d %B %Y").lstrip("0")
 
 def build(kind, lang):
-    chosen = sorted((p for p in posts if p["type"] == kind and p["featured"]), key=lambda p: p["display_order"])
-    if len(chosen) > 3:
+    featured = [p for p in posts if p["type"] == kind and p["featured"]]
+    if len(featured) > 3:
         raise ValueError("More than three featured items: " + kind)
+    chosen = sorted((p for p in posts if p["type"] == kind and
+                     (p["featured"] or (kind == "essay" and p.get("status") == "published"))),
+                    key=lambda p: p["display_order"])
     rendered = []
     for item in chosen:
         title = pl[item["id"]]["title"] if lang == "pl" else item["title"]

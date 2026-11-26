@@ -130,3 +130,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #b48e50; outline-offs
   .reader-main { width: 100%; padding: 0; }
   .essay-reader-body { font-size: 12pt; }
 }
+
+/* Optional editorial illustration on an individual essay. */
+.reader-illustration { margin: 0 0 30px; }
+.reader-illustration img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.reader-illustration figcaption { margin-top: 8px; color: #7b6544; font: 400 .85rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-align: center; }

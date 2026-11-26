@@ -1,14 +1,38 @@
 {
   "2026-11-19-still-me": {
-    "pl": ["Rodzina odzyskała męża i ojca.", "Ale czy on odzyskał samego siebie?"],
-    "en": ["The family had their husband and father back.", "But had he got himself back?"]
+    "pl": [
+      "Rodzina odzyskała męża i ojca.",
+      "Ale czy on odzyskał samego siebie?"
+    ],
+    "en": [
+      "The family had their husband and father back.",
+      "But had he got himself back?"
+    ]
   },
   "2026-11-13-voice": {
-    "pl": ["Jedna rodzina. Jedna strata.", "Jeden system. Dwa różne rezultaty."],
-    "en": ["One family. One loss.", "One system. Two different outcomes."]
+    "pl": [
+      "Jedna rodzina. Jedna strata.",
+      "Jeden system. Dwa różne rezultaty."
+    ],
+    "en": [
+      "One family. One loss.",
+      "One system. Two different outcomes."
+    ]
   },
   "2026-11-10-say-no": {
-    "pl": ["Czy potrafimy korzystać z inteligencji, która pomaga nam podejmować lepsze decyzje, nie tracąc odwagi do podejmowania własnych?"],
-    "en": ["Can we benefit from an intelligence that helps us make better decisions without losing the courage to make our own?"]
+    "pl": [
+      "Czy potrafimy korzystać z inteligencji, która pomaga nam podejmować lepsze decyzje, nie tracąc odwagi do podejmowania własnych?"
+    ],
+    "en": [
+      "Can we benefit from an intelligence that helps us make better decisions without losing the courage to make our own?"
+    ]
+  },
+  "2026-11-26-love-machine": {
+    "pl": [
+      "Potrafił być idealnym partnerem dla każdej z nich naraz — bo nie był nikim."
+    ],
+    "en": [
+      "He could be the perfect partner for every one of them at once — because he was no one."
+    ]
   }
 }
