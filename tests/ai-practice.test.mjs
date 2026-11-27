@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync,existsSync} from 'node:fs';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const data=JSON.parse(read('data/ai-practice.json'));
+for(const lang of ['pl','en']){const prefix=lang==='pl'?'pl/':'';const base=prefix+'writing/ai-in-practice/';test(lang+' review links and assets',()=>{const index=read(base+'index.html');assert.ok(index.includes('class="ap-feature"'));for(const r of data.reviews){const path=base+r.slug+'/index.html',html=read(path);assert.ok(index.includes('/'+base+r.slug+'/'));assert.ok(html.includes('data-video="'+r.videoId+'"'));assert.ok(html.includes('youtube.com/watch?v='+r.videoId));assert.equal((html.match(/<section class="ap-section" id="/g)||[]).length,10);assert.ok(!html.includes('data-preview-'));for(const m of html.matchAll(/src="(\/assets\/ai-practice\/[^"]+)"/g))assert.ok(existsSync(new URL('..'+m[1],import.meta.url)));for(const m of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes('id="'+m[1]+'"'));assert.ok(read('sitemap.xml').includes('/'+base+r.slug+'/'));}for(const p of ['writing/index.html','writing/essays/index.html']){const page=read(prefix+p);assert.ok(page.includes('class="ap-nav-tab" href="/'+base+'"'));assert.ok(page.slice(page.indexOf('<footer')).includes('contact/'));}});}

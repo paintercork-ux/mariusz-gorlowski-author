@@ -212,3 +212,6 @@
  .v4-books .paper-card .tlc-review--closing p{font-size:1.25rem;line-height:1.6;}
  .v4-books .tlc-review--closing{padding:23px 5px 9px;}
 }
+
+/* AI in Practice: keep the third writing tab compact on narrow screens. */
+.v4-tabs .ap-nav-tab svg{flex:none;margin-right:5px;}@media(max-width:480px){.v4-tabs .ap-nav-tab svg{display:none;}}
